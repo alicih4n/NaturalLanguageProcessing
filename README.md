@@ -38,14 +38,14 @@ This hybrid approach guarantees fast response times for general interactions whi
 ## How to Run
 
 1. Ensure Python 3.10+ is installed.
-2. Install dependencies:
+2. Run the automated master script, which handles dependencies, testing, and model downloading:
    ```bash
-   pip install -r requirements.txt
+   ./run_project.sh
    ```
-3. Run the MLOps test suite:
-   ```bash
-   pytest tests/
-   ```
+
+## Model Acquisition
+
+The system features a Smart Downloader. On the first run, the interactive demo will automatically check if the local LLM exists. If missing, it will prompt you to download the quantized 350M GGUF model directly from HuggingFace to enable the Hybrid RAG capabilities. If skipped, the chatbot will seamlessly fallback to "Lightweight Mode" using only JSON semantic retrieval.
 
 ## Contributor Info
 

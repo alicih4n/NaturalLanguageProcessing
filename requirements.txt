@@ -9,3 +9,5 @@ pytest
 joblib
 nltk
 llama-cpp-python
+requests
+tqdm

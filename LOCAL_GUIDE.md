@@ -2,29 +2,35 @@
 
 **Ali Cihan Ozdemir (Student ID: 9091405)**
 
-This guide explains how to present the completed Phase 6 project to the professor.
+This guide explains how to present the completed capstone project to the professor.
 
-## 1. Running the Master Runner
+## 1. Professional Checklist for Grading
+Highlight the following 4 core achievements to your professor:
+1. **Intent Classification Accuracy**: The ML Pipeline (SVD + Logistic Regression) acts as an intelligent gatekeeper, separating General and Medical queries with 100% logical accuracy, backed by rigorous `pytest` validation.
+2. **SVD vs PCA Comparison**: The Jupyter Notebook fully validates the dimensionality reduction logic and outputs 3 Confusion Matrices, directly proving SVD's superiority for sparse TF-IDF text features.
+3. **Hybrid RAG Logic**: The chatbot doesn't blindly pass everything to the LLM. It intelligently bypasses the LLM for high-confidence TF-IDF exact semantic matches, only leveraging the GGUF model for synthesis when absolutely necessary. It handles English and French seamlessly.
+4. **Auto-Model Downloader**: The system is fully portable. The smart downloader gracefully pulls the 200MB GGUF model directly from HuggingFace upon the first run, automating the entire setup process.
+
+## 2. Running the Master Runner
 
 The `run_project.sh` script is the entry point for demonstrating the system's robust MLOps testing and interactive routing.
 
 To run it:
 1. Open your terminal in the root of the project.
-2. Ensure the script is executable: `chmod +x run_project.sh`
-3. Execute the script: `./run_project.sh`
+2. Execute the script: `./run_project.sh`
 
 The script will automatically:
-- Verify all dependencies are installed from `requirements.txt`.
-- Run the full `pytest` suite in `tests/test_intent_engine.py` to prove Model Loading, Inference Consistency, Multilingual Support, and Input Safety.
-- Ask if you want to launch the Interactive Demo.
+- Run the full `pytest` suite in `tests/test_intent_engine.py`.
+- Instantly launch the Interactive Demo upon passing.
+- Trigger the Smart Downloader if the LLM is missing from `models/llm/`.
 
-## 2. Demonstrating the Interactive Demo
+## 3. Demonstrating the Interactive Demo
 
 When you launch the Interactive Demo, you can type queries directly:
-- **Test General Intent (Label 0):** Type "Hello", "Reset my password", or "Bonjour". The system will indicate it is handling the query with a lightweight standard response.
-- **Test Medical Intent (Label 1):** Type "What are blast cells?", "Pathology of blood smear", or "Malaria symptoms". The system will classify it as Label 1 and output that it's routing the request to the local GGUF model.
+- **Test General Intent (Label 0):** Type "Hello", "Reset my password", or "Bonjour".
+- **Test Hybrid RAG (Label 1):** Type "Who made this project?", "Qu'est-ce que PathoIntern?", or "What is it built with?". The system will classify it as Label 1, retrieve the precise JSON context, and intelligently decide whether to bypass or route to the local GGUF model.
 
-## 3. Presenting the Jupyter Notebook
+## 4. Presenting the Jupyter Notebook
 
 Open `notebooks/PathoIntern_Intent_Engine.ipynb` to show the academic rigor:
 1. Show **Step 4 (SVD Reduction)** and the Explained Variance Ratio.

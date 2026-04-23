@@ -6,6 +6,9 @@ import numpy as np
 from sklearn.feature_extraction.text import TfidfVectorizer
 from sklearn.metrics.pairwise import cosine_similarity
 
+# Import the downloader
+from downloader import ensure_model_exists
+
 # Import the LlamaManager
 sys.path.append(os.path.abspath(os.path.join(os.path.dirname(__file__), '..', '..')))
 from src.core.chatbot_engine import LlamaManager
@@ -88,11 +91,16 @@ def main():
         print("Models not found. Please ensure the notebook has been executed.")
         return
 
-    # Eager Loading the LLM
-    print("\n[System] Pre-loading 200MB GGUF Model into RAM for zero-latency inference...")
-    llama = LlamaManager()
-    llama.load_model()
-    print("[System] Model loaded successfully.")
+    # Check for GGUF model via downloader
+    llm_available = ensure_model_exists()
+    
+    if llm_available:
+        print("\n[System] Pre-loading 200MB GGUF Model into RAM for zero-latency inference...")
+        llama = LlamaManager()
+        llama.load_model()
+        print("[System] Model loaded successfully. Running in Hybrid Mode.")
+    else:
+        print("\n[System] Running in Lightweight Mode (JSON only) - LLM bypassed.")
     
     print("\nType your query in English or French. Type 'exit' or 'quitter' to quit.")
     while True:
@@ -130,12 +138,16 @@ def main():
                     print(f"-> Action: Hyper-Precise Match (Score: {sim_score:.2f}). Bypassing LLM.")
                     print(f"\n🤖 PathoIntern (Direct JSON Match): {context}")
                 elif sim_score >= 0.15:
-                    print(f"-> Action: Medium Confidence Match (Score: {sim_score:.2f}). Routing Top 3 contexts to GGUF LLM...")
-                    try:
-                        response = llama.generate_rag_response(query=text, context=context, language=detected_language)
-                        print(f"\n🤖 PathoIntern (GGUF): {response}")
-                    except Exception as e:
-                        print(f"\n🤖 Error running LLM: {e}")
+                    if llm_available:
+                        print(f"-> Action: Medium Confidence Match (Score: {sim_score:.2f}). Routing Top 3 contexts to GGUF LLM...")
+                        try:
+                            response = llama.generate_rag_response(query=text, context=context, language=detected_language)
+                            print(f"\n🤖 PathoIntern (GGUF): {response}")
+                        except Exception as e:
+                            print(f"\n🤖 Error running LLM: {e}")
+                    else:
+                        print(f"-> Action: Medium Confidence Match (Score: {sim_score:.2f}). System running in Lightweight Mode (JSON only) - LLM bypassed.")
+                        print(f"\n🤖 PathoIntern (Lightweight Retrieval): {context}")
                 else:
                     print(f"-> Action: Weak Context (Score: {sim_score:.2f}). Rejecting Query.")
                     if detected_language == "fr":

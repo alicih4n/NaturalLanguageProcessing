@@ -4,5 +4,6 @@ __pycache__/
 venv/
 env/
 *.gguf
+models/llm/*.gguf
 .ipynb_checkpoints/
 .pytest_cache/
