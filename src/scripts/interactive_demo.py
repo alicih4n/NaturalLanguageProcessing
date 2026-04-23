@@ -5,6 +5,7 @@ import json
 import numpy as np
 from sklearn.feature_extraction.text import TfidfVectorizer
 from sklearn.metrics.pairwise import cosine_similarity
+import re
 
 # Import the downloader
 from downloader import ensure_model_exists
@@ -14,8 +15,14 @@ sys.path.append(os.path.abspath(os.path.join(os.path.dirname(__file__), '..', '.
 from src.core.chatbot_engine import LlamaManager
 
 def detect_language(query: str) -> str:
-    french_indicators = {"le", "la", "les", "des", "un", "une", "est", "qui", "quoi", "bonjour", "projet", "membre", "c'est", "comment", "salut", "merci", "quelle", "technologie", "utilise"}
-    words = set(query.lower().replace("?", "").replace("!", "").replace(".", "").replace(",", "").split())
+    french_indicators = {
+        "que", "fait", "est", "le", "la", "les", "pour", "dans", "avec", 
+        "ce", "qui", "quoi", "comment", "pourquoi", "ou", "est-ce", 
+        "interne", "pathologique"
+    }
+    # Clean string and extract standalone words
+    cleaned_query = re.sub(r'[^\w\s]', ' ', query.lower())
+    words = set(cleaned_query.split())
     if words.intersection(french_indicators):
         return "fr"
     return "en"
@@ -51,7 +58,7 @@ def retrieve_context(query: str, language: str):
         else:
             boosted_query += " team members built project Ali Cihan Ozdemir"
             
-    vectorizer = TfidfVectorizer(lowercase=True, analyzer='char_wb', ngram_range=(1, 3))
+    vectorizer = TfidfVectorizer(lowercase=True, analyzer='word', ngram_range=(1, 3))
     tfidf_matrix = vectorizer.fit_transform(questions)
     query_vec = vectorizer.transform([boosted_query])
     
@@ -61,9 +68,9 @@ def retrieve_context(query: str, language: str):
     best_idx = sorted_indices[0]
     best_score = sims[best_idx]
     
-    if best_score >= 0.50:
+    if best_score > 0.90:
         return answers[best_idx], best_score
-    elif best_score >= 0.15:
+    elif best_score >= 0.30:
         # Top 3 matching QA pairs
         top_indices = sorted_indices[:3]
         top_contexts = []
@@ -134,13 +141,14 @@ def main():
                 
                 context, sim_score = retrieve_context(text, detected_language)
                 
-                if sim_score >= 0.50:
+                if sim_score > 0.90:
                     print(f"-> Action: Hyper-Precise Match (Score: {sim_score:.2f}). Bypassing LLM.")
                     print(f"\n🤖 PathoIntern (Direct JSON Match): {context}")
-                elif sim_score >= 0.15:
+                elif sim_score >= 0.30:
                     if llm_available:
-                        print(f"-> Action: Medium Confidence Match (Score: {sim_score:.2f}). Routing Top 3 contexts to GGUF LLM...")
+                        print(f"-> Action: Medium Confidence Match (Score: {sim_score:.2f}). Routing to GGUF LLM...")
                         try:
+                            # IMPORTANT: passing detected_language ensures correct prompt
                             response = llama.generate_rag_response(query=text, context=context, language=detected_language)
                             print(f"\n🤖 PathoIntern (GGUF): {response}")
                         except Exception as e:

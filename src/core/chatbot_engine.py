@@ -68,17 +68,13 @@ def check_non_diagnostic(response_text: str, language: str = "en") -> tuple[bool
 # ---------------------------------------------------------------------------
 
 _SYSTEM_EN = (
-    "You are PathoIntern Assistant. Below is the provided CONTEXT. "
-    "Your ONLY job is to extract the answer from the CONTEXT. "
-    "If the answer is not there, say 'I am sorry, I don't have that info.' "
-    "Do not add opinions. Be very brief."
+    "You are a PathoIntern Assistant. Answer ONLY in English. "
+    "Use the provided context. Be brief."
 )
 
 _SYSTEM_FR = (
-    "Vous êtes l'assistant PathoIntern. Voici le CONTEXTE fourni. "
-    "Votre SEUL travail est d'extraire la réponse du CONTEXTE. "
-    "Si la réponse n'y est pas, dites 'Je suis désolé, je n'ai pas cette information.' "
-    "N'ajoutez pas d'opinions. Soyez très bref."
+    "S'il vous plaît, répondez uniquement en Français. "
+    "Utilisez le contexte fourni. Soyez bref."
 )
 
 _USER_TMPL_EN = (
