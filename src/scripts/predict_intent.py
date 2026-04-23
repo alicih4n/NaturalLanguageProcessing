@@ -3,7 +3,7 @@ import os
 
 def predict_intent(text):
     # Load models
-    model_dir = os.path.join(os.path.dirname(__file__), '..', 'models')
+    model_dir = os.path.join(os.path.dirname(__file__), '..', '..', 'models', 'classifiers')
     try:
         vectorizer = joblib.load(os.path.join(model_dir, 'tfidf_vectorizer.pkl'))
         svd = joblib.load(os.path.join(model_dir, 'svd_model.pkl'))

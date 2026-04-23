@@ -26,11 +26,14 @@ This hybrid approach guarantees fast response times for general interactions whi
 
 ## Project Structure
 
-- `data/`: Contains the augmented dataset `pathology_classification_dataset.csv`.
-- `models/`: Stores serialized `joblib` artifacts (TF-IDF vectorizer, SVD, LR).
-- `src/`: Houses executable scripts like `predict_intent.py`.
-- `tests/`: Contains the robust MLOps `pytest` suite testing inference and load stability.
-- `PathoIntern_Intent_Engine.ipynb`: The core academic pipeline validating TF-IDF, SVD, and PCA implementations.
+- `data/raw/`: Base JSON knowledge bases.
+- `data/processed/`: Augmented classification datasets.
+- `models/classifiers/`: Stores serialized `joblib` artifacts (TF-IDF vectorizer, SVD, LR).
+- `models/llm/`: Domain-specific GGUF base models.
+- `notebooks/`: The core academic pipeline validating TF-IDF, SVD, and PCA implementations.
+- `src/core/`: Application backend (`chatbot_engine.py`).
+- `src/scripts/`: Generator scripts and the `interactive_demo.py` hybrid bridge.
+- `tests/`: Robust MLOps `pytest` suite for inference consistency.
 
 ## How to Run
 

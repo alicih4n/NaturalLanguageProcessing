@@ -2,7 +2,7 @@ import os
 import joblib
 import pytest
 
-MODEL_DIR = os.path.join(os.path.dirname(__file__), '..', 'models')
+MODEL_DIR = os.path.join(os.path.dirname(__file__), '..', 'models', 'classifiers')
 
 @pytest.fixture(scope="module")
 def models():
