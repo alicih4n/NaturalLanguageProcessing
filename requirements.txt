@@ -1,13 +1,16 @@
-scikit-learn
+# Data Science & Machine Learning
 pandas
 numpy
+scikit-learn
 matplotlib
 seaborn
-nbformat
-jupyter
-pytest
 joblib
 nltk
-llama-cpp-python
+
+# MLOps, LLM & Development
+jupyter
+nbformat
+pytest
 requests
 tqdm
+llama-cpp-python
