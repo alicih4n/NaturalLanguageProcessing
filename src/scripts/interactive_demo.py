@@ -17,7 +17,7 @@ def detect_language(query: str) -> str:
         return "fr"
     return "en"
 
-def retrieve_context(query: str, language: str) -> str:
+def retrieve_context(query: str, language: str):
     base_dir = os.path.abspath(os.path.join(os.path.dirname(__file__), '..', '..'))
     if language == "fr":
         kb_path = os.path.join(base_dir, 'data', 'raw', 'knowledge_base_fr.json')
@@ -25,7 +25,7 @@ def retrieve_context(query: str, language: str) -> str:
         kb_path = os.path.join(base_dir, 'data', 'raw', 'knowledge_base_en.json')
         
     if not os.path.exists(kb_path):
-        return ""
+        return "", 0.0
         
     with open(kb_path, 'r', encoding='utf-8') as f:
         data = json.load(f)
@@ -37,18 +37,16 @@ def retrieve_context(query: str, language: str) -> str:
         answers.append(item['answer'])
         
     if not questions:
-        return ""
+        return "", 0.0
         
-    vectorizer = TfidfVectorizer(lowercase=True)
+    vectorizer = TfidfVectorizer(lowercase=True, ngram_range=(1, 2))
     tfidf_matrix = vectorizer.fit_transform(questions)
     query_vec = vectorizer.transform([query])
     
     sims = cosine_similarity(query_vec, tfidf_matrix).flatten()
     best_idx = sims.argmax()
     
-    if sims[best_idx] > 0.15:
-        return answers[best_idx]
-    return ""
+    return answers[best_idx], sims[best_idx]
 
 def main():
     print("==================================================")
@@ -102,16 +100,25 @@ def main():
             elif pred == 1:
                 print(f"-> Intent: [1] Medical/Project (Confidence: {max_prob:.2f})")
                 print(f"-> Detected Language: {detected_language.upper()}")
-                print("-> Action: Verified Medical/Project Intent. Retrieving context from JSON...")
                 
-                context = retrieve_context(text, detected_language)
+                context, sim_score = retrieve_context(text, detected_language)
                 
-                print("-> Action: Generating response via PathoIntern Core LLM (GGUF)...")
-                try:
-                    response = llama.generate_rag_response(query=text, context=context, language=detected_language)
-                    print(f"\n🤖 PathoIntern (GGUF): {response}")
-                except Exception as e:
-                    print(f"\n🤖 Error running LLM: {e}")
+                if sim_score > 0.85:
+                    print(f"-> Action: Hyper-Precise Match (Score: {sim_score:.2f}). Bypassing LLM.")
+                    print(f"\n🤖 PathoIntern (Direct JSON Match): {context}")
+                elif sim_score >= 0.4:
+                    print(f"-> Action: Medium Confidence Match (Score: {sim_score:.2f}). Routing to GGUF LLM...")
+                    try:
+                        response = llama.generate_rag_response(query=text, context=context, language=detected_language)
+                        print(f"\n🤖 PathoIntern (GGUF): {response}")
+                    except Exception as e:
+                        print(f"\n🤖 Error running LLM: {e}")
+                else:
+                    print(f"-> Action: Weak Context (Score: {sim_score:.2f}). Rejecting Query.")
+                    if detected_language == "fr":
+                        print("\n🤖 System: Je ne possède pas d'informations spécifiques à ce sujet dans ma base de connaissances.")
+                    else:
+                        print("\n🤖 System: I do not have specific information about this in my knowledge base.")
             else:
                 print(f"-> Intent: [0] General/System (Confidence: {max_prob:.2f})")
                 print(f"-> Detected Language: {detected_language.upper()}")

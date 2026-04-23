@@ -13,7 +13,21 @@ def augment_medical_questions(questions, target_count=1000):
     prefixes_en = ["Can you tell me: ", "I need to know, ", "What about: ", "Please explain ", "Query: ", "Analyze this: ", "Can you check "]
     prefixes_fr = ["Pouvez-vous me dire: ", "J'ai besoin de savoir: ", "Qu'en est-il de: ", "Veuillez expliquer ", "Question: ", "Analysez ceci: "]
     
-    medical_specific = ["Analyze this lab slide", "What is the pathology of this blood smear?", "Is there a blood smear anomaly?", "Check this carcinoma histology", "Analyze leukocyte count", "carcinoma histology", "blood smear anomaly", "leukocyte count"]
+    # Very distinct medical phrases
+    medical_specific = [
+        "Analyze this lab slide", 
+        "What is the pathology of this blood smear?", 
+        "Is there a blood smear anomaly?", 
+        "Check this carcinoma histology", 
+        "Analyze leukocyte count", 
+        "carcinoma histology", 
+        "blood smear anomaly", 
+        "leukocyte count",
+        "Who made this project?", # We want this to be matched with the KB accurately as a project query (Label 1)
+        "What is PathoIntern?",
+        "How does the model work?",
+        "Qu'est-ce que PathoIntern?"
+    ]
     
     full_pool = questions + medical_specific
     
@@ -50,12 +64,10 @@ def generate_general_questions(target_count=1000):
         "Reset my password", "I forgot my password", "Help me with my password", "What is your name?",
         "Are you a robot?", "Thank you", "Bye", "See you later", "Who built you?",
         "Tell me about yourself.", "How's the weather today?", "What is the weather like?",
-        "Where is the lab?", "I need directions to the lab", "Who is in the lab today?",
-        "Is the lab open?", "Can you help me log in?", "What's up dude?", "Yo", "Hey",
+        "Can you help me log in?", "What's up dude?", "Yo", "Hey",
         "Bonjour", "Salut", "Comment ça va?", "Bonsoir", "Merci", "Au revoir",
         "Comment tu t'appelles?", "Qui es-tu?", "Tu es un robot?", "Aidez-moi",
         "Mot de passe oublié", "Réinitialiser mon mot de passe", "À plus tard",
-        "C'est quoi ce projet?", "Qui t'a créé?", "Où est le laboratoire?", 
         "Aidez-moi avec le système", "Je ne peux pas me connecter",
         "Good afternoon", "Hey", "What's up?", "Can you assist me?", "I need help",
         "Yes", "No", "Maybe", "I don't know", "Please", "Thanks", "Ok", "Okay",
@@ -64,7 +76,7 @@ def generate_general_questions(target_count=1000):
     
     augmented = []
     
-    specific_cases = ["Hello", "How are you?", "Who built you?", "Bonjour", "C'est quoi ce projet?", "Where is the lab?"]
+    specific_cases = ["Hello", "How are you?", "Who built you?", "Bonjour", "C'est quoi ce projet?"]
     # Heavily weight the specific test cases
     for _ in range(30):
         augmented.extend(specific_cases)
