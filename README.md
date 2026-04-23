@@ -44,7 +44,7 @@ PathoIntern is designed to run locally. Follow the step-by-step instructions bel
 
 ### Clone the repository
 ```bash
-git clone <repository-url>
+git clone https://github.com/alicih4n/NaturalLanguageProcessing.git
 cd NaturalLanguageProcessing
 ```
 
