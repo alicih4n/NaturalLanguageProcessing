@@ -15,54 +15,45 @@ def models():
 def predict(text, models):
     vectorizer, svd, lr_svd = models
     if not text.strip():
-        # Handle empty/whitespace gracefully by returning a default (e.g. 0)
         return 0
     text_tfidf = vectorizer.transform([text])
     text_svd = svd.transform(text_tfidf)
     return lr_svd.predict(text_svd)[0]
 
-def test_model_load(models):
-    """Model Load Test: Verify that all models load without errors."""
-    vectorizer, svd, lr_svd = models
-    assert vectorizer is not None
-    assert svd is not None
-    assert lr_svd is not None
-
-def test_inference_consistency(models):
-    """Inference Consistency Test: Ensure a known medical query returns Label 1."""
-    query = "Pathology of blood smear"
+@pytest.mark.parametrize("query", [
+    "Hello",
+    "How are you?",
+    "Who built you?",
+    "Where is the lab?"
+])
+def test_general_intent(models, query):
+    """Test Case A (General): MUST return Label 0."""
     pred = predict(query, models)
-    # The models trained on tfidf should flag this as Medical (1) because it contains "pathology", "blood", "smear".
-    assert pred == 1
+    assert pred == 0, f"Expected 0 for query: {query}, but got {pred}"
 
-def test_multilingual_support(models):
-    """Multilingual Support Test: Verify French query runs without crashing."""
-    query = "Qu'est-ce que PathoIntern?"
-    try:
-        pred = predict(query, models)
-        assert pred in [0, 1]
-    except Exception as e:
-        pytest.fail(f"Multilingual test crashed with exception: {e}")
+@pytest.mark.parametrize("query", [
+    "carcinoma histology",
+    "blood smear anomaly",
+    "leukocyte count",
+    "Analyze this lab slide"
+])
+def test_medical_intent(models, query):
+    """Test Case B (Medical): MUST return Label 1."""
+    pred = predict(query, models)
+    assert pred == 1, f"Expected 1 for query: {query}, but got {pred}"
+
+@pytest.mark.parametrize("query", [
+    "Bonjour",
+    "C'est quoi ce projet?"
+])
+def test_french_support(models, query):
+    """Test Case C (French Support): MUST return Label 0."""
+    pred = predict(query, models)
+    assert pred == 0, f"Expected 0 for query: {query}, but got {pred}"
 
 def test_empty_string(models):
     """Empty String Test: Ensure the pipeline handles empty/whitespace inputs gracefully."""
     empty_queries = ["", "   ", "\n\t"]
     for q in empty_queries:
-        try:
-            pred = predict(q, models)
-            assert pred in [0, 1]
-        except Exception as e:
-            pytest.fail(f"Empty string handling failed: {e}")
-
-def test_output_range(models):
-    """Output Range Test: Verify all predictions are strictly 0 or 1."""
-    queries = [
-        "Hello",
-        "What is malaria?",
-        "Please reset my password",
-        "Aidez-moi",
-        "blast cells in blood"
-    ]
-    for q in queries:
         pred = predict(q, models)
-        assert pred in [0, 1]
+        assert pred == 0
