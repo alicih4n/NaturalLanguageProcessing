@@ -2,6 +2,7 @@ import joblib
 import os
 import sys
 import json
+import numpy as np
 from sklearn.feature_extraction.text import TfidfVectorizer
 from sklearn.metrics.pairwise import cosine_similarity
 
@@ -9,27 +10,35 @@ from sklearn.metrics.pairwise import cosine_similarity
 sys.path.append(os.path.abspath(os.path.join(os.path.dirname(__file__), '..', '..')))
 from src.core.chatbot_engine import LlamaManager
 
-def load_knowledge_base():
+def detect_language(query: str) -> str:
+    french_indicators = {"le", "la", "les", "des", "un", "une", "est", "qui", "quoi", "bonjour", "projet", "membre", "c'est", "comment", "salut", "merci"}
+    words = set(query.lower().replace("?", "").replace("!", "").replace(".", "").replace(",", "").split())
+    if words.intersection(french_indicators):
+        return "fr"
+    return "en"
+
+def retrieve_context(query: str, language: str) -> str:
     base_dir = os.path.abspath(os.path.join(os.path.dirname(__file__), '..', '..'))
-    kb_path_en = os.path.join(base_dir, 'data', 'raw', 'knowledge_base_en.json')
-    kb_path_fr = os.path.join(base_dir, 'data', 'raw', 'knowledge_base_fr.json')
-    
+    if language == "fr":
+        kb_path = os.path.join(base_dir, 'data', 'raw', 'knowledge_base_fr.json')
+    else:
+        kb_path = os.path.join(base_dir, 'data', 'raw', 'knowledge_base_en.json')
+        
+    if not os.path.exists(kb_path):
+        return ""
+        
+    with open(kb_path, 'r', encoding='utf-8') as f:
+        data = json.load(f)
+        
     questions = []
     answers = []
-    
-    for kb_path in [kb_path_en, kb_path_fr]:
-        if os.path.exists(kb_path):
-            with open(kb_path, 'r', encoding='utf-8') as f:
-                data = json.load(f)
-            for item in data.get('qa_pairs', []):
-                questions.append(item['question'])
-                answers.append(item['answer'])
-                
-    return questions, answers
-
-def retrieve_context(query, questions, answers):
+    for item in data.get('qa_pairs', []):
+        questions.append(item['question'])
+        answers.append(item['answer'])
+        
     if not questions:
         return ""
+        
     vectorizer = TfidfVectorizer(lowercase=True)
     tfidf_matrix = vectorizer.fit_transform(questions)
     query_vec = vectorizer.transform([query])
@@ -37,9 +46,9 @@ def retrieve_context(query, questions, answers):
     sims = cosine_similarity(query_vec, tfidf_matrix).flatten()
     best_idx = sims.argmax()
     
-    if sims[best_idx] > 0.05: # basic threshold
+    if sims[best_idx] > 0.15:
         return answers[best_idx]
-    return "I couldn't find specific information about this in my knowledge base, but I will try to answer."
+    return ""
 
 def main():
     print("==================================================")
@@ -58,13 +67,13 @@ def main():
         print("Models not found. Please ensure the notebook has been executed.")
         return
 
-    print("Loading Knowledge Base...")
-    kb_questions, kb_answers = load_knowledge_base()
-    
-    # Initialize the LLM Manager early so it loads once if possible
+    # Eager Loading the LLM
+    print("\n[System] Pre-loading 200MB GGUF Model into RAM for zero-latency inference...")
     llama = LlamaManager()
+    llama.load_model()
+    print("[System] Model loaded successfully.")
     
-    print("Type your query in English or French. Type 'exit' or 'quitter' to quit.")
+    print("\nType your query in English or French. Type 'exit' or 'quitter' to quit.")
     while True:
         try:
             text = input("\nUser> ")
@@ -72,6 +81,8 @@ def main():
                 break
             if not text.strip():
                 continue
+                
+            detected_language = detect_language(text)
                 
             text_tfidf = vectorizer.transform([text])
             text_svd = svd.transform(text_tfidf)
@@ -84,22 +95,31 @@ def main():
             if max_prob < 0.60:
                 print("-> Intent: Ambiguous Query (Confidence below 60%)")
                 print("-> Action: Requesting clarification from user.")
-                print("\n🤖 System: I'm not entirely sure what you mean. Could you please clarify?")
+                if detected_language == "fr":
+                    print("\n🤖 System: Je ne suis pas sûr de comprendre. Pourriez-vous clarifier ?")
+                else:
+                    print("\n🤖 System: I'm not entirely sure what you mean. Could you please clarify?")
             elif pred == 1:
-                print(f"-> Intent: [1] Medical/Pathology (Confidence: {max_prob:.2f})")
-                print("-> Action: Verified Medical Intent. Retrieving context from JSON...")
-                context = retrieve_context(text, kb_questions, kb_answers)
+                print(f"-> Intent: [1] Medical/Project (Confidence: {max_prob:.2f})")
+                print(f"-> Detected Language: {detected_language.upper()}")
+                print("-> Action: Verified Medical/Project Intent. Retrieving context from JSON...")
                 
-                print("-> Action: Initializing PathoIntern Core LLM (GGUF)...")
+                context = retrieve_context(text, detected_language)
+                
+                print("-> Action: Generating response via PathoIntern Core LLM (GGUF)...")
                 try:
-                    response = llama.generate_rag_response(text, context)
+                    response = llama.generate_rag_response(query=text, context=context, language=detected_language)
                     print(f"\n🤖 PathoIntern (GGUF): {response}")
                 except Exception as e:
                     print(f"\n🤖 Error running LLM: {e}")
             else:
                 print(f"-> Intent: [0] General/System (Confidence: {max_prob:.2f})")
+                print(f"-> Detected Language: {detected_language.upper()}")
                 print("-> Action: Handling with Lightweight Standard Response (LLM Bypassed).")
-                print("\n🤖 System: Hello! I am the PathoIntern system assistant. I can help you navigate the system or answer basic questions.")
+                if detected_language == "fr":
+                    print("\n🤖 System: Bonjour! Je suis l'assistant système PathoIntern. Je peux vous aider à naviguer dans le système ou répondre à des questions de base.")
+                else:
+                    print("\n🤖 System: Hello! I am the PathoIntern system assistant. I can help you navigate the system or answer basic questions.")
                 
         except KeyboardInterrupt:
             print("\nExiting.")
