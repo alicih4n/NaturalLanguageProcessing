@@ -1,52 +1,110 @@
-# PathoIntern: Multilingual Intent Classification
+# 🧬 PathoIntern: Hybrid Intent Classification & RAG Architecture
 
-## Project Overview
+> **Context:** This repository serves as the final submission for **TWO** distinct courses: **PROG8245** and **CSCN8010**.
 
-This project implements **Phase 1 and Phase 2** of the PathoIntern Data Science initiative. We introduce a newly augmented dataset and a Jupyter Notebook that establishes a baseline classical machine learning model for intent classification.
+---
 
-## Hybrid Architecture Vision
+## 👥 Team & Contributors
 
-The ML model created in this repository acts as a **"Fast-Intent-Router"** for the existing GGUF model (`LFM2.5-350M-Q4_K_M.gguf`). 
+### Course 1: PROG8245 (Machine Learning)
+* **Ali Cihan Ozdemir** (9091405) - *Lead Contributor & Architect*
+* **Lohith Reddy Danda** (9054470)
+* **Muthuraj Jayakumar** (9084570)
+* **Sumanth Reddy K** (9040660)
 
-Instead of routing every single user query directly to the computationally expensive LLM, our classical Machine Learning pipeline (Multinomial Naive Bayes trained on TF-IDF features) intercepts queries first. 
+### Course 2: CSCN8010 (Foundations of Machine Learning Frameworks)
+* **Ali Cihan Ozdemir** (9091405) - *Lead Contributor & Architect*
+* **Lohith Reddy Danda** (9054470)
+* **Muthuraj Jayakumar** (9084570)
 
-- **Label 1 (Medical/Pathology):** If the router detects a medical or pathology-related query, it will forward it to the specialized GGUF model to generate an accurate, domain-specific response using the `chatbot_engine.py`.
-- **Label 0 (General/System):** If the query is identified as a general greeting or system command (e.g., "Hello", "Reset my password"), the router bypasses the LLM and handles it via lightweight predefined logic.
+*(Note: Sumanth Reddy K is explicitly excluded from the CSCN8010 submission).*
 
-This hybrid approach guarantees fast response times for general interactions while reserving the heavy lifting for the GGUF model when domain expertise is actually required.
+---
 
-## Components
+## 🏗️ Architecture Overview
 
-1. **Synthetic Dataset Generation:** 
-   The script `generate_dataset.py` takes our foundational 155 JSON QA pairs (English & French) and programmatically augments them into a robust 2,000-row CSV dataset (`data/pathology_classification_dataset.csv`).
-2. **Jupyter Notebook Implementation:**
-   The notebook `PathoIntern_Intent_Engine.ipynb` demonstrates the ingestion, TF-IDF vectorization, and dimensionality reduction (SVD vs PCA) of the dataset. The Intent Classification engine is now complete and validated with 3 different architectures (Multinomial Naive Bayes, SVD + Logistic Regression, PCA + Logistic Regression), successfully acting as the proof-of-concept for the Fast-Intent-Router.
-3. **Hybrid Bridge Demo:**
-   The script `src/predict_intent.py` acts as a working demonstration, correctly identifying and routing interactions.
+The **PathoIntern** project integrates a classical Machine Learning router with a Large Language Model (LLM) Retrieval-Augmented Generation (RAG) system.
 
-## Project Structure
+### Fast-Intent-Router
+A robust classical ML layer designed to intercept user queries and classify intent:
+* **Feature Extraction:** Utilizes **TF-IDF** for vectorization.
+* **Dimensionality Reduction:** Employs **SVD** and **PCA** to compress the feature space while retaining variance, ensuring high-speed inference.
+* **Classification Engine:** Integrates models like **Logistic Regression** and **Naive Bayes** to achieve highly deterministic, low-latency intent classification.
 
-- `data/raw/`: Base JSON knowledge bases.
-- `data/processed/`: Augmented classification datasets.
-- `models/classifiers/`: Stores serialized `joblib` artifacts (TF-IDF vectorizer, SVD, LR).
-- `models/llm/`: Domain-specific GGUF base models.
-- `notebooks/`: The core academic pipeline validating TF-IDF, SVD, and PCA implementations.
-- `src/core/`: Application backend (`chatbot_engine.py`).
-- `src/scripts/`: Generator scripts and the `interactive_demo.py` hybrid bridge.
-- `tests/`: Robust MLOps `pytest` suite for inference consistency.
+### GGUF LLM RAG Pipeline
+An advanced Retrieval-Augmented Generation system running on a deeply quantized LLM:
+* **Eager Loading:** Pre-loads model weights and embeddings into memory for rapid initialization and minimal response times.
+* **Bilingual Retrieval:** Features a highly specialized retrieval engine capable of context-aware routing for both **English** and **French** knowledge bases, keeping language paths safely isolated.
 
-## How to Run
+---
 
-1. Ensure Python 3.10+ is installed.
-2. Run the automated master script, which handles dependencies, testing, and model downloading:
+## ⚙️ Comprehensive Installation Guide (OS-Agnostic)
+
+PathoIntern is designed to run locally. Follow the step-by-step instructions below tailored to your operating system.
+
+### Clone the repository
+```bash
+git clone <repository-url>
+cd NaturalLanguageProcessing
+```
+
+### Virtual Environment Setup
+
+**macOS/Linux:**
+```bash
+python3 -m venv venv
+source venv/bin/activate
+```
+
+**Windows (CMD/PowerShell):**
+```cmd
+python -m venv venv
+venv\Scripts\activate
+```
+
+### Install Dependencies
+```bash
+pip install -r requirements.txt
+```
+
+---
+
+## 🚀 Execution & Usage
+
+PathoIntern features a smart **Auto-Downloader** that automatically fetches an optimized **200MB GGUF model** upon the very first run.
+
+### Option A: Master Script (macOS/Linux)
+We provide a convenient shell script to run the project effortlessly:
+```bash
+chmod +x run_project.sh
+./run_project.sh
+```
+
+### Option B: Run Manually (All OS / Windows)
+If you prefer running the components step-by-step or are on a Windows machine:
+
+1. **Run Automated Tests:**
    ```bash
-   ./run_project.sh
+   python -m pytest tests/
+   ```
+2. **Launch the Live Chatbot Engine:**
+   ```bash
+   python src/scripts/interactive_demo.py
    ```
 
-## Model Acquisition
+---
 
-The system features a Smart Downloader. On the first run, the interactive demo will automatically check if the local LLM exists. If missing, it will prompt you to download the quantized 350M GGUF model directly from HuggingFace to enable the Hybrid RAG capabilities. If skipped, the chatbot will seamlessly fallback to "Lightweight Mode" using only JSON semantic retrieval.
+## 📂 Directory Structure
 
-## Contributor Info
-
-**Ali Cihan Ozdemir** (Student ID: 9091405)
+```text
+NaturalLanguageProcessing/
+├── README.md                           # Comprehensive project overview
+├── LOCAL_GUIDE.md                      # Evaluator's quick-start and grading guide
+├── requirements.txt                    # Project dependencies
+├── run_project.sh                      # Master execution script (macOS/Linux)
+├── data/                               # Dataset files
+├── models/                             # ML models and downloaded GGUF weights
+├── notebooks/                          # Jupyter Notebooks and utilities
+├── src/                                # Core logic and execution scripts
+└── tests/                              # Pytest test suites
+```
