@@ -1,0 +1,950 @@
+{
+  "metadata": {
+    "language": "en",
+    "version": "3.0",
+    "last_updated": "2026-04-17",
+    "total_pairs": 155,
+    "categories": [
+      "project_overview",
+      "research",
+      "architecture",
+      "data_processing",
+      "scoring_system",
+      "user_management",
+      "team",
+      "phases_roadmap"
+    ]
+  },
+  "qa_pairs": [
+    {
+      "id": "en_overview_01",
+      "category": "project_overview",
+      "question": "What is PathoIntern?",
+      "answer": "PathoIntern is a non-diagnostic AI triage assistant for blood smear pathology. It acts as a digital intern — performing first-pass analysis of blood smear patch images, flagging morphological anomalies, and displaying the most anomalous cases at the top of a prioritized worklist. The final clinical interpretation always remains with the licensed pathologist."
+    },
+    {
+      "id": "en_overview_02",
+      "category": "project_overview",
+      "question": "Why was PathoIntern created?",
+      "answer": "PathoIntern was created to address the growing problem of pathologist workload and burnout. Blood smear review is one of the most cognitively demanding tasks in clinical pathology, and slide volumes are rising 5-10% annually without proportional growth in pathologist capacity. When critical slides are mixed with routine cases, urgent findings can be delayed by hours. PathoIntern ensures that pathologist expertise is always applied first to the cases that need it most."
+    },
+    {
+      "id": "en_overview_03",
+      "category": "project_overview",
+      "question": "What is the vision of PathoIntern?",
+      "answer": "The vision is simple: No critical blood smear should wait for review. PathoIntern exists to close the gap between rising slide volumes and limited pathologist capacity — not by replacing pathologist expertise, but by ensuring that expertise is always applied first to the cases that need it most."
+    },
+    {
+      "id": "en_overview_04",
+      "category": "project_overview",
+      "question": "What is the mission of PathoIntern?",
+      "answer": "The mission is to help pathologists prioritize blood smear slides through safe, non-diagnostic AI triage — so expertise is applied where it matters most. PathoIntern is designed to act as a digital intern — one that never sleeps, never fatigues, and never makes a final call."
+    },
+    {
+      "id": "en_overview_05",
+      "category": "project_overview",
+      "question": "Is PathoIntern a diagnostic tool?",
+      "answer": "No. PathoIntern is explicitly non-diagnostic. It never assigns, suggests, or implies a clinical diagnosis. All output represents pattern similarity to previously reviewed cases and anomaly distance from a normal baseline — for triage prioritization only. The pathologist retains complete authority over every clinical decision. This is an architectural constraint enforced at every layer of the system, not a limitation."
+    },
+    {
+      "id": "en_overview_06",
+      "category": "project_overview",
+      "question": "What does non-diagnostic mean in the context of PathoIntern?",
+      "answer": "Non-diagnostic means that PathoIntern never provides clinical diagnoses, diagnostic probabilities, or medical advice. Its scores represent how much a blood smear patch deviates from a normal baseline and how similar it is to previously seen cases. These are pattern-based triage signals, not diagnostic conclusions. Banned terms in the system include: diagnosis, diagnostic probability, likely, prediction, classify, and classification."
+    },
+    {
+      "id": "en_overview_07",
+      "category": "project_overview",
+      "question": "What is a digital intern in pathology?",
+      "answer": "A digital intern is an AI assistant that performs the same first-pass review that a human pathology intern would — looking at slides, flagging anything that appears unusual, and suggesting which cases the senior pathologist should review first. Like a real intern, PathoIntern never makes final clinical decisions. It surfaces patterns and anomalies for expert review."
+    },
+    {
+      "id": "en_overview_08",
+      "category": "project_overview",
+      "question": "What are the four mission pillars of PathoIntern?",
+      "answer": "The four mission pillars are: (1) First-Pass Analysis — CTransPath encodes each blood smear patch into a 768-dimensional feature vector for quantitative prioritization. (2) Priority by Anomaly Risk — k-NN anomaly detection scores each patch against a normal-cell baseline and maps it to a 0-100 criticality score across four tiers. (3) Incremental Learning — Pathologist verdicts (agree/disagree/modify) feed future model improvement cycles. (4) Transparent and Auditable — Every action is recorded in an immutable audit log with no unsupervised AI decisions."
+    },
+    {
+      "id": "en_overview_09",
+      "category": "project_overview",
+      "question": "What are the explicit non-goals of PathoIntern?",
+      "answer": "PathoIntern has four explicit non-goals enforced as architectural constraints: (1) No Automated Diagnosis — output is triage priority only. (2) No CBC Data — the system operates on digitized image patches only, no lab values or clinical history. (3) No Unsupervised Decisions — every scored patch requires pathologist review. (4) No Diagnostic Probability — scores are pattern similarity, never probability of disease."
+    },
+    {
+      "id": "en_overview_10",
+      "category": "project_overview",
+      "question": "What problem does PathoIntern solve?",
+      "answer": "PathoIntern solves the problem of unstructured blood smear review queues. Currently, pathologists review slides in the order they arrive (first-in-first-out), meaning a critical case with blast cells or hemoparasites can sit behind dozens of routine normal slides. PathoIntern analyzes each patch, scores it by anomaly risk, and reorders the worklist so the most critical cases surface first — reducing time-to-review for urgent findings."
+    },
+    {
+      "id": "en_research_01",
+      "category": "research",
+      "question": "What research papers support PathoIntern?",
+      "answer": "PathoIntern is grounded in four peer-reviewed publications: (1) Khatab et al. (2024) in Critical Reviews in Clinical Laboratory Sciences — establishes pathologist workload and burnout as the core problem. (2) Baltruschat et al. (2021) in European Radiology — proves AI worklist prioritization reduces critical-case turnaround by 56%. (3) Dippel et al. (2024) in NEJM AI — validates CTransPath embeddings plus anomaly detection for clinical-grade triage. (4) Chen et al. (2024) in Nature Medicine — provides scientific validation for foundation model embeddings in computational pathology."
+    },
+    {
+      "id": "en_research_02",
+      "category": "research",
+      "question": "What is the workload and burnout problem in pathology?",
+      "answer": "According to Khatab et al. (2024), pathologist workloads are increasing by approximately 5-10% annually across most departments, yet no standardized tool exists to measure or fairly distribute that workload. Burnout is driven by productivity demands, lack of recognition, and electronic health record burdens. The paper demonstrates that pathologists lack time-limiting factors for case sign-outs, making them uniquely vulnerable to fatigue-related performance degradation, which directly leads to diagnostic errors."
+    },
+    {
+      "id": "en_research_03",
+      "category": "research",
+      "question": "How does AI worklist prioritization work?",
+      "answer": "Baltruschat et al. (2021) demonstrated that AI-driven worklist prioritization can reduce turnaround time for critical findings from 80.1 minutes to 35.6 minutes — a 56% reduction. The key insight is that the AI never renders diagnoses — it only reorders the queue by urgency so clinicians see critical cases first. The AI triages; the physician diagnoses. PathoIntern applies this same paradigm to blood smear pathology."
+    },
+    {
+      "id": "en_research_04",
+      "category": "research",
+      "question": "What is the NEJM AI study about CTransPath?",
+      "answer": "Dippel et al. (2024) published in NEJM AI used CTransPath foundation model embeddings on 17 million histological images from 5,423 biopsy cases. The system was trained only on normal cases and used anomaly detection to flag rare conditions — achieving 95% AUROC for detecting anomalous pathologies. This is the closest methodological analog to PathoIntern: both use CTransPath 768-dim embeddings, both perform anomaly detection against a normal baseline, and both are designed to flag and prioritize cases for pathologist review."
+    },
+    {
+      "id": "en_research_05",
+      "category": "research",
+      "question": "What is the UNI foundation model?",
+      "answer": "UNI is a self-supervised vision transformer developed by Mahmood Lab and published in Nature Medicine (Chen et al., 2024). It was pretrained on over 100 million histopathology images from more than 100,000 diagnostic whole-slide images spanning 20 major tissue types. UNI produces 4096-dimensional embeddings and significantly outperforms CTransPath. PathoIntern plans to upgrade from CTransPath (768-dim) to UNI (4096-dim) in Phase 2."
+    },
+    {
+      "id": "en_research_06",
+      "category": "research",
+      "question": "How do these research papers connect?",
+      "answer": "The four papers form a cohesive argument chain: Paper 1 (Khatab) establishes the problem — pathologist workloads cause burnout and diagnostic errors. Paper 2 (Baltruschat) proves the solution paradigm works — AI worklist prioritization reduces turnaround by 56%. Paper 3 (Dippel) validates the exact technical approach — CTransPath plus anomaly detection at clinical-grade performance. Paper 4 (Chen) provides foundational scientific validation — pretrained pathology embeddings generalize across tissue types and tasks."
+    },
+    {
+      "id": "en_research_07",
+      "category": "research",
+      "question": "What is CTransPath?",
+      "answer": "CTransPath is a computational pathology foundation model based on the Swin Transformer architecture (Swin-Tiny variant). It encodes histopathology image patches into 768-dimensional feature vectors that capture morphological patterns. PathoIntern uses CTransPath to generate embeddings for each blood smear patch, which are then used for anomaly detection and similarity search. The model uses a modified ConvStem patch embedding layer and requires timm version 0.5.4 specifically."
+    },
+    {
+      "id": "en_research_08",
+      "category": "research",
+      "question": "Why doesn't PathoIntern use classification?",
+      "answer": "PathoIntern deliberately avoids classification because classification implies diagnosis. Instead, it uses embedding-based similarity and anomaly detection — measuring how far a patch deviates from normal patterns and which previously reviewed cases it resembles most. This approach is scientifically validated (Dippel et al., 2024) and keeps the system firmly in the non-diagnostic triage space. The previously identified research papers that used YOLO/CNN classification were rejected because they align with replacing pathologist judgment, not assisting it."
+    },
+    {
+      "id": "en_arch_01",
+      "category": "architecture",
+      "question": "What tech stack does PathoIntern use?",
+      "answer": "PathoIntern uses a three-tier architecture: (1) Frontend — Next.js 14 with App Router, TypeScript, and Tailwind CSS, running on port 3000. (2) Backend — Python FastAPI with async SQLAlchemy 2.0, running on port 8000. (3) Database — PostgreSQL 15 with the pgvector extension for vector similarity search. The ML pipeline uses PyTorch with CTransPath (Swin-Tiny) for embedding generation, and timm 0.5.4 is pinned as a required dependency."
+    },
+    {
+      "id": "en_arch_02",
+      "category": "architecture",
+      "question": "How is the backend structured?",
+      "answer": "The FastAPI backend has 6 API routers: auth, patches, embeddings, scores, verdicts, and audit. It follows a service layer pattern with dedicated services for each domain: patch_service, embedding_service, scoring_service, verdict_service, audit_service, and data_loader. The ML pipeline includes the CTransPath encoder (ctranspath.py) and scoring algorithms (scoring.py) with AnomalyDetector, SimilaritySearcher, and CriticalityScorer classes."
+    },
+    {
+      "id": "en_arch_03",
+      "category": "architecture",
+      "question": "What database does PathoIntern use?",
+      "answer": "PathoIntern uses PostgreSQL 15 with the pgvector extension. The database has 6 tables: users, patches, embeddings, scores, verdicts, and audit_logs. The pgvector extension enables vector similarity search — storing 768-dimensional CTransPath embeddings and performing cosine distance queries to find similar patches. All database operations use async SQLAlchemy 2.0 with asyncpg as the driver."
+    },
+    {
+      "id": "en_arch_04",
+      "category": "architecture",
+      "question": "How does authentication work in PathoIntern?",
+      "answer": "PathoIntern uses JWT (JSON Web Token) authentication with HS256 signing. Passwords are hashed using bcrypt directly (not passlib, which is unmaintained). There are three roles: technologist, pathologist, and admin. Technologists can upload patches but cannot submit verdicts or access audit logs. Only pathologist and admin roles can submit verdicts. Admin users have additional access to user management and certain about pages. Login is rate-limited to 5 requests per minute per IP using slowapi."
+    },
+    {
+      "id": "en_arch_05",
+      "category": "architecture",
+      "question": "What is the audit trail?",
+      "answer": "The audit trail is an immutable, append-only log stored in the audit_logs table. Every action in the system — uploads, embedding generation, scoring, review, verdict submission — is recorded with full attribution (who, what, when). There are no DELETE or UPDATE endpoints for audit logs. This ensures complete traceability and accountability for every AI-assisted triage decision. The audit middleware also logs all API requests."
+    },
+    {
+      "id": "en_arch_06",
+      "category": "architecture",
+      "question": "How is PathoIntern deployed?",
+      "answer": "PathoIntern is deployed on a DigitalOcean droplet using Docker Compose. There are two environments: QA (qa.pathointern.ca) and Production (pathointern.ca). Nginx serves as a reverse proxy with TLS termination via Let's Encrypt certificates. CI/CD is handled by GitHub Actions — pushes to the develop branch auto-deploy to QA, pushes to main auto-deploy to production. Multi-stage Docker builds separate development and production targets."
+    },
+    {
+      "id": "en_arch_07",
+      "category": "architecture",
+      "question": "What is pgvector?",
+      "answer": "pgvector is a PostgreSQL extension that adds support for vector similarity search. In PathoIntern, each blood smear patch is encoded by CTransPath into a 768-dimensional vector (embedding). These embeddings are stored in a pgvector column, and the system uses cosine distance queries to find the top-k most similar patches in the reference corpus. This powers the 'Resemblance to Known Cases' panel in the review interface."
+    },
+    {
+      "id": "en_arch_08",
+      "category": "architecture",
+      "question": "How does the frontend communicate with the backend?",
+      "answer": "The frontend communicates via REST API calls with JWT Bearer token authentication. The API client is centralized in frontend/src/lib/api.ts, which provides typed fetch wrapper functions for all endpoints. Authentication state is managed through a React context (AuthContext.tsx). The frontend runs on Next.js 14 with App Router, and pages are organized under /phase1 (upload, results, review, audit) and /about sections."
+    },
+    {
+      "id": "en_arch_09",
+      "category": "architecture",
+      "question": "What are the brand colors of PathoIntern?",
+      "answer": "PathoIntern uses four brand colors: Navy (#1E3A5F) as the primary color for headers and text, Coral (#D64045) for alerts and emphasis, Teal (#2A9D8F) for positive indicators and success states, and Burnt Orange (#E76F51) for secondary accents. These colors are consistently applied across all pages using Tailwind CSS classes."
+    },
+    {
+      "id": "en_data_01",
+      "category": "data_processing",
+      "question": "How do I upload a blood smear image?",
+      "answer": "To upload a blood smear image: (1) Log in with your credentials. (2) Navigate to the Upload page under Phase 1. (3) Select one or more patch images (PNG or JPG format). (4) Click Upload. The system will save each image, generate a CTransPath embedding (768-dimensional vector), compute anomaly and criticality scores, and add the patch to the prioritized worklist. You can then review results on the Results page."
+    },
+    {
+      "id": "en_data_02",
+      "category": "data_processing",
+      "question": "What image formats does PathoIntern accept?",
+      "answer": "PathoIntern accepts PNG and JPG image formats for blood smear patch uploads. Images should be pre-extracted patches (cropped regions of a blood smear), not whole-slide images. Whole-slide image support (NDPI, SVS, TIFF formats) is planned for Phase 2."
+    },
+    {
+      "id": "en_data_03",
+      "category": "data_processing",
+      "question": "What happens after I upload an image?",
+      "answer": "After upload, the system performs three steps automatically: (1) Embedding generation — CTransPath encodes the image into a 768-dimensional L2-normalized vector and stores it in pgvector. (2) Anomaly scoring — the k-NN AnomalyDetector measures the embedding's distance from the normal-cell baseline. (3) Criticality scoring — the CriticalityScorer combines the anomaly score with similar-case context to produce a 0-100 criticality score and assigns a tier (Urgent, High, Elevated, or Routine). The patch then appears in the worklist."
+    },
+    {
+      "id": "en_data_04",
+      "category": "data_processing",
+      "question": "What is the Kaggle dataset used in PathoIntern?",
+      "answer": "PathoIntern's Phase 1 uses the Kaggle Parasite Dataset, which contains 34,298 blood smear patch images across 8 classes. These include normal morphology (RBCs, Leukocytes) and various parasite types. The dataset serves as the reference corpus — the normal images (10,371 RBC and Leukocyte patches) form the anomaly detection baseline, and the full labelled corpus powers the similarity search for the 'Resemblance to Known Cases' panel."
+    },
+    {
+      "id": "en_data_05",
+      "category": "data_processing",
+      "question": "How are embeddings generated?",
+      "answer": "Embeddings are generated using the CTransPath model, a Swin-Tiny vision transformer pretrained on computational pathology images. Each blood smear patch is passed through the model, producing a 768-dimensional feature vector. This vector is L2-normalized (converted to a unit vector) before being stored in the pgvector database. The normalization ensures that cosine distance can be computed as a simple dot product subtraction: d(a,b) = 1 - a·b."
+    },
+    {
+      "id": "en_data_06",
+      "category": "data_processing",
+      "question": "What is the anomaly baseline?",
+      "answer": "The anomaly baseline is a collection of embeddings from patches with normal morphology — specifically, patches labelled as RBCs (red blood cells) and Leukocytes. The current baseline is built from 10,371 normal patches from the Kaggle corpus. When a new patch is analyzed, the AnomalyDetector measures its k-NN distance (k=10) from this baseline. The further a patch's embedding is from the normal baseline, the higher its anomaly score — indicating it may contain unusual morphological patterns."
+    },
+    {
+      "id": "en_data_07",
+      "category": "data_processing",
+      "question": "How does the data ingestion pipeline work?",
+      "answer": "The data ingestion pipeline has four steps: (1) Ingest — the ingest_kaggle script downloads and imports images from the Kaggle dataset, creating patch records in the database. (2) Embed — the generate_embeddings script runs each image through CTransPath and stores the 768-dim vectors in pgvector. (3) Build Baseline — the build_baseline script extracts embeddings for normal patches (RBCs, Leukocytes) and saves them as the anomaly detection baseline (anomaly_baseline.npz). (4) Score — the score_all script computes anomaly and criticality scores for all patches."
+    },
+    {
+      "id": "en_data_08",
+      "category": "data_processing",
+      "question": "Can I process data on a local machine instead of the server?",
+      "answer": "Yes. The recommended approach for large-scale data processing is to use a local GPU machine. For example, the Kaggle corpus was processed using a local RTX 4060 GPU at 76.6 patches per second (7.5 minutes total), then shipped to the server via scp and pg_dump. This avoids multi-hour CPU processing on the server. The local GPU pipeline approach is the recommended pattern for future corpus updates."
+    },
+    {
+      "id": "en_scoring_01",
+      "category": "scoring_system",
+      "question": "How does the scoring system work?",
+      "answer": "PathoIntern uses a three-component scoring system: (1) Anomaly Score — k-NN cosine distance from the normal-cell baseline, measuring how much a patch deviates from typical normal morphology. (2) Similarity Search — pgvector finds the top-5 most similar patches from the labelled reference corpus, providing visual context. (3) Criticality Score — a 0-100 composite score that combines anomaly distance with similar-case context, including boosts for close matches to known disease cases. The criticality score determines the triage tier."
+    },
+    {
+      "id": "en_scoring_02",
+      "category": "scoring_system",
+      "question": "What are the triage tiers?",
+      "answer": "PathoIntern assigns patches to four triage tiers based on the criticality score: Urgent (score 80-100) — highest anomaly signal, should be reviewed first. High (score 60-79) — significant deviation from normal patterns. Elevated (score 40-59) — moderate anomaly signal. Routine (score 0-39) — closest to normal baseline patterns. The worklist is sorted by criticality score in descending order so the most anomalous cases appear first."
+    },
+    {
+      "id": "en_scoring_03",
+      "category": "scoring_system",
+      "question": "What does the criticality score represent?",
+      "answer": "The criticality score is a 0-100 integer that represents how much a blood smear patch deviates from normal morphological patterns for triage prioritization purposes. It is NOT a diagnostic probability. A higher score means the patch's embedding is further from the normal baseline and may resemble known disease cases in the reference corpus. The score combines anomaly distance, similarity to disease cases, and close-match confidence boosts."
+    },
+    {
+      "id": "en_scoring_04",
+      "category": "scoring_system",
+      "question": "How does anomaly detection work?",
+      "answer": "The AnomalyDetector uses k-NN (k-nearest neighbors with k=10) cosine distance to measure how far a patch's embedding is from the normal-morphology baseline. Because all embeddings are L2-normalized unit vectors, cosine distance is computed as d(a,b) = 1 - a·b. The 95th percentile of within-normal k-NN distances is used as a calibration reference, doubled to give headroom. A patch deviating by 2x the normal spread scores 1.0 (maximum anomaly)."
+    },
+    {
+      "id": "en_scoring_05",
+      "category": "scoring_system",
+      "question": "What is the similarity search?",
+      "answer": "The similarity search uses pgvector to find the top-5 most similar patches from the labelled Kaggle reference corpus. Only labelled patches are included in the reference pool — user-uploaded patches (which have no label) are excluded to prevent circular references. The similar patches are displayed in the 'Resemblance to Known Cases' panel with color-coded badges: teal for Normal (RBCs/Leukocyte), coral for Non-routine (disease classes), and grey for Unclassified."
+    },
+    {
+      "id": "en_scoring_06",
+      "category": "scoring_system",
+      "question": "What does the worklist show?",
+      "answer": "The worklist displays all scored patches sorted by criticality score in descending order, so the most anomalous cases appear first. Each entry shows the patch image, criticality score, tier badge, and review status. The worklist supports filtering by tier (Urgent, High, Elevated, Routine) and review status (Pending, Reviewed). Pagination and counts are server-side for accuracy. Pathologists work through the list, reviewing cases and submitting verdicts."
+    },
+    {
+      "id": "en_scoring_07",
+      "category": "scoring_system",
+      "question": "What is a verdict?",
+      "answer": "A verdict is a pathologist's clinical assessment of a scored patch. There are three verdict types: Agree (the pathologist concurs with the AI tier assignment), Disagree (the pathologist believes the tier is incorrect), and Modify (the pathologist adjusts the assessment). For Disagree and Modify verdicts, the pathologist must provide written notes explaining their reasoning. Each verdict includes a verdict score (0-100) — for Agree, it auto-populates from the criticality score. Only one verdict per patch is allowed, and only the original reviewer can update it."
+    },
+    {
+      "id": "en_scoring_08",
+      "category": "scoring_system",
+      "question": "What are normal labels in the dataset?",
+      "answer": "In PathoIntern, the normal labels are RBCs (red blood cells) and Leukocyte. Patches with these labels represent normal blood cell morphology and form the anomaly detection baseline. Any other label (such as Plasmodium vivax, Plasmodium falciparum, etc.) represents a non-routine or disease morphology. Patches with no label (user uploads) are treated as unclassified and are excluded from the reference pool."
+    },
+    {
+      "id": "en_scoring_09",
+      "category": "scoring_system",
+      "question": "How are the reference cases displayed?",
+      "answer": "Reference cases are displayed in the 'Resemblance to Known Cases' panel on the review page. The panel shows the top-5 most similar patches from the labelled corpus, with color-coded morphology badges: teal badges for Normal cases (RBCs, Leukocyte), coral badges for Non-routine cases (disease classes), and grey badges for Unclassified cases. The display order prioritizes non-normal cases first to give pathologists immediate context about potential disease patterns."
+    },
+    {
+      "id": "en_scoring_10",
+      "category": "scoring_system",
+      "question": "What is the safety disclaimer?",
+      "answer": "Every results and review page in PathoIntern displays a non-dismissible safety disclaimer banner. This banner reminds users that PathoIntern is a non-diagnostic triage assistant and that all clinical decisions must be made by a licensed pathologist. The disclaimer cannot be closed or hidden — it is an architectural constraint, not a user preference. This ensures that no user can interact with AI-generated scores without being aware of the system's non-diagnostic nature."
+    },
+    {
+      "id": "en_user_01",
+      "category": "user_management",
+      "question": "How do I get an account on PathoIntern?",
+      "answer": "To get an account on PathoIntern, you need to contact the system administrator. Currently, user registration is handled through the admin panel — an admin user creates your account with your username, password, and assigned role (pathologist, technologist, or admin). Self-registration is not available to maintain controlled access to the clinical triage system. Contact the project team to request access."
+    },
+    {
+      "id": "en_user_02",
+      "category": "user_management",
+      "question": "What user roles exist in PathoIntern?",
+      "answer": "PathoIntern has three user roles: (1) Technologist — can upload patch images into the triage pipeline and view processing status, but cannot submit verdicts or access audit logs. This role is designed for lab staff who prepare and digitize slides. (2) Pathologist — can upload patches, view results, review the worklist, submit verdicts, and view the audit trail. This is the primary clinical user role. (3) Admin — has all pathologist permissions plus user management (creating and managing user accounts) and access to additional about pages (Personas, User Stories, Roadmap)."
+    },
+    {
+      "id": "en_user_03",
+      "category": "user_management",
+      "question": "Who can submit verdicts?",
+      "answer": "Only authenticated users with the pathologist or admin role can submit verdicts. Technologists cannot submit verdicts — they receive a 403 Forbidden response if they attempt to do so. This enforces the principle of pathologist authority — clinical assessment must come from a licensed professional. Each patch can have only one verdict, and only the original reviewer can update their verdict. For Disagree and Modify verdicts, the pathologist must provide written notes."
+    },
+    {
+      "id": "en_user_04",
+      "category": "user_management",
+      "question": "How do I log in to PathoIntern?",
+      "answer": "Navigate to the login page at the root URL. Enter your username and password, then click Log In. The system uses JWT authentication — upon successful login, you receive an access token that is stored in your browser. Login is rate-limited to 5 attempts per minute per IP address for security. If you forget your password, contact the system administrator."
+    },
+    {
+      "id": "en_user_05",
+      "category": "user_management",
+      "question": "How do I request admin access?",
+      "answer": "Admin access is granted by an existing admin user through the admin panel at /admin/users. If you need admin privileges, contact the project lead (Muthuraj Jayakumar) or any existing admin user. They can update your role from pathologist to admin through the user management interface. Admin access provides user management capabilities and access to additional project documentation pages."
+    },
+    {
+      "id": "en_user_06",
+      "category": "user_management",
+      "question": "What are the password requirements?",
+      "answer": "Passwords must be at least 8 characters long. Usernames must be at least 3 characters and no more than 100 characters. Usernames are case-insensitive and are automatically converted to lowercase. Passwords are securely hashed using bcrypt before storage — they are never stored in plain text."
+    },
+    {
+      "id": "en_team_01",
+      "category": "team",
+      "question": "Who built PathoIntern?",
+      "answer": "PathoIntern was built by a team of four: Muthuraj Jayakumar (Project Lead and ML Architecture), Sumanth Reddy (Backend and Data Pipeline), Lohith Reddy (Frontend and UI/UX), and Ali Ozdemir (Infrastructure and Backend). The team built a production-quality AI triage system in 6 weeks across 6 sprints."
+    },
+    {
+      "id": "en_team_02",
+      "category": "team",
+      "question": "Who is Muthuraj Jayakumar?",
+      "answer": "Muthuraj Jayakumar is the Project Lead and ML Architecture lead for PathoIntern. He is responsible for overall project architecture and technical direction, CTransPath model integration and the embedding pipeline, k-NN anomaly detection and criticality scoring engine, and research paper selection and methodology documentation. His tech stack includes Python, PyTorch, CTransPath, FastAPI, and pgvector. He led Sprints 2-3 (Data Pipeline and Scoring Engine)."
+    },
+    {
+      "id": "en_team_03",
+      "category": "team",
+      "question": "Who is Sumanth Reddy?",
+      "answer": "Sumanth Reddy is the Backend and Data Pipeline developer for PathoIntern. He is responsible for FastAPI backend services and asynchronous API design, PostgreSQL and pgvector database operations, Kaggle dataset download, normalization, and bulk ingestion, and the audit logging system and data integrity. His tech stack includes FastAPI, SQLAlchemy, asyncpg, PostgreSQL, and Alembic. He led Sprints 1-2 (Database schema and Data ingestion)."
+    },
+    {
+      "id": "en_team_04",
+      "category": "team",
+      "question": "Who is Lohith Reddy?",
+      "answer": "Lohith Reddy is the Frontend and UI/UX developer for PathoIntern. He is responsible for Next.js App Router architecture and page structure, about portal design and responsive Tailwind layouts, upload flow UI, result display, and worklist dashboard, and accessibility, loading states, and error handling. His tech stack includes Next.js 14, TypeScript, Tailwind CSS, and React. He led Sprints 1, 3-5 (About portal, Upload and Results UI)."
+    },
+    {
+      "id": "en_team_05",
+      "category": "team",
+      "question": "Who is Ali Ozdemir?",
+      "answer": "Ali Ozdemir is the Infrastructure and Backend developer for PathoIntern. He is responsible for Docker Compose orchestration (PostgreSQL, FastAPI, Next.js), pgvector extension setup and database initialization, JWT authentication system and security middleware, and development environment standardization. His tech stack includes Docker, PostgreSQL, pgvector, FastAPI, and JWT. He led Sprint 1 (Infrastructure and Auth) and supports all sprints."
+    },
+    {
+      "id": "en_team_06",
+      "category": "team",
+      "question": "How was the development organized?",
+      "answer": "Development was organized into 6 one-week sprints: Sprint 1 — Setup and About (Docker, Auth, DB schema, About portal). Sprint 2 — Data Pipeline (CTransPath integration, data ingestion, pgvector storage). Sprint 3 — Scoring Engine (k-NN scoring, Score API, Results UI). Sprint 4 — Integration (end-to-end testing, upload and results wiring). Sprint 5 — Review and Polish (Audit API, Verdict API, Review panel). Sprint 6 — Demo and Docs (demo script, documentation, polish, deployment). All sprints are completed."
+    },
+    {
+      "id": "en_phases_01",
+      "category": "phases_roadmap",
+      "question": "What is Phase 1 of PathoIntern?",
+      "answer": "Phase 1 is the MVP (Minimum Viable Product) — a patch-based triage system that validates the core concept. It uses pre-extracted patch images (PNG/JPG), the public Kaggle Parasite Dataset, CTransPath for 768-dim embeddings, k-NN anomaly detection, and Docker Compose deployment. Phase 1 was completed on February 23, 2026, across 6 sprints. It delivers a fully functional end-to-end system including upload, embedding, scoring, worklist, verdicts, and audit trail."
+    },
+    {
+      "id": "en_phases_02",
+      "category": "phases_roadmap",
+      "question": "What is Phase 2 of PathoIntern?",
+      "answer": "Phase 2 extends PathoIntern to full whole-slide image (WSI) integration. It will support WSI formats (NDPI, SVS, TIFF) using OpenSlide for tile extraction, upgrade to the UNI foundation model for 4096-dimensional embeddings, add an OpenSeadragon deep-zoom viewer with risk heatmap overlays, implement slide-level aggregated anomaly scoring, and support LIS/EMR integration. Phase 2 is planned for 8-12 additional weeks and requires institutional WSI data and GPU infrastructure."
+    },
+    {
+      "id": "en_phases_03",
+      "category": "phases_roadmap",
+      "question": "Why are there two phases?",
+      "answer": "Whole-slide image processing requires institutional data access, high-compute infrastructure, and regulatory pathway planning that cannot be completed in a 6-week academic project. Phase 1 validates the core triage concept — that AI pattern similarity can reliably stratify patches by anomaly risk — with publicly available data and a manageable technical stack. Phase 2 then extends the validated concept to clinical-grade deployment with the feedback collected from Phase 1 pathologist verdicts."
+    },
+    {
+      "id": "en_phases_04",
+      "category": "phases_roadmap",
+      "question": "What is the difference between Phase 1 and Phase 2?",
+      "answer": "Key differences: Input — Phase 1 uses pre-extracted patches, Phase 2 uses whole-slide images. Embeddings — Phase 1 uses CTransPath (768-dim), Phase 2 uses UNI (4096-dim). Viewer — Phase 1 shows static images, Phase 2 has deep-zoom with heatmap overlays. Dataset — Phase 1 uses public Kaggle data, Phase 2 uses institutional WSI library. Scale — Phase 1 handles under 10,000 patches, Phase 2 targets production continuous ingestion. Phase 1 validates the concept; Phase 2 delivers clinical-grade quality."
+    },
+    {
+      "id": "en_phases_05",
+      "category": "phases_roadmap",
+      "question": "What is the current status of the project?",
+      "answer": "Phase 1 MVP was completed on February 23, 2026, with all 6 sprints finished and 135+ tests passing. The system is deployed on a DigitalOcean droplet with QA at qa.pathointern.ca and production at pathointern.ca. CI/CD is fully automated via GitHub Actions. The full Kaggle corpus (34,298 images) is populated on QA. Phase 2 (WSI support) is planned but not yet started. The current branch (develop) focuses on infrastructure and CI/CD refinement."
+    },
+    {
+      "id": "en_phases_06",
+      "category": "phases_roadmap",
+      "question": "What is OpenSeadragon?",
+      "answer": "OpenSeadragon is an open-source, web-based deep-zoom viewer for high-resolution images. In Phase 2 of PathoIntern, OpenSeadragon will be used to display whole-slide images (which can be tens of gigapixels) with smooth pan and zoom capabilities. It will be combined with a risk heatmap overlay, showing pathologists which regions of the slide have the highest anomaly signals based on patch-level scoring."
+    },
+    {
+      "id": "en_phases_07",
+      "category": "phases_roadmap",
+      "question": "What is OpenSlide?",
+      "answer": "OpenSlide is a C library for reading whole-slide images in various vendor formats (NDPI, SVS, TIFF, etc.). In Phase 2, PathoIntern will use OpenSlide (via its Python bindings) to read whole-slide image files and extract individual tile patches for embedding generation. This replaces the manual patch upload workflow of Phase 1 with automated tile extraction from clinical-grade slide images."
+    },
+    {
+      "id": "en_phases_08",
+      "category": "phases_roadmap",
+      "question": "What is the branching strategy?",
+      "answer": "PathoIntern follows a three-tier branching strategy: feature branches (feature/*) are created for individual features and merged into the develop branch via pull request. The develop branch serves as the QA integration branch — pushes to develop auto-deploy to qa.pathointern.ca. The main branch is the production branch — pushes to main auto-deploy to pathointern.ca with a production git tag. This ensures all changes are tested in QA before reaching production."
+    },
+    {
+      "id": "en_misc_01",
+      "category": "project_overview",
+      "question": "What types of blood cell abnormalities can PathoIntern help with?",
+      "answer": "PathoIntern's triage system helps prioritize cases involving various morphological findings including: Red cell abnormalities (schistocytes, echinocytes, target cells, spherocytes, sickle cells), Hemoparasites (Plasmodium species causing malaria, Babesia, Trypanosoma), White cell abnormalities (blast cells in acute leukemia, hypersegmented neutrophils, reactive lymphocytes), and Platelet abnormalities (giant platelets, platelet clumping). Note that PathoIntern flags these patterns for pathologist review — it does not identify or name them."
+    },
+    {
+      "id": "en_misc_02",
+      "category": "scoring_system",
+      "question": "How accurate is PathoIntern?",
+      "answer": "PathoIntern's accuracy should be understood in the context of its role as a triage tool, not a diagnostic system. The underlying approach — CTransPath embeddings plus anomaly detection — has been validated at 95% AUROC in the NEJM AI study by Dippel et al. (2024) for detecting anomalous pathologies in histopathology. PathoIntern uses the same technical paradigm applied to blood smear patches. However, since PathoIntern is non-diagnostic, its value is measured by how well it prioritizes the worklist, not by classification accuracy."
+    },
+    {
+      "id": "en_misc_03",
+      "category": "architecture",
+      "question": "Is PathoIntern open source?",
+      "answer": "PathoIntern is developed as an academic project. The codebase is hosted on GitHub with a development team of four. For questions about access, licensing, or collaboration, contact the project lead Muthuraj Jayakumar."
+    },
+    {
+      "id": "en_misc_04",
+      "category": "data_processing",
+      "question": "What is the difference between anomaly score and criticality score?",
+      "answer": "The anomaly score is the raw k-NN cosine distance measuring how far a patch's embedding deviates from the normal baseline — it ranges from 0 to 1 where higher means more anomalous. The criticality score is a composite 0-100 integer that combines the anomaly score with additional context from similar-case analysis, including boosts when the patch closely resembles known disease cases. The criticality score is what determines the triage tier and worklist ordering."
+    },
+    {
+      "id": "en_misc_05",
+      "category": "project_overview",
+      "question": "How does PathoIntern compare to other AI pathology tools?",
+      "answer": "Most AI pathology tools focus on automated classification — identifying specific diseases from images, which amounts to replacing pathologist judgment. PathoIntern takes a fundamentally different approach: it uses embedding-based anomaly detection to prioritize the review queue without making any diagnostic claims. The AI triages; the pathologist diagnoses. This paradigm was validated by Baltruschat et al. (2021) showing 56% reduction in turnaround time for critical findings. PathoIntern is assistive, not autonomous."
+    },
+    {
+      "id": "en_misc_06",
+      "category": "data_processing",
+      "question": "How long does it take to process an image?",
+      "answer": "Processing time depends on hardware: with a GPU (e.g., RTX 4060), CTransPath processes about 76 patches per second. On CPU, processing is significantly slower but functional. The full pipeline — embedding generation, anomaly scoring, similarity search, and criticality scoring — completes within seconds per patch on GPU hardware. The initial model loading takes a few seconds on first use."
+    },
+    {
+      "id": "en_misc_07",
+      "category": "architecture",
+      "question": "What CI/CD pipeline does PathoIntern use?",
+      "answer": "PathoIntern uses GitHub Actions for CI/CD: The CI workflow (ci.yml) runs backend tests and builds the frontend on every PR and push to develop/main. The deploy-qa workflow (deploy-qa.yml) automatically deploys to qa.pathointern.ca on push to develop. The deploy-prod workflow (deploy-prod.yml) automatically deploys to pathointern.ca on push to main and creates a production git tag. Deployment uses SSH to the droplet and Docker Compose for orchestration."
+    },
+    {
+      "id": "en_misc_08",
+      "category": "user_management",
+      "question": "Is there a demo account I can try?",
+      "answer": "Demo account availability depends on the deployment environment. Contact the project team to request access to the QA environment (qa.pathointern.ca) for evaluation purposes. The admin will create credentials for you with the appropriate role (pathologist or admin)."
+    },
+    {
+      "id": "en_misc_09",
+      "category": "scoring_system",
+      "question": "Can the pathologist override the AI score?",
+      "answer": "Yes. The verdict system is specifically designed for this. When reviewing a patch, the pathologist can: Agree with the AI's tier and score, Disagree with the assessment (must provide notes explaining why), or Modify the assessment (adjust the score and provide notes). For Disagree and Modify verdicts, the pathologist provides their own verdict score (0-100). This ensures pathologist authority over every clinical decision while creating a feedback loop for system improvement."
+    },
+    {
+      "id": "en_misc_10",
+      "category": "project_overview",
+      "question": "What makes PathoIntern different from automated blood cell counters?",
+      "answer": "Automated blood cell counters (CBCs) measure quantitative parameters — cell counts, hemoglobin levels, platelet counts. PathoIntern operates on a completely different level: it analyzes the visual morphology of blood smear patch images to detect anomalous patterns. It does not count cells or measure lab values. Instead, it identifies patches whose morphological embeddings deviate from normal patterns, prioritizing them for expert pathologist review. The two systems are complementary, not competing."
+    },
+    {
+      "id": "en_overview_11",
+      "category": "project_overview",
+      "question": "Who is PathoIntern designed for?",
+      "answer": "PathoIntern is designed for three primary user groups: (1) Pathologists and hematopathologists who review blood smear slides and need help prioritizing their worklist. (2) Lab technologists who prepare and digitize blood smear slides and upload patch images into the triage pipeline. (3) Laboratory directors who oversee compliance, audit trails, and technology adoption in clinical labs. Six detailed user personas were defined during the design phase to ensure the system meets real clinical workflow needs."
+    },
+    {
+      "id": "en_overview_12",
+      "category": "project_overview",
+      "question": "What are the six user personas?",
+      "answer": "PathoIntern was designed around six user personas: (1) Dr. Emily Chen — Consultant Hematopathologist, the primary clinical user with final authority over all cases. (2) Michael Thompson — Senior Lab Technologist, responsible for slide preparation and digitization. (3) Dr. Sarah Patel — Internal Medicine Physician, who receives pathology reports and makes treatment decisions. (4) Olivia Martin — Patient, who awaits timely diagnosis and results. (5) Dr. Daniel O'Connor — Laboratory Director, focused on compliance, audit, and technology adoption. (6) Sophie Tremblay — Clinical Informatics Engineer, responsible for deployment, security, and system integration."
+    },
+    {
+      "id": "en_overview_13",
+      "category": "project_overview",
+      "question": "How does PathoIntern protect patient safety?",
+      "answer": "PathoIntern protects patient safety through multiple architectural safeguards: (1) Non-dismissible safety disclaimers on every results and review page. (2) Non-diagnostic constraint — the system never provides clinical diagnoses or disease probabilities. (3) Pathologist authority — only licensed professionals can submit clinical verdicts. (4) Immutable audit trail — every action is permanently logged with full attribution. (5) No unsupervised decisions — every AI-scored patch requires pathologist review. (6) Confidence thresholds — the system acknowledges uncertainty rather than guessing."
+    },
+    {
+      "id": "en_overview_14",
+      "category": "project_overview",
+      "question": "What is the difference between triage and diagnosis?",
+      "answer": "Triage is the process of sorting and prioritizing cases by urgency — determining which cases should be reviewed first. Diagnosis is the clinical determination of what condition or disease a patient has. PathoIntern performs triage only: it ranks blood smear patches by how much they deviate from normal patterns, placing the most anomalous cases at the top of the worklist. It never identifies, names, or suggests specific diseases. The pathologist performs the diagnosis after reviewing the prioritized cases."
+    },
+    {
+      "id": "en_overview_15",
+      "category": "project_overview",
+      "question": "Can PathoIntern be used for teaching or education?",
+      "answer": "While PathoIntern is primarily designed for clinical triage, its similar-patches panel (Resemblance to Known Cases) could be valuable for educational purposes. Trainees can see how the system groups morphologically similar cases and learn to recognize patterns across the reference corpus. However, PathoIntern should never be used as a diagnostic teaching tool — it does not identify or label specific conditions. Any educational use should emphasize the non-diagnostic nature of the system."
+    },
+    {
+      "id": "en_overview_16",
+      "category": "project_overview",
+      "question": "How does PathoIntern handle the risk of false negatives?",
+      "answer": "A false negative in PathoIntern's context would be a critical case scored as Routine, causing it to appear low on the worklist. PathoIntern mitigates this risk through: (1) Conservative baseline — the anomaly baseline is built exclusively from confirmed normal morphology (RBCs and Leukocytes), so anything with unusual features should score higher. (2) The system is designed as an aid, not a replacement — pathologists still review all cases, the worklist only changes the order. (3) Pathologist verdicts create a feedback loop — if a pathologist disagrees with a tier assignment, that information can inform future model improvements."
+    },
+    {
+      "id": "en_overview_17",
+      "category": "project_overview",
+      "question": "What is incremental learning in PathoIntern?",
+      "answer": "Incremental learning refers to the system's ability to improve over time through pathologist feedback. When a pathologist submits a verdict (agree, disagree, or modify) with a verdict score, this creates labelled training data that can be used to refine the scoring model in future update cycles. PathoIntern's four mission pillars include incremental learning as a core principle. Currently, verdicts are stored but not yet fed back into the model automatically — this is planned for future iterations."
+    },
+    {
+      "id": "en_overview_18",
+      "category": "project_overview",
+      "question": "What regulatory considerations apply to PathoIntern?",
+      "answer": "As a non-diagnostic triage tool, PathoIntern is designed to operate below the threshold of a clinical diagnostic device. It does not render diagnoses, suggest treatments, or replace pathologist judgment. However, any future deployment in a clinical setting would need to consider: (1) Institutional review and approval processes. (2) Data privacy regulations (PIPEDA in Canada, HIPAA in the US) for patient specimen images. (3) Laboratory accreditation requirements. (4) Documentation of the system's limitations and intended use. The immutable audit trail and non-diagnostic constraint are architectural safeguards that support regulatory compliance."
+    },
+    {
+      "id": "en_research_09",
+      "category": "research",
+      "question": "What does 95% AUROC mean and why is it significant?",
+      "answer": "AUROC (Area Under the Receiver Operating Characteristic curve) is a standard metric for evaluating how well a system distinguishes between two classes — in this case, normal versus anomalous pathology. A score of 95% means the system correctly ranks an anomalous case higher than a normal case 95% of the time. The Dippel et al. (2024) NEJM AI study achieved this level using the same technical approach as PathoIntern (CTransPath embeddings + anomaly detection), providing strong evidence that the methodology is clinically viable for triage prioritization."
+    },
+    {
+      "id": "en_research_10",
+      "category": "research",
+      "question": "What is transfer learning in computational pathology?",
+      "answer": "Transfer learning is the practice of using a model pretrained on one task (or dataset) and applying its learned representations to a different but related task. CTransPath was pretrained on millions of histopathology images, learning general morphological features. PathoIntern transfers this knowledge to blood smear analysis — instead of training a model from scratch on blood smear images, it uses CTransPath's pretrained feature extractor to generate embeddings that capture meaningful morphological patterns. This is why PathoIntern works well even without a large labelled blood smear training set."
+    },
+    {
+      "id": "en_research_11",
+      "category": "research",
+      "question": "Why doesn't PathoIntern use YOLO or CNN classification?",
+      "answer": "YOLO and CNN-based classification approaches were deliberately rejected because they align with replacing pathologist judgment rather than assisting it. Classification models output labels like 'malaria positive' or 'leukemia detected' — which are inherently diagnostic claims. PathoIntern uses embedding-based anomaly detection instead, which only measures how much a patch deviates from normal patterns without ever naming or identifying specific conditions. The earlier papers in the project's research table used YOLO/CNN approaches and were replaced with the four current papers that directly support the triage-first, human-in-the-loop paradigm."
+    },
+    {
+      "id": "en_research_12",
+      "category": "research",
+      "question": "How many images was CTransPath pretrained on?",
+      "answer": "CTransPath was pretrained on approximately 15 million histopathology image patches from over 30,000 whole-slide images spanning multiple tissue types and institutions. This massive pretraining corpus allows CTransPath to learn general morphological features that transfer well to specific applications like blood smear analysis. The Dippel et al. NEJM AI study further validated these embeddings on 17 million histological images from 5,423 biopsy cases."
+    },
+    {
+      "id": "en_research_13",
+      "category": "research",
+      "question": "What is self-supervised learning in computational pathology?",
+      "answer": "Self-supervised learning is a training paradigm where the model learns representations from unlabelled data by solving pretext tasks (such as predicting masked regions or contrasting augmented views of the same image). Both CTransPath and UNI use self-supervised learning, which is critical in pathology where labelled data is scarce and expensive to produce. This allows models to learn meaningful morphological features from millions of unlabelled slides, then transfer those features to downstream tasks like anomaly detection without needing disease-specific labels."
+    },
+    {
+      "id": "en_arch_10",
+      "category": "architecture",
+      "question": "What is rate limiting in PathoIntern?",
+      "answer": "PathoIntern implements rate limiting at the application level using slowapi. The login endpoint (POST /api/auth/login) is limited to 5 requests per minute per IP address. Exceeding this limit returns HTTP 429 (Too Many Requests). This prevents brute-force password attacks. The rate limiter instance lives in a dedicated module (app/rate_limit.py) to avoid circular imports. Nginx also provides a secondary rate limiting layer at 10 requests per second with burst capacity of 20."
+    },
+    {
+      "id": "en_arch_11",
+      "category": "architecture",
+      "question": "How are passwords stored securely in PathoIntern?",
+      "answer": "Passwords are hashed using the bcrypt algorithm before storage — they are never stored in plain text. PathoIntern uses the bcrypt library directly rather than passlib, because passlib is unmaintained and incompatible with bcrypt versions 4.1 and above. The bcrypt algorithm includes automatic salting and a configurable work factor (cost factor of 12 rounds by default), making it resistant to rainbow table attacks and computationally expensive to brute-force."
+    },
+    {
+      "id": "en_arch_12",
+      "category": "architecture",
+      "question": "What is the audit middleware?",
+      "answer": "The audit middleware (audit_middleware.py) is a FastAPI middleware layer that automatically logs all incoming API requests. It captures the HTTP method, endpoint path, requesting user (if authenticated), IP address, response status code, and timestamp. This provides a baseline activity log independent of the explicit audit log entries created by service-layer operations (uploads, scoring, verdicts). Together, they ensure complete traceability of all system activity."
+    },
+    {
+      "id": "en_arch_13",
+      "category": "architecture",
+      "question": "What ports does PathoIntern use?",
+      "answer": "PathoIntern uses different ports depending on the environment. In development: Frontend on port 3000, Backend on port 8000, PostgreSQL on port 5432. In QA (qa.pathointern.ca): Frontend on port 3100, Backend on port 8100, PostgreSQL on port 5433. In production (pathointern.ca): Frontend on port 3000, Backend on port 8000, PostgreSQL on port 5434. Nginx reverse-proxies ports 80 (HTTP) and 443 (HTTPS) to the appropriate backend and frontend ports."
+    },
+    {
+      "id": "en_arch_14",
+      "category": "architecture",
+      "question": "What is Docker Compose and how does PathoIntern use it?",
+      "answer": "Docker Compose is a tool for defining and running multi-container Docker applications. PathoIntern uses Docker Compose to orchestrate three services: the FastAPI backend, the Next.js frontend, and the PostgreSQL database with pgvector. The base docker-compose.yml defines the development configuration, while docker-compose.qa.yml and docker-compose.prod.yml override settings for QA and production environments respectively (different ports, production build targets, environment variables)."
+    },
+    {
+      "id": "en_arch_15",
+      "category": "architecture",
+      "question": "How does TLS/HTTPS work in PathoIntern?",
+      "answer": "PathoIntern uses Let's Encrypt for free TLS certificates, managed by Certbot on the DigitalOcean droplet. Nginx terminates TLS connections and forwards plain HTTP to the backend and frontend containers. HSTS (HTTP Strict-Transport-Security) headers are enabled with a one-year max-age to force browsers to always use HTTPS. A custom post-renewal hook (reload-nginx.sh) automatically reloads Nginx after certificate renewal, ensuring zero-downtime certificate rotation."
+    },
+    {
+      "id": "en_arch_16",
+      "category": "architecture",
+      "question": "What is the Nginx reverse proxy and what does it do?",
+      "answer": "Nginx acts as the reverse proxy for PathoIntern, sitting in front of both the backend and frontend services. It handles: (1) TLS termination — accepting HTTPS connections and forwarding as HTTP internally. (2) Routing — directing /api/* requests to the FastAPI backend and all other requests to the Next.js frontend. (3) Rate limiting — enforcing a 10 requests/second general rate zone with burst capacity. (4) Security headers — adding HSTS, X-Frame-Options, and other security headers. (5) The nginx config is symlinked from the repo to /etc/nginx/sites-available/ on the droplet, so git pull + reload propagates edits."
+    },
+    {
+      "id": "en_arch_17",
+      "category": "architecture",
+      "question": "What environment variables does PathoIntern need?",
+      "answer": "Key environment variables include: DATABASE_URL (PostgreSQL connection string), JWT_SECRET (signing key for authentication tokens), DATA_DIR (path to the data directory for patch images and model weights), CORS_ORIGINS (comma-separated list of allowed frontend origins), ADMIN_USERNAME and ADMIN_PASSWORD (seed admin credentials for first-run setup). The frontend requires NEXT_PUBLIC_API_URL as a build-time argument (not runtime env) because Next.js bakes it into the JavaScript bundle."
+    },
+    {
+      "id": "en_arch_18",
+      "category": "architecture",
+      "question": "What is the service layer pattern used in the backend?",
+      "answer": "The backend follows a three-layer architecture: (1) API layer (routers) — handles HTTP request/response, validation, and authentication. (2) Service layer — contains business logic (patch_service, embedding_service, scoring_service, verdict_service, audit_service). (3) Data layer (models + database) — SQLAlchemy ORM models and database operations. This separation means API routes are thin — they validate input, call a service function, and return the result. All business rules (like 'only the original reviewer can update a verdict') live in the service layer."
+    },
+    {
+      "id": "en_arch_19",
+      "category": "architecture",
+      "question": "How are CORS origins configured?",
+      "answer": "CORS (Cross-Origin Resource Sharing) origins are configured via the CORS_ORIGINS environment variable as a comma-separated list of allowed frontend URLs (e.g., 'https://qa.pathointern.ca,https://pathointern.ca'). The config uses a pydantic field validator with a NoDecode annotation to prevent pydantic-settings from trying to JSON-decode the raw string. In development, localhost:3000 is typically included. The FastAPI CORSMiddleware then uses this list to set the Access-Control-Allow-Origin header on API responses."
+    },
+    {
+      "id": "en_arch_20",
+      "category": "architecture",
+      "question": "What is multi-stage Docker build?",
+      "answer": "Multi-stage Docker build means the Dockerfile has multiple FROM stages — typically a 'development' stage and a 'production' stage. PathoIntern's backend and frontend Dockerfiles both use this pattern. The development stage includes dev tools and runs with hot-reload. The production stage creates an optimized, smaller image with only runtime dependencies. The docker-compose.yml base file targets the development stage, while docker-compose.qa.yml and docker-compose.prod.yml override to target the production stage."
+    },
+    {
+      "id": "en_arch_21",
+      "category": "architecture",
+      "question": "How does the frontend build process work?",
+      "answer": "The Next.js frontend uses the App Router (introduced in Next.js 14). In development, 'npm run dev' starts a hot-reload server on port 3000. For production, 'npm run build' creates an optimized static build, and 'npm start' serves it. The NEXT_PUBLIC_API_URL environment variable must be set at build time (not runtime) because Next.js inlines it into the JavaScript bundle. The production Docker stage runs the build during image creation and serves the pre-built output."
+    },
+    {
+      "id": "en_data_09",
+      "category": "data_processing",
+      "question": "What is the local GPU pipeline approach?",
+      "answer": "The local GPU pipeline is the recommended approach for large-scale data processing. Instead of running the ML pipeline on the CPU-only server, you use a local machine with a GPU (e.g., RTX 4060) to generate embeddings at ~76 patches per second. The steps are: (1) Run ingest and embedding generation locally. (2) Export the database with pg_dump. (3) Ship the data artifacts (patches tarball + database dump) to the server via scp. (4) Import on the server with pg_restore. This avoids multi-hour CPU processing on the droplet."
+    },
+    {
+      "id": "en_data_10",
+      "category": "data_processing",
+      "question": "How many patches are in the full Kaggle corpus?",
+      "answer": "The full Kaggle Parasite Dataset contains 34,298 blood smear patch images across 8 classes. Of these, 10,371 are normal morphology patches (RBCs and Leukocytes) that form the anomaly detection baseline. The remaining patches include various parasite types and other morphological categories. The entire corpus is populated on the QA environment (qa.pathointern.ca) and serves as the reference pool for similarity search."
+    },
+    {
+      "id": "en_data_11",
+      "category": "data_processing",
+      "question": "What are the 8 classes in the Kaggle Parasite Dataset?",
+      "answer": "The Kaggle Parasite Dataset contains 8 classes of blood smear patches: (1) RBCs (Red Blood Cells) — normal red blood cell morphology. (2) Leukocyte — normal white blood cell morphology. (3) Plasmodium vivax — a malaria-causing parasite species. (4) Plasmodium falciparum — the most dangerous malaria parasite. (5-8) Additional parasite and morphology classes. RBCs and Leukocyte are treated as 'normal' labels in PathoIntern; all others are non-routine and trigger higher anomaly scores."
+    },
+    {
+      "id": "en_data_12",
+      "category": "data_processing",
+      "question": "What is L2 normalization and why is it important?",
+      "answer": "L2 normalization converts each embedding vector to a unit vector (length = 1) by dividing by its L2 norm (Euclidean length). PathoIntern L2-normalizes all CTransPath embeddings before storing them in pgvector. This is important because it enables cosine similarity to be computed as a simple dot product: similarity(a, b) = a · b when both vectors are unit length. It also means cosine distance = 1 - dot_product, which simplifies the anomaly scoring math and makes distance comparisons consistent across all patches."
+    },
+    {
+      "id": "en_data_13",
+      "category": "data_processing",
+      "question": "What image dimensions does CTransPath expect?",
+      "answer": "CTransPath expects input images of 224x224 pixels in RGB format (3 channels). Blood smear patch images are automatically resized to this dimension during preprocessing before being passed through the model. The model uses a Swin-Tiny transformer architecture with a modified ConvStem patch embedding layer that divides the 224x224 input into overlapping patches for the transformer encoder."
+    },
+    {
+      "id": "en_data_14",
+      "category": "data_processing",
+      "question": "How are processed artifacts shipped to the server?",
+      "answer": "After processing data locally with the GPU pipeline, artifacts are shipped to the server in two ways: (1) The patches tarball (~306 MB) and database dump (~323 MB) are transferred via scp (secure copy) to the droplet. (2) The anomaly baseline file (anomaly_baseline.npz, ~31 MB) is committed to the git repository and deployed automatically through the CI/CD pipeline. On the server, pg_restore imports the database dump, and the patches tarball is extracted to the data directory."
+    },
+    {
+      "id": "en_data_15",
+      "category": "data_processing",
+      "question": "What is the anomaly_baseline.npz file?",
+      "answer": "The anomaly_baseline.npz is a NumPy archive containing the precomputed embeddings of all normal-morphology patches (RBCs and Leukocytes) from the Kaggle corpus. The current baseline contains 10,371 embeddings and is approximately 31 MB. The AnomalyDetector loads this file at startup and uses it as the reference for k-NN distance calculations. It is stored in the backend/models/ directory and is git-tracked so it auto-deploys with the application."
+    },
+    {
+      "id": "en_data_16",
+      "category": "data_processing",
+      "question": "How is the anomaly baseline rebuilt?",
+      "answer": "The anomaly baseline is rebuilt using the build_baseline script (python -m app.scripts.build_baseline). This script queries the database for all patches with normal labels (RBCs and Leukocyte), extracts their embeddings from pgvector, and saves them as a NumPy archive (anomaly_baseline.npz). The baseline should be rebuilt whenever the normal reference corpus changes — for example, after ingesting new normal-morphology patches or correcting labels in the existing corpus."
+    },
+    {
+      "id": "en_data_17",
+      "category": "data_processing",
+      "question": "What happens if CTransPath model weights are missing?",
+      "answer": "If the CTransPath model weights file (ctranspath.pth) is not found in the expected location, the embedding generation endpoint returns a 503 Service Unavailable error with a message distinguishing it from a missing image file (which returns 404). The model weights must be downloaded separately and placed in the backend/models/ directory. The weights are not included in the git repository due to their size (~100 MB)."
+    },
+    {
+      "id": "en_data_18",
+      "category": "data_processing",
+      "question": "How does batch embedding generation work?",
+      "answer": "The generate_embeddings script (python -m app.scripts.generate_embeddings) processes all patches that have been ingested but do not yet have embeddings. It loads CTransPath once, then iterates through unprocessed patches, generating a 768-dimensional L2-normalized embedding for each one and storing it in pgvector. On a GPU (RTX 4060), this runs at approximately 76 patches per second. The script handles NULL labels gracefully and sorts patches by label for consistent processing order."
+    },
+    {
+      "id": "en_scoring_11",
+      "category": "scoring_system",
+      "question": "What is k-NN and how is it used for anomaly detection?",
+      "answer": "k-NN (k-Nearest Neighbors) is an algorithm that finds the k closest data points to a given query point. In PathoIntern, k-NN with k=10 measures the average cosine distance from a patch's embedding to its 10 nearest neighbors in the normal-morphology baseline. If a patch is morphologically normal, its embedding will be close to many baseline embeddings (low distance). If it contains unusual patterns, it will be far from the normal baseline (high distance), triggering a higher anomaly score."
+    },
+    {
+      "id": "en_scoring_12",
+      "category": "scoring_system",
+      "question": "What is cosine distance versus cosine similarity?",
+      "answer": "Cosine similarity measures how similar two vectors are, ranging from -1 (opposite) to 1 (identical). Cosine distance is simply 1 minus cosine similarity, so it ranges from 0 (identical) to 2 (opposite). In PathoIntern, because all embeddings are L2-normalized, cosine similarity equals the dot product (a · b), and cosine distance equals 1 - (a · b). Higher cosine distance from the normal baseline means greater morphological deviation and a higher anomaly score."
+    },
+    {
+      "id": "en_scoring_13",
+      "category": "scoring_system",
+      "question": "How does the criticality boost work for disease cases?",
+      "answer": "When computing the criticality score, the CriticalityScorer examines the top similar patches from the reference corpus. If any of the top-3 most similar patches have non-normal labels (labels that are not RBCs or Leukocyte and are not NULL), a boost is applied to the criticality score. Specifically, the number of non-normal similar cases (disease_count) increases the score. Close matches to known disease cases (high similarity score) provide a larger boost. This ensures that patches resembling known pathological patterns are prioritized even if their raw anomaly distance is moderate."
+    },
+    {
+      "id": "en_scoring_14",
+      "category": "scoring_system",
+      "question": "What is the 95th percentile calibration in anomaly scoring?",
+      "answer": "The 95th percentile calibration is used to scale raw anomaly distances into a meaningful 0-to-1 range. The AnomalyDetector computes the k-NN distances among the normal baseline patches themselves to find the 95th percentile of within-normal variation. This value is doubled to provide headroom, then used as a reference scale: a patch whose distance equals 2x the normal 95th percentile scores 1.0 (maximum anomaly). This calibration ensures that the anomaly score reflects how unusual a patch is relative to normal variation, not just absolute distance."
+    },
+    {
+      "id": "en_scoring_15",
+      "category": "scoring_system",
+      "question": "What is the verdict score and how does it differ from the criticality score?",
+      "answer": "The verdict score is a 0-100 integer provided by the pathologist when submitting a verdict. It represents the pathologist's clinical assessment of the patch's priority. The criticality score is the AI-generated 0-100 score from the anomaly detection pipeline. For 'agree' verdicts, the UI auto-populates the verdict score with the criticality score. For 'disagree' or 'modify' verdicts, the pathologist enters their own score, which may differ significantly from the AI's assessment. Both scores are stored and visible in the worklist and audit trail."
+    },
+    {
+      "id": "en_scoring_16",
+      "category": "scoring_system",
+      "question": "Why are non-normal reference cases displayed first in the similar patches panel?",
+      "answer": "The similar patches panel reorders results to show non-normal (disease) cases before normal cases, while capping at 5 total. This display reordering gives pathologists immediate visual context about potential pathological patterns without requiring them to scroll past normal reference cases. Importantly, only the display order is affected — the raw distance-ordered top-5 results are preserved for the scoring math. The distinction is implemented in scoring_service.py and does not alter the criticality score calculation."
+    },
+    {
+      "id": "en_scoring_17",
+      "category": "scoring_system",
+      "question": "Can a pathologist change their verdict after submission?",
+      "answer": "Yes. The original reviewer can update their verdict using the PUT /api/verdicts/{patch_id} endpoint. Only the pathologist who originally submitted the verdict can update it — attempts by other users (including admins) return 403 Forbidden with 'Only the original reviewer may update.' When updating, the pathologist can change the verdict type (agree/disagree/modify), the verdict score, and the notes. The update is recorded in the audit trail as a separate event."
+    },
+    {
+      "id": "en_scoring_18",
+      "category": "scoring_system",
+      "question": "How does server-side worklist filtering work?",
+      "answer": "The worklist endpoint (GET /api/scores/worklist) supports a review_status query parameter with three values: 'all' (default, shows everything), 'pending' (patches without verdicts), and 'reviewed' (patches with verdicts). The endpoint uses a LEFT JOIN with the verdicts table and filters by verdict existence. Pagination and total counts reflect the filtered subset, not the full corpus. The frontend loads tab counts via 3 lightweight API calls on mount and resets the tier filter when switching tabs."
+    },
+    {
+      "id": "en_scoring_19",
+      "category": "scoring_system",
+      "question": "What does the scoring reasoning text contain?",
+      "answer": "The scoring reasoning is an array of human-readable strings that explain why a patch received its score. It includes: (1) The anomaly distance from the normal baseline. (2) The tier assignment and what it means. (3) A summary of the most similar reference cases and their labels. (4) Whether a criticality boost was applied due to close matches with non-normal cases. The reasoning text is carefully written to use only non-diagnostic language — terms like 'resemblance,' 'pattern deviation,' and 'triage priority' are used instead of banned diagnostic terms."
+    },
+    {
+      "id": "en_scoring_20",
+      "category": "scoring_system",
+      "question": "How does batch scoring (score-all) work?",
+      "answer": "The batch scoring endpoint (POST /api/scores/score-all) is restricted to admin users only. It iterates through all patches that have embeddings but no scores, computing anomaly scores, similarity searches, and criticality scores for each one. The endpoint returns the count of newly scored patches. Non-admin users receive 403 Forbidden. This is typically run after bulk data ingestion to score the entire corpus. Individual patches can also be scored one at a time via POST /api/scores/score/{patch_id}."
+    },
+    {
+      "id": "en_user_07",
+      "category": "user_management",
+      "question": "What is the technologist role in PathoIntern?",
+      "answer": "The technologist role represents lab staff who prepare and digitize blood smear slides. In the real clinical workflow, lab technologists handle slide preparation, staining, and scanning — they produce the digital images that pathologists review. In PathoIntern, technologists can upload patch images into the triage pipeline and view processing status, but they cannot submit clinical verdicts, access audit logs, or manage users. This mirrors the real-world separation of duties between lab technologists and pathologists."
+    },
+    {
+      "id": "en_user_08",
+      "category": "user_management",
+      "question": "What can a technologist do in PathoIntern?",
+      "answer": "Technologists can: (1) Log in with their credentials. (2) Upload blood smear patch images (PNG or JPG) into the triage pipeline. (3) View the processing status of uploaded patches. Technologists are designed to feed images into the system so that pathologists can focus on reviewing and making clinical assessments. The technologist role ensures that upload access does not require full clinical privileges."
+    },
+    {
+      "id": "en_user_09",
+      "category": "user_management",
+      "question": "What can a technologist NOT do in PathoIntern?",
+      "answer": "Technologists cannot: (1) Submit verdicts — attempting to do so returns 403 Forbidden. (2) Access audit logs — viewing audit entries returns 403 Forbidden. (3) View audit statistics or patch-level audit trails. (4) Manage users or access the admin panel. (5) Access admin-only about pages (Personas, User Stories, Roadmap). These restrictions enforce the principle that clinical assessment must come from licensed pathologists, while operational activities like uploading are handled by lab staff."
+    },
+    {
+      "id": "en_user_10",
+      "category": "user_management",
+      "question": "How does user registration work technically?",
+      "answer": "User registration is handled through the admin API endpoint POST /api/auth/register, which requires admin-level authentication. The admin provides a username, password, and role (pathologist, technologist, or admin). The backend validates the input (username 3-100 chars, password minimum 8 chars), checks for duplicate usernames (case-insensitive), hashes the password with bcrypt, and creates the user record. There is no self-registration endpoint — all account creation requires an existing admin."
+    },
+    {
+      "id": "en_user_11",
+      "category": "user_management",
+      "question": "What happens if I exceed the login rate limit?",
+      "answer": "If you exceed 5 login attempts within one minute from the same IP address, the system returns HTTP 429 (Too Many Requests). You must wait until the rate limit window resets before trying again. This protection applies per IP address, so different users at different locations are not affected by each other's attempts. The rate limit is implemented using slowapi at the application level and is separate from the Nginx-level rate limiting."
+    },
+    {
+      "id": "en_user_12",
+      "category": "user_management",
+      "question": "How long does a login session last?",
+      "answer": "Login sessions are managed through JWT (JSON Web Tokens) with a configurable expiration time. The token is stored in the browser and sent with each API request as a Bearer token in the Authorization header. When the token expires, the user must log in again. The token contains the user's ID, username, and role, allowing the backend to authenticate and authorize each request without querying the database for session state."
+    },
+    {
+      "id": "en_user_13",
+      "category": "user_management",
+      "question": "What is the admin user management panel?",
+      "answer": "The admin panel is accessible at /admin/users and is restricted to users with the admin role. It allows administrators to: (1) View all registered users and their roles. (2) Create new user accounts with any of the three roles (technologist, pathologist, admin). (3) Manage existing user accounts. The panel provides a form to enter username, password, and role selection. A seed admin account is automatically created on first application startup using the ADMIN_USERNAME and ADMIN_PASSWORD environment variables."
+    },
+    {
+      "id": "en_user_14",
+      "category": "user_management",
+      "question": "Can multiple users use PathoIntern at the same time?",
+      "answer": "Yes. PathoIntern is a multi-user web application. Multiple pathologists, technologists, and admins can be logged in and working simultaneously. Each user has their own JWT session. The one constraint is the verdict system: each patch can have only one verdict, and only the original reviewer can update it. If two pathologists try to submit verdicts for the same patch, the second submission will be rejected with an error indicating that a verdict already exists."
+    },
+    {
+      "id": "en_user_15",
+      "category": "user_management",
+      "question": "What is role-based access control in PathoIntern?",
+      "answer": "Role-based access control (RBAC) means that each user is assigned a role (technologist, pathologist, or admin), and the system enforces permissions based on that role. The permission hierarchy is: Technologist < Pathologist < Admin. Key access rules: uploading is allowed for all roles, verdicts require pathologist or admin, audit logs require pathologist or admin, user management requires admin, and admin-only about pages (Personas, Stories, Roadmap) are hidden from non-admin navigation. RBAC is enforced at the API layer — the frontend hides restricted features, but the backend rejects unauthorized requests with 403."
+    },
+    {
+      "id": "en_user_16",
+      "category": "user_management",
+      "question": "How is the seed admin account created?",
+      "answer": "On first application startup, the backend's lifespan function checks if any admin user exists in the database. If none exists, it automatically creates one using the ADMIN_USERNAME and ADMIN_PASSWORD environment variables. This ensures that every fresh deployment has at least one admin who can then create other user accounts through the admin panel. The seed admin creation is logged in the application startup output."
+    },
+    {
+      "id": "en_user_17",
+      "category": "user_management",
+      "question": "Are usernames case-sensitive?",
+      "answer": "No. Usernames in PathoIntern are case-insensitive. When a user registers, their username is automatically converted to lowercase before being stored in the database. This means 'DrChen', 'drchen', and 'DRCHEN' are all treated as the same username. Duplicate username checks are also case-insensitive, preventing confusion from similar-looking usernames."
+    },
+    {
+      "id": "en_user_18",
+      "category": "user_management",
+      "question": "What is the difference between the three user roles?",
+      "answer": "The three roles have progressively broader access: (1) Technologist — upload patches only. Cannot submit verdicts, view audit logs, or manage users. Designed for lab staff who prepare and digitize slides. (2) Pathologist — full clinical access including uploading, viewing results, submitting verdicts, and viewing the audit trail. The primary clinical user role. (3) Admin — all pathologist permissions plus user management (creating/managing accounts) and access to admin-only about pages (Personas, User Stories, Roadmap). The role hierarchy is enforced at the API level."
+    },
+    {
+      "id": "en_team_07",
+      "category": "team",
+      "question": "What institution is PathoIntern associated with?",
+      "answer": "PathoIntern is an academic project developed as a college capstone. The project demonstrates the application of AI-assisted triage in clinical pathology, combining machine learning, web development, and healthcare domain knowledge into a production-quality system. The team of four built a complete end-to-end solution over 6 weeks while maintaining rigorous non-diagnostic constraints and audit trail requirements."
+    },
+    {
+      "id": "en_team_08",
+      "category": "team",
+      "question": "How long did it take to build Phase 1?",
+      "answer": "Phase 1 was built in 6 weeks, organized into 6 one-week sprints, from January to February 23, 2026. The team of four worked in parallel with assigned sprint leads: Sprint 1 (Setup and About), Sprint 2 (Data Pipeline), Sprint 3 (Scoring Engine), Sprint 4 (Integration), Sprint 5 (Review and Polish), Sprint 6 (Demo and Docs). All sprints are completed with 135+ tests passing."
+    },
+    {
+      "id": "en_team_09",
+      "category": "team",
+      "question": "What development methodology was used?",
+      "answer": "PathoIntern used an Agile sprint-based methodology with weekly sprints. Each sprint had defined goals, assigned leads, and acceptance criteria. The team used a three-tier branching strategy: feature branches for individual work, develop branch as the QA integration branch, and main branch for production. Code changes go through pull requests before merging. The project followed a hybrid of Recommendation A (demo-first rapid build) with selective elements from Recommendation B (research-grounded) approaches."
+    },
+    {
+      "id": "en_team_10",
+      "category": "team",
+      "question": "What tools does the team use for development?",
+      "answer": "The team uses: Git and GitHub for version control and collaboration, GitHub Actions for CI/CD, Docker and Docker Compose for containerized development and deployment, VS Code as the primary IDE, PostgreSQL with pgvector for the database, and DigitalOcean for cloud hosting. The ML pipeline uses PyTorch with CUDA for GPU-accelerated processing on local development machines. Claude AI was used as a development assistant for architecture design and code generation."
+    },
+    {
+      "id": "en_team_11",
+      "category": "team",
+      "question": "What was the hybrid recommendation approach?",
+      "answer": "Two MVP execution recommendations were produced: Recommendation A ('Vertical Slice — Demo-First Rapid Build') prioritized a single dataset (Kaggle Parasite), CTransPath embeddings, and delivery certainty. Recommendation B ('Research-Grounded Academic MVP') used three datasets, UNI embeddings, and prioritized academic rigor. The team followed a hybrid approach: start with Recommendation A for lower risk and faster progress, then selectively add Recommendation B elements if ahead of schedule at the Week 4 checkpoint."
+    },
+    {
+      "id": "en_team_12",
+      "category": "team",
+      "question": "How were the supporting research papers selected?",
+      "answer": "The four supporting research papers were carefully selected to form a cohesive argument chain. Earlier papers found in AI_Blood_Triage_Research_Table.xls focused on YOLO/CNN classification (replacing pathologist judgment) and were deliberately rejected. The four selected papers support PathoIntern's triage-first paradigm: Paper 1 (Khatab) establishes the workload problem, Paper 2 (Baltruschat) proves AI triage works, Paper 3 (Dippel) validates the CTransPath + anomaly detection approach, and Paper 4 (Chen) provides scientific validation for foundation model embeddings."
+    },
+    {
+      "id": "en_phases_09",
+      "category": "phases_roadmap",
+      "question": "What is the QA environment?",
+      "answer": "The QA (Quality Assurance) environment is a pre-production testing environment hosted at qa.pathointern.ca on a DigitalOcean droplet. It mirrors the production setup but uses different ports (3100, 8100, 5433) and has its own database. The QA environment is automatically deployed when code is pushed to the develop branch via GitHub Actions. It contains the full Kaggle corpus (34,298 images) and is used for integration testing and UAT (User Acceptance Testing) before changes are promoted to production."
+    },
+    {
+      "id": "en_phases_10",
+      "category": "phases_roadmap",
+      "question": "What is the production environment?",
+      "answer": "The production environment is the live, public-facing deployment at pathointern.ca. It uses standard ports (3000, 8000, 5434) and is automatically deployed when code is merged to the main branch. Each production deployment creates a git tag (prod-YYYYMMDD-HHMMSS) for traceability. Production has HSTS enabled, TLS via Let's Encrypt, and follows the same Docker Compose orchestration as QA but with production-specific environment variables and build targets."
+    },
+    {
+      "id": "en_phases_11",
+      "category": "phases_roadmap",
+      "question": "How do I access the QA site for testing?",
+      "answer": "The QA site is accessible at https://qa.pathointern.ca. You need credentials created by an admin user on the QA environment (these are separate from production credentials). Contact the project team to request a QA account. The QA database is independent from production, so any testing activity (uploads, verdicts, etc.) does not affect production data."
+    },
+    {
+      "id": "en_phases_12",
+      "category": "phases_roadmap",
+      "question": "How are deployments triggered?",
+      "answer": "Deployments are fully automated through GitHub Actions: (1) Pushing to the develop branch triggers the deploy-qa workflow, which SSHs into the droplet, pulls the latest code, and rebuilds the Docker containers for the QA stack. (2) Pushing to the main branch triggers the deploy-prod workflow, which does the same for the production stack and creates a production git tag. (3) The CI workflow runs on every pull request and push to develop/main, running backend tests and building the frontend to catch issues before deployment."
+    },
+    {
+      "id": "en_phases_13",
+      "category": "phases_roadmap",
+      "question": "What is a production git tag?",
+      "answer": "A production git tag is a git tag automatically created by the deploy-prod GitHub Actions workflow each time code is deployed to production. Tags follow the format prod-YYYYMMDD-HHMMSS (e.g., prod-20260223-143022). This provides a permanent, immutable record of exactly which code version is running in production at any point in time. If a rollback is needed, the team can deploy the code at a previous production tag."
+    },
+    {
+      "id": "en_phases_14",
+      "category": "phases_roadmap",
+      "question": "What infrastructure is needed for Phase 2?",
+      "answer": "Phase 2 requires significant infrastructure upgrades: (1) GPU compute — UNI (4096-dim) embeddings and whole-slide image processing require GPU acceleration. (2) Storage — WSI files can be tens of gigabytes each, requiring substantially more storage than the patch-based Phase 1. (3) Memory — the droplet must be upgraded from the current 2 GB to at least 8 GB to handle OpenSlide processing and larger embedding models. (4) Institutional data access — real clinical WSI data requires data sharing agreements and ethics approval."
+    },
+    {
+      "id": "en_phases_15",
+      "category": "phases_roadmap",
+      "question": "What is the PathoIntern Assistant?",
+      "answer": "PathoIntern Assistant is a bilingual (English and French) AI help chatbot embedded as a floating widget on every page of the application. It uses LFM2.5-350M-Q4_K_M — a compact LiquidAI model loaded via llama-cpp-python — for fast local inference without requiring a GPU. Voice input is supported via hold-to-record: audio is captured by the browser, uploaded to the backend, and transcribed by OpenAI Whisper (base model) before entering the text pipeline. Semantic retrieval uses sentence-transformers (paraphrase-multilingual-MiniLM-L12-v2) over a 300-pair bilingual knowledge base stored in pgvector. Language is auto-detected per query; French queries receive a French system prompt and French knowledge base context."
+    },
+    {
+      "id": "en_phases_16",
+      "category": "phases_roadmap",
+      "question": "How does the PathoIntern chatbot handle voice input and safety?",
+      "answer": "Voice input uses browser MediaRecorder to capture audio as a WebM blob, which is uploaded to the backend and transcribed by Whisper (base model) server-side — no third-party API is used. Transcribed text then enters the same pipeline as typed messages. Safety is enforced at two layers: a 9-rule system prompt instructs the model never to produce clinical conclusions, and a post-generation filter scans every response for banned words (e.g. diagnosis or classify) replacing any violation with a pre-written safe fallback. Queries with a retrieval similarity score below 0.35 bypass the LLM entirely and return a please-rephrase response, preventing hallucination on out-of-scope topics. The chatbot is publicly accessible with rate limiting at 10 text and 5 voice requests per minute per IP address."
+    },
+    {
+      "id": "en_phases_17",
+      "category": "phases_roadmap",
+      "question": "What DigitalOcean droplet specifications does PathoIntern use?",
+      "answer": "PathoIntern currently runs on a 2 GB RAM DigitalOcean droplet. The Phase 1 MVP stack — FastAPI, Next.js, PostgreSQL, the CTransPath ML model, and the chatbot (LFM2.5-350M ~300 MB, Whisper base ~140 MB, sentence-transformers ~100 MB) — fits within this budget. Only one environment (QA or production) should run at a time; for simultaneous QA and production, upgrade to 4 GB. Phase 2 (whole-slide image processing with UNI 4096-dim embeddings) requires a GPU-enabled droplet or an upgrade to at least 8 GB with GPU support — this is separate from the chatbot requirement, which runs comfortably on the current 2 GB droplet."
+    },
+    {
+      "id": "en_phases_18",
+      "category": "phases_roadmap",
+      "question": "What is LIS/EMR integration planned for Phase 2?",
+      "answer": "LIS (Laboratory Information System) and EMR (Electronic Medical Record) integration is planned for Phase 2 to connect PathoIntern with existing clinical workflows. This would allow: (1) Automatic ingestion of digitized slides from the LIS when they are scanned. (2) Pushing triage results and pathologist verdicts back to the EMR for clinical documentation. (3) Linking patient identifiers to slides for clinical context. This integration requires HL7/FHIR standards compliance and institutional IT collaboration."
+    },
+    {
+      "id": "en_phases_19",
+      "category": "phases_roadmap",
+      "question": "How will whole-slide image tile extraction work in Phase 2?",
+      "answer": "In Phase 2, OpenSlide (via Python bindings) will read whole-slide image files in vendor formats (NDPI, SVS, TIFF). The slide will be divided into a grid of tiles (patches) at a specified magnification level. Each tile will be passed through the UNI foundation model (4096-dim embeddings) for anomaly scoring. The tile-level scores will then be aggregated into a slide-level anomaly score and visualized as a risk heatmap overlay on the OpenSeadragon deep-zoom viewer, highlighting regions that require pathologist attention."
+    },
+    {
+      "id": "en_phases_20",
+      "category": "phases_roadmap",
+      "question": "What is the risk heatmap overlay?",
+      "answer": "The risk heatmap overlay is a Phase 2 feature that will visualize anomaly scores spatially across a whole-slide image. Using OpenSeadragon's overlay capabilities, each tile's anomaly score will be represented as a semi-transparent color overlay — red/warm for high anomaly regions, blue/cool for normal regions. This gives pathologists an immediate visual guide to which areas of the slide warrant closer examination, without requiring them to review every tile individually."
+    },
+    {
+      "id": "en_overview_19",
+      "category": "project_overview",
+      "question": "What topics can the PathoIntern Assistant answer?",
+      "answer": "PathoIntern Assistant can answer questions across eight knowledge categories: project overview (what PathoIntern is and how it works), research (the four papers supporting the approach), architecture (FastAPI backend, Next.js frontend, PostgreSQL and pgvector), data processing (Kaggle Parasite Dataset ingestion and patch extraction), scoring system (anomaly scoring, similarity search, criticality tiers), user management (technologist, pathologist, and admin roles), team (the four-person development team), and phases and roadmap (Phase 1 MVP status, Phase 2 WSI plans, deployment and chatbot details). It cannot answer questions about specific patient cases, clinical recommendations, or topics outside this scope."
+    },
+    {
+      "id": "en_overview_20",
+      "category": "project_overview",
+      "question": "Can I use the PathoIntern Assistant in French?",
+      "answer": "Yes. PathoIntern Assistant is fully bilingual in English and French. Language is detected automatically from your message — you do not need to select a language manually, though a manual EN/FR toggle is available in the chat widget header. When French is detected, the assistant retrieves answers from the French knowledge base and responds using a French-language system prompt. Voice input (hold-to-record) is also bilingual — Whisper transcribes both English and French speech before it enters the pipeline."
+    },
+    {
+      "id": "en_overview_21",
+      "category": "project_overview",
+      "question": "Is the PathoIntern chatbot clinically reliable?",
+      "answer": "No — and this is by design. PathoIntern Assistant is a help tool for understanding the system, not a source of clinical information. It answers questions about how PathoIntern works, its methodology, and its research foundation. It enforces the same non-diagnostic constraint as the main application: it will never provide clinical conclusions, disease assessments, or treatment recommendations. If asked to interpret a specific patient result or advise on clinical action, it will politely decline. For any clinical decision, the licensed pathologist's judgement is always the final authority."
+    },
+    {
+      "id": "en_phases_21",
+      "category": "phases_roadmap",
+      "question": "How confident should I be in chatbot answers?",
+      "answer": "Each chatbot response includes a colour-coded confidence badge based on the semantic similarity between your query and the best-matching knowledge base entry: High (70% or above, green) means the question closely matches a curated answer; Good (50-69%, blue) means a reasonable match was found; Moderate (35-49%, orange) means the match is partial — the answer may address your question only in part; Low or Fallback (below 35%, red) means no good match was found and the LLM was bypassed — the chatbot will ask you to rephrase. For critical information about PathoIntern methodology or your specific workflow, always consult the project team directly."
+    },
+    {
+      "id": "en_arch_22",
+      "category": "architecture",
+      "question": "How does the chatbot RAG retrieval pipeline work?",
+      "answer": "RAG stands for Retrieval-Augmented Generation. When you send a message, three steps happen: (1) Retrieval — your query is encoded into a 384-dimensional vector by sentence-transformers (paraphrase-multilingual-MiniLM-L12-v2) and compared against 300 pre-embedded knowledge base entries stored in pgvector using cosine similarity. The top-3 most similar entries in your detected language are retrieved. (2) Augmentation — those entries are injected as context into the LLM prompt, along with a language-specific system prompt enforcing PathoIntern non-diagnostic rules. (3) Generation — LFM2.5-350M-Q4_K_M generates a response grounded in the retrieved context. If the top similarity score is below 0.35, the LLM is bypassed and a pre-written fallback is returned. A post-generation filter then scans the output for banned words before delivery."
+    }
+  ]
+}

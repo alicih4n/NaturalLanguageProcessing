@@ -1,0 +1,2001 @@
+text,label
+Qu'est-ce que l'approche de recommandation hybride?,1
+thanks,0
+Can the pathologist override the AI score?,1
+ok,0
+MOT DE PASSE OUBLIÉ,0
+What types of blood cell abnormalities can PathoIntern help with,1
+Is PathoIntern a diagnostic tool?,1
+Je ne sais pas,0
+J'ai besoin de savoir: how are processed artifacts shipped to the server?,1
+Question: who is lohith reddy?,1
+qu'est-ce que le patron de couche de service utilisé dans le backend?,1
+quels sont les quatre piliers de la mission de pathointern?,1
+I FORGOT MY PASSWORD,0
+Salut?,0
+Non...,0
+Query: qu'est-ce que ctranspath?,1
+Tu es un robot??,0
+Non!,0
+How does the frontend communicate with the backend?,1
+Okay!,0
+AIDEZ-MOI,0
+Thanks?,0
+comment fonctionne le système de notation?,1
+What about: pathointern peut-il être utilisé pour l'enseignement?,1
+Combien de patches contient le corpus Kaggle complet?,1
+AIDEZ-MOI,0
+what is self-supervised learning in computational pathology?,1
+Veuillez expliquer how does batch scoring (score-all) work?,1
+how does tls/https work in pathointern?,1
+Oui!,0
+What are the triage tiers?,1
+Qu'est-ce que... le fichier anomaly_baseline.npz?,1
+Comment tu t'appelles?...,0
+J'ai besoin de savoir: comment fonctionnera l'extraction de tuiles wsi en phase 2?,1
+comment télécharger une image de frottis sanguin?,1
+Good evening,0
+COMMENT TU T'APPELLES?,0
+Okay?,0
+Can multiple users use... PathoIntern at the same time?,1
+Veuillez expliquer what image formats does pathointern accept?,1
+Non?,0
+What user roles... exist in PathoIntern?,1
+YES,0
+How is the backend structured,1
+are you a robot?,0
+Bonjour?,0
+What about: is the pathointern chatbot clinically reliable?,1
+Help me...,0
+Good afternoon!,0
+No?,0
+Comment tu t'appelles?!,0
+how many patches are in the full kaggle corpus?,1
+Pouvez-vous me dire: what are the six user personas?,1
+Query: what is the mission of pathointern?,1
+Pourquoi les cas de référence non-normaux sont-ils affichés en premier?,1
+Maybe!,0
+Peut-on traiter les données sur une machine locale plutôt que sur le serveur,1
+pathointern est-il un outil de diagnostic?,1
+Au revoir!,0
+Peut-être?,0
+No,0
+good evening,0
+Hi there...,0
+Who is Lohith Reddy,1
+BONSOIR,0
+Qui es-tu?...,0
+WHO CREATED YOU?,0
+Comment les origines CORS sont-elles configurées?,1
+Quelles variables d'environnement PathoIntern nécessite-t-il?,1
+okay,0
+Comment accéder au site QA pour les tests?,1
+good evening,0
+D'accord?,0
+What is LIS/EMR integration planned for Phase 2?,1
+Veuillez expliquer can i process data on a local machine instead of the server?,1
+Salut,0
+Merci...,0
+What is the difference between Phase 1 and Phase 2,1
+Ok,0
+Comment télécharger une... image de frottis sanguin?,1
+good morning,0
+What is the production environment?,1
+Bye...,0
+Pourquoi PathoIntern n'utilise-t-il pas YOLO ou la classification CNN?,1
+How are you?...,0
+SALUT,0
+Veuillez expliquer qu'est-ce que le middleware d'audit?,1
+How does the PathoIntern chatbot... handle voice input and safety?,1
+Comment ça va??,0
+Quelles considérations réglementaires... s'appliquent à PathoIntern?,1
+What is the audit trail?,1
+Je ne sais pas...,0
+Question: qu'est-ce que pathointern?,1
+Comment fonctionnera l'extraction de tuiles WSI en Phase 2?,1
+Can multiple users use... PathoIntern at the same time?,1
+What about: qu'est-ce qui différencie pathointern des compteurs de cellules sanguines automatisés?,1
+À PLUS TARD,0
+Qu'en est-il de: how confident should i be in chatbot answers?,1
+Tu es un robot?,0
+How does server-side... worklist filtering work?,1
+I need help!,0
+How does AI... worklist prioritization work?,1
+How is the seed admin account created,1
+I need help?,0
+YES,0
+What user roles exist in PathoIntern?,1
+Comment les embeddings sont-ils générés?,1
+Pouvez-vous me dire: quelles variables d'environnement pathointern nécessite-t-il?,1
+Please explain what image dimensions does ctranspath expect?,1
+what's up?,0
+Qui est Muthuraj Jayakumar,1
+Peut-être?,0
+How will whole-slide image tile extraction work in Phase 2?,1
+PathoIntern est-il... open source?,1
+Good afternoon!,0
+Who is... Lohith Reddy?,1
+qu'est-ce que le modèle fondamental uni?,1
+Comment fonctionne le processus... de construction du frontend?,1
+Please explain comment la ligne de base d'anomalies est-elle reconstruite?,1
+Good afternoon!,0
+Qu'en est-il de: qu'est-ce que le contrôle d'accès basé sur les rôles dans pathointern?,1
+Bonsoir?,0
+Qu'en est-il de: what is transfer learning in computational pathology?,1
+"I need to know, how does authentication work in pathointern?",1
+How is... the backend structured?,1
+Salut!,0
+Qu'en est-il de: quelles sont les couleurs de marque de pathointern?,1
+YES,0
+can you assist me?,0
+What about: comment pathointern protège-t-il la sécurité des patients?,1
+Qu'en est-il de: comment fonctionne tls/https dans pathointern?,1
+Qu'en est-il de: what is openslide?,1
+What about: pathointern peut-il être utilisé pour l'enseignement?,1
+Thanks...,0
+Pouvez-vous me dire: dans quelle mesure devrais-je faire confiance aux reponses du chatbot?,1
+J'ai besoin de savoir: what is the verdict score and how does it differ from the criticality score?,1
+"I need to know, qu'est-ce que k-nn et comment est-il utilisé pour la détection d'anomalies?",1
+What is the UNI foundation model?,1
+See you later!,0
+Merci,0
+Comment ça va?...,0
+comment le compte administrateur initial est-il créé?,1
+Ok?,0
+Good evening?,0
+Oui,0
+J'ai besoin de savoir: how are cors origins configured?,1
+What is a production git tag,1
+Qu'est-ce que le modèle fondamental UNI,1
+oui,0
+Please explain what is the difference between triage and diagnosis?,1
+Question: why doesn't pathointern use classification?,1
+Can you assist me?!,0
+Qu'est-ce qu'un tag git de production?,1
+What is the risk heatmap overlay?,1
+help me,0
+Good afternoon!,0
+How are deployments triggered?,1
+Bye!,0
+Qu'est-ce que CTransPath?,1
+Réinitialiser mon mot de passe...,0
+Bonjour?,0
+Can you assist me?,0
+What is cosine... distance versus cosine similarity?,1
+Pouvez-vous me dire: qu'est-ce que la phase 1 de pathointern?,1
+Quelles dimensions d'image CTransPath attend-il?,1
+Thanks?,0
+Peut-on traiter les données sur une... machine locale plutôt que sur le serveur?,1
+Peut-être...,0
+Yes...,0
+please,0
+Comment obtenir un... compte sur PathoIntern?,1
+What environment variables does PathoIntern need,1
+s'il vous plaît,0
+comment tu t'appelles?,0
+What is CTransPath?,1
+Query: qu'est-ce que la piste d'audit?,1
+Please?,0
+THANKS,0
+Who is PathoIntern designed for?,1
+How long did it take to build Phase 1?,1
+D'ACCORD,0
+Que contient le texte de raisonnement du score?,1
+What is PathoIntern?,1
+Who created you?!,0
+GOOD MORNING,0
+Qu'est-ce que l'environnement QA,1
+How is the... anomaly baseline rebuilt?,1
+Why are there two phases,1
+qu'est-ce qu'un interne numérique en pathologie?,1
+Why are... there two phases?,1
+Mot de passe oublié!,0
+Je ne sais pas!,0
+Qu'est-ce que le patron de couche de service utilisé dans le backend?,1
+hey,0
+Is there a demo... account I can try?,1
+Comment tu t'appelles??,0
+Please,0
+What is Phase 2 of PathoIntern?,1
+Qui est... Muthuraj Jayakumar?,1
+Please explain how does the frontend build process work?,1
+PathoIntern est-il un outil de diagnostic,1
+peut-être,0
+Non!,0
+PathoIntern est-il un... outil de diagnostic?,1
+Un pathologiste peut-il modifier son verdict après soumission,1
+What is your name?,0
+what is openseadragon?,1
+What is the Kaggle dataset used in PathoIntern?,1
+Okay!,0
+Are you a robot?!,0
+maybe,0
+Please explain what development methodology was used?,1
+HI THERE,0
+J'ai besoin de savoir: comment les embeddings sont-ils générés?,1
+What is role-based... access control in PathoIntern?,1
+Bye!,0
+D'accord?,0
+Qu'en est-il de: can i process data on a local machine instead of the server?,1
+what is phase 1 of pathointern?,1
+SALUT,0
+Query: how are processed artifacts shipped to the server?,1
+PEUT-ÊTRE,0
+Is the PathoIntern chatbot clinically reliable?,1
+Are you a robot?...,0
+NON,0
+Please explain what is ctranspath?,1
+How are you?,0
+What's up?,0
+good evening,0
+OK,0
+YES,0
+quel est le problème de charge de travail et d'épuisement en pathologie?,1
+Qu'est-ce que la normalisation L2 et pourquoi est-elle importante?,1
+Qu'est-ce que le middleware d'audit?,1
+Quelles sont les étiquettes normales dans le jeu de données?,1
+Can you tell me: que se passe-t-il après le téléchargement d'une image?,1
+Pouvez-vous me dire: what ci/cd pipeline does pathointern use?,1
+Can I process data on a local machine instead of the server?,1
+who created you?,0
+Comment tu t'appelles?,0
+Qu'est-ce que l'environnement de production?,1
+"I need to know, how does the criticality boost work for disease cases?",1
+Qu'est-ce que CTransPath,1
+Can you assist me?!,0
+Bonsoir...,0
+No...,0
+What about: comment demander l'accès administrateur?,1
+Qui es-tu??,0
+Pouvez-vous me dire: how does the scoring system work?,1
+What are the triage tiers,1
+Hi there...,0
+Please explain how is the seed admin account created?,1
+AIDEZ-MOI,0
+What are the brand colors of PathoIntern,1
+What are the four... mission pillars of PathoIntern?,1
+can pathointern be used for teaching or education?,1
+HELLO,0
+Good evening!,0
+Comment tu t'appelles??,0
+Comment fonctionne la détection d'anomalies?,1
+J'ai besoin de savoir: who is muthuraj jayakumar?,1
+Thanks,0
+Oui...,0
+please,0
+Can you assist me?...,0
+"I need to know, pourquoi y a-t-il deux phases?",1
+Quel est le jeu de données Kaggle utilisé dans PathoIntern?,1
+Bye...,0
+What is Phase 1 of PathoIntern?,1
+What is transfer learning in computational pathology?,1
+Bonjour,0
+Quelle est la différence entre la Phase 1 et la Phase 2?,1
+What's up??,0
+"I need to know, how many images was ctranspath pretrained on?",1
+I don't know?,0
+Are you a robot?,0
+Salut...,0
+Au revoir...,0
+COMMENT TU T'APPELLES?,0
+peut-être,0
+Maybe...,0
+What does non-diagnostic mean... in the context of PathoIntern?,1
+Who created you?,0
+Yes...,0
+Merci!,0
+yes,0
+Peut-être...,0
+Quelle méthodologie de développement a été utilisée?,1
+quels sujets l'assistant pathointern peut-il traiter?,1
+Quels ports PathoIntern utilise-t-il?,1
+qu'est-ce que l'environnement de production?,1
+What is role-based access control in PathoIntern?,1
+OKAY,0
+Qu'est-ce qu'OpenSlide?,1
+que se passe-t-il si les poids du modèle ctranspath sont manquants?,1
+quelle est la précision de pathointern?,1
+How are you?!,0
+Qu'est-ce que Docker Compose... et comment PathoIntern l'utilise-t-il?,1
+Mot de passe oublié...,0
+Okay!,0
+À PLUS TARD,0
+pathointern peut-il être utilisé pour l'enseignement?,1
+Please!,0
+J'ai besoin de savoir: what tech stack does pathointern use?,1
+bonjour,0
+What is the current... status of the project?,1
+Tu es un robot??,0
+What is Docker Compose and how does PathoIntern use it?,1
+Query: how many images was ctranspath pretrained on?,1
+How are you?!,0
+what image dimensions does ctranspath expect?,1
+Bonjour,0
+What types of blood cell abnormalities can PathoIntern help with?,1
+I need help,0
+How do I get an account on PathoIntern?,1
+Query: que montre la liste de travail?,1
+Tu es un robot?!,0
+Réinitialiser mon mot de passe?,0
+Quelle est la mission de PathoIntern?,1
+Please explain pourquoi pathointern n'utilise-t-il pas la classification?,1
+Bonjour,0
+what infrastructure is needed for phase 2?,1
+NO,0
+Please explain pathointern est-il open source?,1
+À PLUS TARD,0
+comment ça va?,0
+Merci...,0
+hello,0
+What types of blood cell abnormalities can PathoIntern help with,1
+Comment ça va?,0
+Tu es un robot??,0
+PathoIntern peut-il être utilisé pour l'enseignement?,1
+Au revoir...,0
+hey,0
+Qu'est-ce que le score de verdict?,1
+Ok...,0
+À plus tard,0
+good afternoon,0
+Tu es un robot?...,0
+What are normal labels in the dataset,1
+Salut,0
+J'ai besoin de savoir: what are the password requirements?,1
+Comment fonctionne la notation par lots (score-all)?,1
+Hello?,0
+Les noms d'utilisateur sont-ils... sensibles à la casse?,1
+Mot de passe oublié,0
+Comment le frontend... communique-t-il avec le backend?,1
+I FORGOT MY PASSWORD,0
+no,0
+Comment fonctionne la priorisation de liste de travail par IA,1
+Qui a construit PathoIntern?,1
+Quelle est la différence entre les trois rôles d'utilisateur?,1
+Comment ces articles de recherche sont-ils connectés?,1
+BONJOUR,0
+d'accord,0
+plusieurs utilisateurs peuvent-ils utiliser pathointern en même temps?,1
+What is the workload and burnout problem in pathology?,1
+Can you tell me: are usernames case-sensitive?,1
+RÉINITIALISER MON MOT DE PASSE,0
+Can PathoIntern be used... for teaching or education?,1
+Tu es un robot?,0
+J'ai besoin de savoir: how were the supporting research papers selected?,1
+No?,0
+i forgot my password,0
+Qui es-tu??,0
+mot de passe oublié,0
+À plus tard,0
+maybe,0
+WHAT IS YOUR NAME?,0
+are you a robot?,0
+I DON'T KNOW,0
+Can you assist me?,0
+mot de passe oublié,0
+Quelle infrastructure est nécessaire pour la Phase 2?,1
+Question: comment les embeddings sont-ils générés?,1
+Comment se connecter à PathoIntern?,1
+Pouvez-vous me dire: puis-je utiliser l'assistant pathointern en francais?,1
+What about: qu'est-ce que la recherche de similarité?,1
+what are the triage tiers?,1
+Réinitialiser mon mot de passe!,0
+Quelle est la précision de PathoIntern,1
+Okay?,0
+bye,0
+Please explain quel problème pathointern résout-il?,1
+what are the six user personas?,1
+What is the Nginx reverse proxy and what does it do,1
+COMMENT TU T'APPELLES?,0
+What's up?!,0
+Bye...,0
+I DON'T KNOW,0
+What is k-NN and how is it used for anomaly detection?,1
+Reset my password,0
+Qu'est-ce qu'un verdict,1
+Quelles dimensions d'image CTransPath attend-il,1
+Comment tu t'appelles?...,0
+Pouvez-vous me dire: what digitalocean droplet specifications does pathointern use?,1
+Qu'est-ce qui différencie PathoIntern des compteurs de cellules sanguines automatisés,1
+What database does PathoIntern use?,1
+How does authentication work in PathoIntern?,1
+au revoir,0
+Can you tell me: quelle est la précision de pathointern?,1
+quelles sont les exigences de mot de passe?,1
+how does the data ingestion pipeline work?,1
+See you later,0
+salut,0
+Is there a demo account I can try?,1
+Query: qu'est-ce qu'openseadragon?,1
+Query: comment les mots de passe sont-ils stockés de manière sécurisée?,1
+What happens after I upload an image?,1
+Help me!,0
+no,0
+Okay...,0
+See you later...,0
+Bonsoir!,0
+Comment PathoIntern gère-t-il le... risque de faux négatifs?,1
+What about: what image dimensions does ctranspath expect?,1
+Quelle méthodologie de... développement a été utilisée?,1
+Au revoir?,0
+Qu'est-ce que le middleware d'audit,1
+Can multiple users use PathoIntern at the same time?,1
+Comment fonctionne le pipeline d'ingestion des données,1
+Quelles sont les exigences de mot de passe?,1
+Qui es-tu?...,0
+Veuillez expliquer qui peut soumettre des verdicts?,1
+what is your name?,0
+réinitialiser mon mot de passe,0
+what is l2 normalization and why is it important?,1
+What about: quels types d'anomalies de cellules sanguines pathointern peut-il aider à identifier?,1
+Who is Ali Ozdemir?,1
+Qu'est-ce que le contrôle d'accès basé sur les rôles dans PathoIntern,1
+Why are there two phases?,1
+Quels sont les niveaux de triage?,1
+Question: comment fonctionne le filtrage côté serveur de la liste de travail?,1
+Quelle est la différence entre distance cosinus et similarité cosinus?,1
+Are usernames case-sensitive?,1
+Question: what is phase 2 of pathointern?,1
+Réinitialiser mon mot de passe!,0
+Pouvez-vous me dire: how is the seed admin account created?,1
+What is a production git tag?,1
+à plus tard,0
+What ports... does PathoIntern use?,1
+Oui...,0
+Please explain why was pathointern created?,1
+Why was PathoIntern created?,1
+Au revoir...,0
+what problem does pathointern solve?,1
+GOOD MORNING,0
+Comment les déploiements sont-ils déclenchés?,1
+bonjour,0
+Please explain how does pathointern protect patient safety?,1
+S'il vous plaît,0
+How does AI worklist prioritization work?,1
+Quels rôles d'utilisateur existent dans PathoIntern?,1
+J'ai besoin de savoir: what are normal labels in the dataset?,1
+Who is Lohith Reddy?,1
+Que se passe-t-il si les poids du modèle CTransPath sont manquants?,1
+How does server-side worklist filtering work,1
+OUI,0
+RESET MY PASSWORD,0
+Please,0
+Hi there,0
+What is pgvector,1
+What are the four mission pillars of PathoIntern?,1
+Comment ça va?,0
+NO,0
+Non...,0
+ok,0
+help me,0
+À plus tard?,0
+See you later!,0
+quel est l'état actuel du projet?,1
+Yes!,0
+What about: how are embeddings generated?,1
+J'ai besoin de savoir: comment les artefacts traités sont-ils envoyés au serveur?,1
+Please explain how does the scoring system work?,1
+Bonsoir?,0
+Can you tell me: comment les origines cors sont-elles configurées?,1
+How does the criticality boost work for disease cases?,1
+"I need to know, quelles sont les exigences de mot de passe?",1
+Comment fonctionne le pipeline de recuperation RAG du chatbot?,1
+How does... anomaly detection work?,1
+Reset my password?,0
+What is... the production environment?,1
+Au revoir!,0
+Comment les artefacts traités sont-ils envoyés au serveur?,1
+"I need to know, what is the local gpu pipeline approach?",1
+YES,0
+Oui!,0
+Que montre la... liste de travail?,1
+Thanks?,0
+Qu'est-ce que la construction Docker multi-étapes,1
+good evening,0
+NO,0
+SALUT,0
+Good evening?,0
+please,0
+See you later,0
+See you later!,0
+who is pathointern designed for?,1
+Qu'en est-il de: who is lohith reddy?,1
+"I need to know, quelle est la différence entre les trois rôles d'utilisateur?",1
+good evening,0
+How long does it take to process an image?,1
+Who created you?!,0
+Qu'est-ce que l'approche de recommandation hybride,1
+What CI/CD pipeline does PathoIntern use,1
+J'ai besoin de savoir: un pathologiste peut-il modifier son verdict après soumission?,1
+What is LIS/EMR integration... planned for Phase 2?,1
+Please explain what is the nejm ai study about ctranspath?,1
+Thank you...,0
+que signifie non diagnostique dans le contexte de pathointern?,1
+Qu'est-ce que pgvector?,1
+Yes?,0
+d'accord,0
+Pouvez-vous me dire: what is l2 normalization and why is it important?,1
+Salut,0
+qu'est-ce que le score de verdict?,1
+Non...,0
+What makes PathoIntern different... from automated blood cell counters?,1
+quelles sont les 8 classes du jeu de données kaggle parasite?,1
+Comment le compte... administrateur initial est-il créé?,1
+I NEED HELP,0
+Can you tell me: what is pathointern?,1
+Quels sujets l'Assistant PathoIntern peut-il traiter?,1
+Thanks?,0
+Combien de temps a-t-il fallu pour construire la Phase 1,1
+Reset my password,0
+Pourquoi y a-t-il deux phases?,1
+hi there,0
+Comment les origines CORS sont-elles configurées,1
+What does 95% AUROC mean and why is it significant?,1
+Question: what problem does pathointern solve?,1
+Comment tu t'appelles??,0
+I forgot my password...,0
+I NEED HELP,0
+Comment la ligne de... base d'anomalies est-elle reconstruite?,1
+Qu'en est-il de: qu'est-ce que le rôle de technologiste dans pathointern?,1
+Comment télécharger une image de frottis sanguin?,1
+Help me,0
+Question: how does tls/https work in pathointern?,1
+qu'est-ce que le fichier anomaly_baseline.npz?,1
+What is a verdict?,1
+How are processed artifacts... shipped to the server?,1
+puis-je utiliser l'assistant pathointern en francais?,1
+Aidez-moi?,0
+CAN YOU ASSIST ME?,0
+Veuillez expliquer what research papers support pathointern?,1
+Can PathoIntern be used for teaching or education?,1
+BONSOIR,0
+Veuillez expliquer qu'est-ce que le score de verdict?,1
+Que signifie 95% d'AUROC... et pourquoi est-ce important?,1
+Quelle base de données PathoIntern utilise-t-il,1
+What about: qu'est-ce que l'environnement de production?,1
+Peut-être...,0
+RÉINITIALISER MON MOT DE PASSE,0
+HI THERE,0
+good morning,0
+Que contient le texte de raisonnement du score,1
+SEE YOU LATER,0
+Comment fonctionne l'authentification dans PathoIntern?,1
+Hey?,0
+What DigitalOcean droplet specifications does PathoIntern use,1
+"I need to know, comment fonctionne le pipeline d'ingestion des données?",1
+Thank you,0
+Who is Muthuraj Jayakumar?,1
+Comment tu t'appelles?!,0
+salut,0
+Please?,0
+que représente le score de criticité?,1
+Qu'est-ce que le rôle de technologiste dans PathoIntern?,1
+NON,0
+Are you a robot??,0
+Bonjour,0
+Yes!,0
+What is cosine... distance versus cosine similarity?,1
+Comment fonctionne... la détection d'anomalies?,1
+Can you assist me?...,0
+RÉINITIALISER MON MOT DE PASSE,0
+Help me?,0
+I need help!,0
+Pourquoi PathoIntern n'utilise-t-il pas... YOLO ou la classification CNN?,1
+What is your name?!,0
+Ok!,0
+J'ai besoin de savoir: what digitalocean droplet specifications does pathointern use?,1
+Good morning?,0
+Qu'est-ce que l'intégration LIS/DME prévue pour la Phase 2?,1
+Thank you...,0
+Qu'en est-il de: qu'est-ce que le contrôle d'accès basé sur les rôles dans pathointern?,1
+Peut-être,0
+Please?,0
+À plus tard?,0
+Question: qu'est-ce que ctranspath?,1
+comment les artefacts traités sont-ils envoyés au serveur?,1
+Bonsoir!,0
+qu'est-ce que l'avertissement de sécurité?,1
+Help me?,0
+What is L2 normalization and why is it important?,1
+What is the anomaly baseline?,1
+Bonjour,0
+Bye,0
+Combien de temps a-t-il fallu pour construire la Phase 1?,1
+J'ai besoin de savoir: how does user registration work technically?,1
+Please explain qui est muthuraj jayakumar?,1
+Réinitialiser mon mot de passe?,0
+J'ai besoin de savoir: how many images was ctranspath pretrained on?,1
+What is the safety disclaimer?,1
+How does anomaly detection work?,1
+Réinitialiser mon mot de passe...,0
+Tu es un robot??,0
+Can you assist me??,0
+Bonsoir?,0
+Qu'est-ce qu'un interne numérique en pathologie?,1
+GOOD AFTERNOON,0
+QUI ES-TU?,0
+Who built PathoIntern?,1
+comment ces articles de recherche sont-ils connectés?,1
+Quel est l'état actuel du projet?,1
+Okay?,0
+Qu'est-ce que le panneau d'administration des utilisateurs?,1
+COMMENT TU T'APPELLES?,0
+Qu'est-ce que le... panneau d'administration des utilisateurs?,1
+good morning,0
+Qu'est-ce que k-NN et comment est-il utilisé pour la détection d'anomalies?,1
+Peut-être...,0
+What are the 8 classes in the Kaggle Parasite Dataset?,1
+À plus tard...,0
+Peut-être...,0
+Pouvez-vous me dire: who is pathointern designed for?,1
+Quel est le problème de charge de travail et d'épuisement en pathologie,1
+Please explain how do these research papers connect?,1
+Veuillez expliquer how does pathointern compare to other ai pathology tools?,1
+Can you tell me: how will whole-slide image tile extraction work in phase 2?,1
+What about: que représente le score de criticité?,1
+yes,0
+Qu'est-ce que la référence d'anomalie?,1
+Who created you?,0
+Reset my password?,0
+Qu'en est-il de: how long does a login session last?,1
+Qui est Lohith Reddy?,1
+Qu'est-ce que la Phase 2 de PathoIntern?,1
+What does the scoring reasoning text contain?,1
+Help me?,0
+OKAY,0
+help me,0
+How does anomaly detection work,1
+Le chatbot PathoIntern est-il cliniquement fiable,1
+Question: what ci/cd pipeline does pathointern use?,1
+Who created you??,0
+What is OpenSeadragon,1
+Pouvez-vous me dire: qu'est-ce que la construction docker multi-étapes?,1
+What is k-NN and how... is it used for anomaly detection?,1
+Question: how does anomaly detection work?,1
+Qui es-tu?...,0
+What is your name??,0
+qu'est-ce que la référence d'anomalie?,1
+Okay?,0
+Quelles dimensions d'image CTransPath attend-il,1
+Can I process data on a... local machine instead of the server?,1
+I FORGOT MY PASSWORD,0
+What was the hybrid recommendation approach?,1
+I need help...,0
+Je ne sais pas?,0
+See you later,0
+Veuillez expliquer what is phase 2 of pathointern?,1
+How does batch scoring (score-all) work?,1
+How does PathoIntern protect patient safety?,1
+Qu'est-ce que la normalisation... L2 et pourquoi est-elle importante?,1
+Okay...,0
+Good morning,0
+Can you tell me: who is pathointern designed for?,1
+À qui... PathoIntern est-il destiné?,1
+Que signifie 95% d'AUROC et pourquoi est-ce important?,1
+CAN YOU ASSIST ME?,0
+J'ai besoin de savoir: how accurate is pathointern?,1
+Can you tell me: comment fonctionnera l'extraction de tuiles wsi en phase 2?,1
+Pourquoi PathoIntern a-t-il été créé,1
+S'il vous plaît...,0
+Veuillez expliquer comment fonctionne tls/https dans pathointern?,1
+Quels sont les six personas utilisateurs?,1
+Can I use the PathoIntern Assistant in French?,1
+quels outils l'équipe utilise-t-elle?,1
+See you later!,0
+Yes!,0
+What's up?...,0
+See you later!,0
+what does the worklist show?,1
+Que montre la... liste de travail?,1
+Question: what database does pathointern use?,1
+THANK YOU,0
+what is multi-stage docker build?,1
+RESET MY PASSWORD,0
+À plus tard?,0
+Au revoir...,0
+THANKS,0
+Mot de passe oublié?,0
+What institution is PathoIntern associated with?,1
+Qu'en est-il de: comment fonctionne la détection d'anomalies?,1
+Ok!,0
+OUI,0
+Is PathoIntern open source?,1
+D'accord?,0
+Veuillez expliquer what is the local gpu pipeline approach?,1
+Comment PathoIntern protège-t-il la sécurité des patients?,1
+Query: what is the pathointern assistant?,1
+Pouvez-vous me dire: quels types d'anomalies de cellules sanguines pathointern peut-il aider à identifier?,1
+"I need to know, qu'est-ce que l'environnement de production?",1
+are you a robot?,0
+NO,0
+How long does... a login session last?,1
+J'ai besoin de savoir: quelle est la stratégie de branchement?,1
+Reset my password?,0
+Quel pipeline CI/CD PathoIntern utilise-t-il?,1
+What is your name?!,0
+Combien de patches contient le corpus Kaggle complet,1
+Question: qu'est-ce qu'openslide?,1
+salut,0
+Hey,0
+Au revoir,0
+À plus tard?,0
+Merci,0
+No,0
+How is the seed admin account created?,1
+Help me,0
+What is the NEJM AI study about CTransPath?,1
+J'ai besoin de savoir: how are deployments triggered?,1
+YES,0
+J'ai besoin de savoir: qu'est-ce que ctranspath?,1
+No?,0
+À plus tard?,0
+Yes!,0
+good afternoon,0
+I need help...,0
+J'ai besoin de savoir: why was pathointern created?,1
+S'il vous plaît,0
+Merci,0
+Qu'est-ce que pgvector?,1
+What is the audit middleware?,1
+J'ai besoin de savoir: qu'est-ce que le contrôle d'accès basé sur les rôles dans pathointern?,1
+Good afternoon?,0
+What is the technologist role in PathoIntern?,1
+okay,0
+salut,0
+Comment tu t'appelles?...,0
+Oui...,0
+Maybe...,0
+who is muthuraj jayakumar?,1
+d'accord,0
+No,0
+Can I use the... PathoIntern Assistant in French?,1
+What does non-diagnostic mean in the context of PathoIntern,1
+Réinitialiser mon mot de passe...,0
+How long does a login session last,1
+What are the brand colors of PathoIntern?,1
+can you assist me?,0
+mot de passe oublié,0
+How are processed artifacts shipped to the server?,1
+Qui es-tu??,0
+What topics can the PathoIntern Assistant answer?,1
+I need help...,0
+what is openseadragon?,1
+Can you tell me: what is phase 1 of pathointern?,1
+what is the local gpu pipeline approach?,1
+Can I use the... PathoIntern Assistant in French?,1
+Qu'est-ce que la Phase 1 de PathoIntern,1
+Thank you!,0
+J'ai besoin de savoir: who built pathointern?,1
+pathointern est-il un outil de diagnostic?,1
+What is the verdict score and how does it differ from the criticality score?,1
+Bonsoir!,0
+Tu es un robot??,0
+comment obtenir un compte sur pathointern?,1
+How do I request admin access,1
+What's up??,0
+réinitialiser mon mot de passe,0
+NON,0
+ARE YOU A ROBOT?,0
+qu'est-ce que le rôle de technologiste dans pathointern?,1
+Que peut faire... un technologiste dans PathoIntern?,1
+Comment fonctionne TLS/HTTPS dans PathoIntern?,1
+What user roles exist in PathoIntern,1
+What is pgvector?,1
+Tu es un robot?!,0
+Query: what is the local gpu pipeline approach?,1
+Quelles sont les couleurs de marque de PathoIntern,1
+GOOD AFTERNOON,0
+Pouvez-vous me dire: what is the nejm ai study about ctranspath?,1
+Je ne sais pas?,0
+Comment tu t'appelles?,0
+NON,0
+Comment télécharger une image de frottis sanguin,1
+Why are non-normal reference cases displayed first in the similar patches panel,1
+What problem does PathoIntern solve,1
+Qui es-tu?...,0
+Please...,0
+Good morning!,0
+i don't know,0
+Good afternoon...,0
+Mot de passe oublié...,0
+Bye,0
+What is your name?!,0
+Veuillez expliquer what institution is pathointern associated with?,1
+RÉINITIALISER MON MOT DE PASSE,0
+OUI,0
+Tu es un robot??,0
+COMMENT TU T'APPELLES?,0
+Comment fonctionne... l'authentification dans PathoIntern?,1
+Quels outils l'équipe utilise-t-elle,1
+good afternoon,0
+BONJOUR,0
+Are you a robot?!,0
+Salut?,0
+Quel est l'état... actuel du projet?,1
+OK,0
+S'il vous plaît,0
+À quelle institution PathoIntern est-il associé?,1
+Query: comment fonctionne le boost de criticité pour les cas pathologiques?,1
+How was the development organized?,1
+What image dimensions does CTransPath expect?,1
+What does the scoring reasoning text contain,1
+Qu'en est-il de: comment fonctionnera l'extraction de tuiles wsi en phase 2?,1
+How are you?!,0
+RÉINITIALISER MON MOT DE PASSE,0
+D'accord...,0
+what is the safety disclaimer?,1
+How does the criticality... boost work for disease cases?,1
+what is lis/emr integration planned for phase 2?,1
+Query: what is the branching strategy?,1
+hi there,0
+que montre la liste de travail?,1
+why was pathointern created?,1
+Thank you!,0
+WHAT'S UP?,0
+Peut-être?,0
+Qu'est-ce que le proxy inverse Nginx?,1
+Comment les origines... CORS sont-elles configurées?,1
+How is PathoIntern deployed?,1
+Qu'est-ce que... la piste d'audit?,1
+Ok...,0
+CAN YOU ASSIST ME?,0
+Query: quel est le problème de charge de travail et d'épuisement en pathologie?,1
+Comment tu t'appelles?!,0
+Oui!,0
+Bonsoir?,0
+quel problème pathointern résout-il?,1
+Quelle est la... mission de PathoIntern?,1
+RESET MY PASSWORD,0
+SEE YOU LATER,0
+What does non-diagnostic mean in the context of PathoIntern?,1
+Que ne peut PAS... faire un technologiste dans PathoIntern?,1
+BONJOUR,0
+qui es-tu?,0
+Réinitialiser mon mot de passe!,0
+Maybe?,0
+is pathointern open source?,1
+i forgot my password,0
+Non!,0
+Can you assist me?...,0
+J'ai besoin de savoir: qu'est-ce que l'environnement de production?,1
+Je ne sais pas?,0
+What research papers support PathoIntern?,1
+Qu'est-ce que l'apprentissage par transfert en pathologie computationnelle?,1
+PEUT-ÊTRE,0
+Query: what can a technologist do in pathointern?,1
+who created you?,0
+J'ai besoin de savoir: pourquoi pathointern n'utilise-t-il pas yolo ou la classification cnn?,1
+QUI ES-TU?,0
+I need help!,0
+À plus tard,0
+Comment ça va?!,0
+Quels formats d'image PathoIntern accepte-t-il,1
+BONSOIR,0
+OK,0
+What is a digital intern in pathology?,1
+Quels types d'anomalies de cellules sanguines PathoIntern peut-il aider à identifier?,1
+What is the... admin user management panel?,1
+See you later...,0
+Pourquoi PathoIntern n'utilise-t-il pas la classification?,1
+NON,0
+WHAT'S UP?,0
+Can you tell me: qui est ali ozdemir?,1
+what are the explicit non-goals of pathointern?,1
+How does PathoIntern compare to other AI pathology tools?,1
+Les noms d'utilisateur sont-ils sensibles à la casse,1
+What development... methodology was used?,1
+What about: what is a digital intern in pathology?,1
+I forgot my password?,0
+Quelles variables... d'environnement PathoIntern nécessite-t-il?,1
+THANK YOU,0
+i forgot my password,0
+Query: how many patches are in the full kaggle corpus?,1
+GOOD EVENING,0
+Thanks...,0
+JE NE SAIS PAS,0
+Hi there?,0
+Can you tell me: what ports does pathointern use?,1
+Veuillez expliquer what is transfer learning in computational pathology?,1
+Please explain how are embeddings generated?,1
+Veuillez expliquer qu'est-ce que le patron de couche de service utilisé dans le backend?,1
+qu'est-ce que l'apprentissage incrémental dans pathointern?,1
+How many patches are in the full Kaggle corpus?,1
+What is the 95th... percentile calibration in anomaly scoring?,1
+no,0
+Salut!,0
+Réinitialiser mon mot de passe?,0
+Quelle infrastructure est nécessaire... pour la Phase 2?,1
+Why was PathoIntern created,1
+Comment tu t'appelles?,0
+WHO CREATED YOU?,0
+YES,0
+Combien de temps faut-il pour traiter une image?,1
+Please explain comment fonctionne la priorisation de liste de travail par ia?,1
+How does the scoring system work?,1
+who created you?,0
+Salut...,0
+Qui peut soumettre des verdicts?,1
+Question: is there a demo account i can try?,1
+Qui est Lohith Reddy,1
+reset my password,0
+OKAY,0
+what's up?,0
+NO,0
+Question: qu'est-ce que la recherche de similarité?,1
+Au revoir...,0
+Good morning!,0
+What does the worklist show?,1
+Yes!,0
+Good evening,0
+Comment ça va??,0
+HELP ME,0
+NO,0
+Comment fonctionne l'authentification dans PathoIntern,1
+I forgot my password...,0
+Question: comment les origines cors sont-elles configurées?,1
+What is OpenSeadragon?,1
+What are the explicit non-goals of PathoIntern,1
+Thank you,0
+Qu'est-ce que la Phase 1 de PathoIntern?,1
+what database does pathointern use?,1
+comment ça va?,0
+Good afternoon...,0
+J'ai besoin de savoir: qu'est-ce que l'environnement de production?,1
+Qu'est-ce que l'apprentissage incrémental dans PathoIntern?,1
+Okay,0
+What about: à qui pathointern est-il destiné?,1
+COMMENT ÇA VA?,0
+no,0
+Comment les origines CORS sont-elles configurées,1
+À plus tard,0
+Are you a robot?...,0
+Les noms d'utilisateur sont-ils sensibles à la casse,1
+Comment tu t'appelles??,0
+Comment ça va?...,0
+What are the password requirements?,1
+Please...,0
+Hey?,0
+Quels ports... PathoIntern utilise-t-il?,1
+Qu'est-ce qu'un verdict?,1
+À PLUS TARD,0
+Aidez-moi,0
+Help me?,0
+Aidez-moi,0
+Thank you,0
+s'il vous plaît,0
+Good morning,0
+À plus tard?,0
+Je ne sais pas,0
+Qu'est-ce que Docker Compose et comment PathoIntern l'utilise-t-il?,1
+How are CORS origins configured?,1
+Mot de passe oublié?,0
+Comment PathoIntern protège-t-il... la sécurité des patients?,1
+Good morning?,0
+AU REVOIR,0
+Veuillez expliquer quelle pile technologique pathointern utilise-t-il?,1
+Quelle est la vision de PathoIntern?,1
+les noms d'utilisateur sont-ils sensibles à la casse?,1
+Can you assist me??,0
+what is the branching strategy?,1
+What is the Nginx reverse proxy and what does it do?,1
+au revoir,0
+"I need to know, how does authentication work in pathointern?",1
+Who created you??,0
+aidez-moi,0
+Please...,0
+How are you??,0
+Bonjour?,0
+i don't know,0
+what can a technologist do in pathointern?,1
+Quelle est la stratégie de branchement?,1
+Comment ça va??,0
+Qu'est-ce qui différencie PathoIntern des compteurs de cellules sanguines automatisés,1
+D'accord...,0
+NON,0
+Non,0
+Comment le backend est-il structuré?,1
+Pouvez-vous me dire: comment pathointern gère-t-il le risque de faux négatifs?,1
+dans quelle mesure devrais-je faire confiance aux reponses du chatbot?,1
+D'accord!,0
+Pouvez-vous me dire: le chatbot pathointern est-il cliniquement fiable?,1
+Maybe...,0
+Pouvez-vous me dire: what image dimensions does ctranspath expect?,1
+Hello!,0
+Ok...,0
+Bye,0
+How are you?!,0
+OUI,0
+What is your name?!,0
+Please explain what infrastructure is needed for phase 2?,1
+no,0
+What are the six user personas?,1
+What about: what is the verdict score and how does it differ from the criticality score?,1
+Mot de passe oublié,0
+"I need to know, quelles specifications de droplet digitalocean pathointern utilise-t-il?",1
+What is... the audit trail?,1
+Ok!,0
+RESET MY PASSWORD,0
+"I need to know, comment le backend est-il structuré?",1
+How does the frontend build process work?,1
+D'accord!,0
+Au revoir,0
+Qu'est-ce que l'avertissement de sécurité?,1
+how are you?,0
+Pouvez-vous me dire: pourquoi les cas de référence non-normaux sont-ils affichés en premier?,1
+What can a technologist NOT do in PathoIntern?,1
+Qui es-tu??,0
+Oui!,0
+Comment ça va??,0
+"I need to know, how are deployments triggered?",1
+Quels rôles d'utilisateur... existent dans PathoIntern?,1
+bye,0
+Veuillez expliquer qu'est-ce que le modèle fondamental uni?,1
+Query: what image dimensions does ctranspath expect?,1
+How does the chatbot RAG retrieval pipeline work?,1
+Comment fonctionne le filtrage côté serveur de la liste de travail?,1
+Why doesn't PathoIntern use YOLO or CNN classification?,1
+Hey...,0
+reset my password,0
+Comment la ligne de base d'anomalies est-elle reconstruite?,1
+Please explain how does tls/https work in pathointern?,1
+Aidez-moi,0
+What can a technologist NOT do in PathoIntern,1
+Que peut faire... un technologiste dans PathoIntern?,1
+Please explain what are the password requirements?,1
+Please explain comment fonctionne le pipeline de recuperation rag du chatbot?,1
+what is the safety disclaimer?,1
+comment fonctionne techniquement l'inscription des utilisateurs?,1
+Pouvez-vous me dire: what is a digital intern in pathology?,1
+Oui...,0
+How are you?,0
+Good evening...,0
+What is the admin user management panel?,1
+Quels sont les non-objectifs explicites de PathoIntern?,1
+J'ai besoin de savoir: comment le backend est-il structuré?,1
+Yes,0
+D'accord?,0
+Réinitialiser mon mot de passe!,0
+what is the difference between phase 1 and phase 2?,1
+Comment le frontend communique-t-il avec le backend,1
+good evening,0
+What does non-diagnostic mean... in the context of PathoIntern?,1
+Que peut faire un technologiste dans PathoIntern?,1
+Thanks?,0
+What is incremental learning in PathoIntern?,1
+Quelles sont les 8 classes du jeu de données Kaggle Parasite?,1
+Bonsoir...,0
+Aidez-moi?,0
+Who created you?,0
+Thank you?,0
+Can you assist me?!,0
+Quels sont les quatre piliers... de la mission de PathoIntern?,1
+Query: que se passe-t-il si les poids du modèle ctranspath sont manquants?,1
+comment tu t'appelles?,0
+Qu'est-ce que le contrôle d'accès basé sur les rôles dans PathoIntern,1
+What about: how long does it take to process an image?,1
+What's up?!,0
+What is the difference between Phase 1 and Phase 2?,1
+What is your name??,0
+What environment variables does PathoIntern need?,1
+Comment fonctionne le pipeline d'ingestion des données?,1
+À plus tard...,0
+Qu'est-ce que l'approche du pipeline GPU local?,1
+How do I upload a blood smear image?,1
+GOOD MORNING,0
+J'ai besoin de savoir: how long does it take to process an image?,1
+Ok,0
+Que contient le texte... de raisonnement du score?,1
+I FORGOT MY PASSWORD,0
+Comment ça va?,0
+Mot de passe oublié?,0
+S'il vous plaît!,0
+Okay...,0
+See you later?,0
+Bonjour...,0
+Quels formats d'image PathoIntern accepte-t-il?,1
+comment la ligne de base d'anomalies est-elle reconstruite?,1
+je ne sais pas,0
+Veuillez expliquer why are there two phases?,1
+Please?,0
+Comment télécharger une image de frottis sanguin,1
+PathoIntern est-il open source?,1
+Quels outils l'équipe utilise-t-elle?,1
+À plus tard!,0
+Maybe!,0
+J'ai besoin de savoir: comment télécharger une image de frottis sanguin?,1
+what is a verdict?,1
+mot de passe oublié,0
+TU ES UN ROBOT?,0
+What about: comment les articles de recherche de soutien ont-ils été sélectionnés?,1
+Comment PathoIntern est-il déployé?,1
+What is your name?,0
+what is self-supervised learning in computational pathology?,1
+Qui peut... soumettre des verdicts?,1
+Peut-être!,0
+Le chatbot PathoIntern est-il cliniquement fiable?,1
+What is multi-stage Docker build?,1
+What happens if I exceed the login rate limit?,1
+Reset my password!,0
+oui,0
+What user roles exist in PathoIntern,1
+BONSOIR,0
+What are the password requirements,1
+Merci,0
+peut-être,0
+Can you assist me?...,0
+Comment les... embeddings sont-ils générés?,1
+how are you?,0
+How do I log in to PathoIntern,1
+Quelle est la différence entre le score d'anomalie et le score de criticité?,1
+Okay...,0
+What is the PathoIntern Assistant?,1
+I FORGOT MY PASSWORD,0
+Bye,0
+What DigitalOcean droplet specifications does PathoIntern use?,1
+no,0
+comment les embeddings sont-ils générés?,1
+À plus tard,0
+what is the audit middleware?,1
+No?,0
+HI THERE,0
+Réinitialiser mon mot de passe,0
+les noms d'utilisateur sont-ils sensibles à la casse?,1
+Good afternoon...,0
+Query: who is ali ozdemir?,1
+Qu'en est-il de: what is pgvector?,1
+Good morning...,0
+What is cosine... distance versus cosine similarity?,1
+What database... does PathoIntern use?,1
+Je ne sais pas!,0
+i forgot my password,0
+What is k-NN and how... is it used for anomaly detection?,1
+Réinitialiser mon mot de passe?,0
+S'il vous plaît?,0
+Please explain comment fonctionne la notation par lots (score-all)?,1
+Quels sont les quatre piliers de la mission de PathoIntern,1
+bye,0
+Thanks?,0
+What was the hybrid recommendation approach,1
+MERCI,0
+What image formats does PathoIntern accept?,1
+Are you a robot?,0
+Hey,0
+BONJOUR,0
+Qu'en est-il de: what is the nginx reverse proxy and what does it do?,1
+See you later!,0
+Comment le frontend communique-t-il avec le backend?,1
+What is the mission of PathoIntern,1
+What about: what ci/cd pipeline does pathointern use?,1
+Quel est le jeu de... données Kaggle utilisé dans PathoIntern?,1
+Good morning!,0
+Pourquoi PathoIntern a-t-il été créé,1
+Question: qu'est-ce que le score de verdict?,1
+qui es-tu?,0
+Comment fonctionne le processus... de construction du frontend?,1
+Hey?,0
+WHAT IS YOUR NAME?,0
+Who created you?!,0
+Question: qu'est-ce que l'apprentissage auto-supervisé en pathologie computationnelle?,1
+À quelle institution PathoIntern est-il associé,1
+what is the audit trail?,1
+how was the development organized?,1
+What about: pathointern est-il open source?,1
+what is pathointern?,1
+OUI,0
+Qu'est-ce que la normalisation L2 et pourquoi est-elle importante,1
+aidez-moi,0
+Qu'en est-il de: is pathointern open source?,1
+Comment les articles de recherche de soutien ont-ils été sélectionnés,1
+OKAY,0
+Comment le développement a-t-il été organisé?,1
+Hey,0
+Query: qu'est-ce que la référence d'anomalie?,1
+que peut faire un technologiste dans pathointern?,1
+Query: qu'est-ce que docker compose et comment pathointern l'utilise-t-il?,1
+J'ai besoin de savoir: qu'est-ce qu'un verdict?,1
+What tech stack does PathoIntern use?,1
+quel est le jeu de données kaggle utilisé dans pathointern?,1
+Please explain qu'est-ce que l'environnement de production?,1
+Pouvez-vous me dire: why was pathointern created?,1
+What are normal labels in the dataset?,1
+Merci!,0
+How are the reference cases displayed?,1
+Qu'est-ce que la référence d'anomalie,1
+Thank you...,0
+Qu'est-ce que le proxy inverse Nginx,1
+Please explain quel est l'état actuel du projet?,1
+What is the difference between the three user roles?,1
+Are you a robot?,0
+Question: how long does it take to process an image?,1
+No...,0
+Aidez-moi,0
+i don't know,0
+Good morning...,0
+Comment le compte administrateur initial est-il créé,1
+peut-être,0
+yes,0
+Peut-être?,0
+What is Docker Compose and... how does PathoIntern use it?,1
+COMMENT ÇA VA?,0
+Au revoir?,0
+Hey?,0
+Please explain is there a demo account i can try?,1
+What about: pourquoi les cas de référence non-normaux sont-ils affichés en premier?,1
+I don't know...,0
+Who created you?,0
+Au revoir,0
+Je ne sais pas...,0
+what is your name?,0
+no,0
+PathoIntern est-il... open source?,1
+Pourquoi les cas de référence... non-normaux sont-ils affichés en premier?,1
+Quelle base de... données PathoIntern utilise-t-il?,1
+what are the 8 classes in the kaggle parasite dataset?,1
+combien de temps faut-il pour traiter une image?,1
+Help me...,0
+How do these research papers connect?,1
+Peut-être...,0
+Hey?,0
+Bonsoir...,0
+Hi there,0
+Quels sont les quatre piliers de la mission de PathoIntern?,1
+Comment demander l'accès administrateur?,1
+Peut-être...,0
+S'IL VOUS PLAÎT,0
+Hello!,0
+Query: what are the password requirements?,1
+please,0
+Can you tell me: qu'est-ce que l'intégration lis/dme prévue pour la phase 2?,1
+How does server-side worklist filtering work?,1
+Please explain what is role-based access control in pathointern?,1
+is pathointern a diagnostic tool?,1
+Question: qu'est-ce que le proxy inverse nginx?,1
+THANKS,0
+Okay?,0
+Sur combien d'images CTransPath a-t-il été pré-entraîné?,1
+Good evening,0
+Can you tell me: what are the password requirements?,1
+Who created you?,0
+d'accord,0
+tu es un robot?,0
+I need help?,0
+What is the local GPU pipeline approach?,1
+Que signifie non diagnostique dans le contexte de PathoIntern?,1
+GOOD AFTERNOON,0
+comment ça va?,0
+please,0
+J'ai besoin de savoir: what research papers support pathointern?,1
+What CI/CD pipeline does PathoIntern use?,1
+Hey?,0
+RESET MY PASSWORD,0
+Please?,0
+Who is... Sumanth Reddy?,1
+What is your name?,0
+"I need to know, how does the frontend communicate with the backend?",1
+I DON'T KNOW,0
+what is openseadragon?,1
+Can you assist me?,0
+"I need to know, le chatbot pathointern est-il cliniquement fiable?",1
+What's up??,0
+What is the audit trail,1
+What can a technologist do in PathoIntern?,1
+How long does... a login session last?,1
+Are you a robot?!,0
+I don't know...,0
+Comment les déploiements sont-ils déclenchés,1
+Comment fonctionne le boost de criticité pour les cas pathologiques?,1
+maybe,0
+Peut-être!,0
+Que se passe-t-il après le téléchargement d'une image?,1
+what is the verdict score and how does it differ from the criticality score?,1
+BYE,0
+"I need to know, what are the explicit non-goals of pathointern?",1
+AU REVOIR,0
+Yes!,0
+Qu'est-ce que l'apprentissage... incrémental dans PathoIntern?,1
+Hello,0
+What's up?!,0
+Comment ça va?!,0
+Quels sont les... six personas utilisateurs?,1
+Qu'est-ce que le... proxy inverse Nginx?,1
+reset my password,0
+comment ça va?,0
+Why doesn't PathoIntern use classification?,1
+Qui es-tu?!,0
+How does batch scoring (score-all) work,1
+Non,0
+Hello,0
+Thank you,0
+What is transfer learning in computational pathology,1
+Non!,0
+quels sujets l'assistant pathointern peut-il traiter?,1
+Good afternoon?,0
+I forgot my password...,0
+How accurate is PathoIntern?,1
+What is the QA environment?,1
+I forgot my password!,0
+How confident should I be in chatbot answers?,1
+Comment tu t'appelles?,0
+Comment fonctionne la... notation par lots (score-all)?,1
+What is the difference between anomaly score and criticality score?,1
+Quelles dimensions... d'image CTransPath attend-il?,1
+Thanks?,0
+good morning,0
+How long does... a login session last?,1
+SALUT,0
+Comment le frontend... communique-t-il avec le backend?,1
+Are you a robot?...,0
+What is your name?...,0
+Comment ça va?...,0
+À plus tard!,0
+I FORGOT MY PASSWORD,0
+THANK YOU,0
+Comment télécharger une... image de frottis sanguin?,1
+I need help?,0
+What is Phase 1 of PathoIntern,1
+Qu'est-ce que l'environnement QA?,1
+PEUT-ÊTRE,0
+What is the difference... between triage and diagnosis?,1
+Can you tell me: what digitalocean droplet specifications does pathointern use?,1
+Okay!,0
+What image formats... does PathoIntern accept?,1
+I NEED HELP,0
+Oui,0
+Is there a demo account I can try,1
+Merci,0
+Oui...,0
+Peut-être,0
+Pouvez-vous me dire: what does the worklist show?,1
+Quels sont les six personas utilisateurs,1
+What ports does PathoIntern use?,1
+Mot de passe oublié?,0
+"I need to know, comment fonctionne le boost de criticité pour les cas pathologiques?",1
+What about: how does server-side worklist filtering work?,1
+Please explain qu'est-ce que le proxy inverse nginx?,1
+Can you tell me: what database does pathointern use?,1
+Quelles variables... d'environnement PathoIntern nécessite-t-il?,1
+Les noms d'utilisateur sont-ils sensibles à la casse,1
+Reset my password!,0
+Comment obtenir un compte sur PathoIntern,1
+Yes,0
+que signifie 95% d'auroc et pourquoi est-ce important?,1
+Pouvez-vous me dire: qu'est-ce que le fichier anomaly_baseline.npz?,1
+How does TLS/HTTPS work in PathoIntern?,1
+Qu'est-ce que l'apprentissage... incrémental dans PathoIntern?,1
+How does PathoIntern handle the risk of false negatives?,1
+What is Docker Compose and... how does PathoIntern use it?,1
+Comment ça va??,0
+Bye!,0
+NON,0
+S'il vous plaît?,0
+Qu'est-ce que CTransPath?,1
+COMMENT TU T'APPELLES?,0
+Query: how does batch embedding generation work?,1
+comment la ligne de base d'anomalies est-elle reconstruite?,1
+Hello!,0
+Are you a robot?...,0
+How does server-side worklist filtering work,1
+Hello...,0
+What is... the anomaly_baseline.npz file?,1
+Qui es-tu?!,0
+How is the backend structured?,1
+je ne sais pas,0
+Ok!,0
+Maybe...,0
+peut-être,0
+Comment fonctionne le boost de criticité pour les cas pathologiques,1
+Qu'en est-il de: comment les artefacts traités sont-ils envoyés au serveur?,1
+Okay...,0
+Pouvez-vous me dire: qu'est-ce qu'un interne numérique en pathologie?,1
+Quels articles de recherche soutiennent PathoIntern?,1
+Query: quel problème pathointern résout-il?,1
+No...,0
+What is cosine distance versus cosine similarity?,1
+Please,0
+Thanks?,0
+comment ça va?,0
+Quelles sont les couleurs de marque de PathoIntern?,1
+Peut-être!,0
+Qu'est-ce que le fichier anomaly_baseline.npz?,1
+Quel est le problème de charge de travail et d'épuisement en pathologie?,1
+maybe,0
+Je ne sais pas,0
+Je ne sais pas?,0
+Mot de passe oublié?,0
+how many images was ctranspath pretrained on?,1
+Maybe,0
+Quelle est la différence entre triage et diagnostic?,1
+Who can... submit verdicts?,1
+What is self-supervised learning in computational pathology?,1
+Que se passe-t-il si je dépasse la limite de connexion?,1
+Qu'est-ce qu'OpenSeadragon?,1
+How does the PathoIntern chatbot handle voice input and safety?,1
+J'ai besoin de savoir: how do i get an account on pathointern?,1
+Mot de passe oublié?,0
+le chatbot pathointern est-il cliniquement fiable?,1
+Mot de passe oublié!,0
+Comment tu t'appelles?,0
+Peut-être,0
+what is the difference between the three user roles?,1
+What is PathoIntern?,1
+Thanks?,0
+How does AI... worklist prioritization work?,1
+What is the current status of the project,1
+Question: dans quelle mesure devrais-je faire confiance aux reponses du chatbot?,1
+Hello,0
+comment télécharger une image de frottis sanguin?,1
+S'il vous plaît,0
+how long does a login session last?,1
+Query: what is incremental learning in pathointern?,1
+How is the... seed admin account created?,1
+Query: how confident should i be in chatbot answers?,1
+Qu'en est-il de: what is the service layer pattern used in the backend?,1
+How is the anomaly baseline rebuilt?,1
+How are you?,0
+What's up??,0
+What about: what types of blood cell abnormalities can pathointern help with?,1
+Query: how does pathointern protect patient safety?,1
+PathoIntern est-il open source,1
+Pouvez-vous me dire: quels ports pathointern utilise-t-il?,1
+Yes!,0
+COMMENT TU T'APPELLES?,0
+No?,0
+Question: qu'est-ce que le proxy inverse nginx?,1
+AU REVOIR,0
+What is... a verdict?,1
+Je ne sais pas...,0
+Mot de passe oublié?,0
+Aidez-moi?,0
+how does pathointern protect patient safety?,1
+"I need to know, how are passwords stored securely in pathointern?",1
+Quel problème PathoIntern résout-il?,1
+How does the data ingestion pipeline work?,1
+Who is Lohith Reddy,1
+Are you a robot?!,0
+Please explain how many images was ctranspath pretrained on?,1
+PathoIntern est-il... open source?,1
+Are you a robot?...,0
+THANK YOU,0
+Bye!,0
+Quelle pile technologique PathoIntern utilise-t-il?,1
+What development methodology was used?,1
+Un pathologiste peut-il modifier son verdict après soumission?,1
+Query: comment la ligne de base d'anomalies est-elle reconstruite?,1
+Good evening,0
+Aidez-moi?,0
+JE NE SAIS PAS,0
+S'il vous plaît?,0
+Qu'est-ce que le panneau d'administration des utilisateurs,1
+Are you a robot?!,0
+What about: how is the seed admin account created?,1
+Who is Sumanth Reddy?,1
+qui es-tu?,0
+What is your name??,0
+Pourquoi PathoIntern a-t-il été créé?,1
+PLEASE,0
+Qu'est-ce que la limitation de débit dans PathoIntern?,1
+Réinitialiser mon mot de passe!,0
+What is the 95th percentile calibration in anomaly scoring?,1
+Are you a robot?!,0
+What about: comment les embeddings sont-ils générés?,1
+Combien de temps dure une session de connexion?,1
+D'accord...,0
+Please?,0
+HI THERE,0
+Maybe!,0
+Hello?,0
+Non!,0
+How long does a login session last,1
+Good afternoon...,0
+What is your name?,0
+Tu es un robot??,0
+See you later!,0
+Thanks...,0
+ARE YOU A ROBOT?,0
+Bonsoir,0
+Salut!,0
+Are you a robot?,0
+What is the difference between triage and diagnosis?,1
+What CI/CD pipeline... does PathoIntern use?,1
+"I need to know, what is the audit middleware?",1
+quels sont les non-objectifs explicites de pathointern?,1
+Bonsoir,0
+How does user registration work technically,1
+Tu es un robot?...,0
+Query: comment les embeddings sont-ils générés?,1
+How does TLS/HTTPS work in PathoIntern,1
+What is the branching strategy?,1
+Can you tell me: comment pathointern est-il déployé?,1
+I don't know,0
+What's up?,0
+Non?,0
+What's up?,0
+See you later?,0
+Bonsoir...,0
+Non!,0
+what is rate limiting in pathointern?,1
+Qu'est-ce qu'un verdict?,1
+Comment tu t'appelles?,0
+YES,0
+J'ai besoin de savoir: qu'est-ce que le proxy inverse nginx?,1
+Good afternoon?,0
+Salut...,0
+Please,0
+Comment ça va??,0
+Comment fonctionne la génération d'embeddings par lots?,1
+J'ai besoin de savoir: qu'est-ce que le fichier anomaly_baseline.npz?,1
+What about: comment les articles de recherche de soutien ont-ils été sélectionnés?,1
+Ok!,0
+Help me,0
+Ok...,0
+Quelle base de données PathoIntern utilise-t-il?,1
+Veuillez expliquer qu'est-ce que l'apprentissage incrémental dans pathointern?,1
+Thanks,0
+What about: qu'est-ce que l'apprentissage incrémental dans pathointern?,1
+Comment PathoIntern gère-t-il le risque de faux négatifs,1
+OUI,0
+"I need to know, can i use the pathointern assistant in french?",1
+Good morning!,0
+Puis-je utiliser l'Assistant PathoIntern en francais?,1
+QUI ES-TU?,0
+What about: what is the admin user management panel?,1
+qu'est-ce que la normalisation l2 et pourquoi est-elle importante?,1
+S'il vous plaît,0
+Mot de passe oublié...,0
+Maybe,0
+What is the anomaly_baseline.npz file?,1
+Are you a robot?!,0
+GOOD MORNING,0
+What is the Nginx reverse proxy and what does it do,1
+What are... the password requirements?,1
+Reset my password...,0
+What makes PathoIntern different from automated blood cell counters?,1
+Can you assist me?...,0
+I forgot my password...,0
+S'il vous plaît!,0
+WHO CREATED YOU?,0
+What is your name?...,0
+Qu'est-ce que l'étude NEJM AI sur CTransPath?,1
+Good morning?,0
+Les noms d'utilisateur sont-ils sensibles à la casse?,1
+J'ai besoin de savoir: qui peut soumettre des verdicts?,1
+What is the Kaggle dataset used in PathoIntern,1
+Au revoir...,0
+Qu'en est-il de: qu'est-ce que la piste d'audit?,1
+What is CTransPath?,1
+Please!,0
+SALUT,0
+qu'est-ce que la piste d'audit?,1
+Are you a robot??,0
+Mot de passe oublié...,0
+Reset my password...,0
+i don't know,0
+Qu'est-ce que la superposition de carte de chaleur de risque?,1
+What is the vision of PathoIntern?,1
+aidez-moi,0
+Mot de passe oublié!,0
+Help me?,0
+Peut-être?,0
+What about: comment fonctionne le pipeline de recuperation rag du chatbot?,1
+Au revoir?,0
+Mot de passe oublié...,0
+What does the scoring reasoning text contain,1
+what image dimensions does ctranspath expect?,1
+Merci,0
+Comment fonctionne TLS/HTTPS dans PathoIntern,1
+GOOD AFTERNOON,0
+Que représente le score de criticité?,1
+Bye,0
+Comment fonctionne le processus de construction du frontend?,1
+What infrastructure is... needed for Phase 2?,1
+COMMENT ÇA VA?,0
+What about: que se passe-t-il si je dépasse la limite de connexion?,1
+comment ça va?,0
+Comment PathoIntern protège-t-il... la sécurité des patients?,1
+i need help,0
+Okay,0
+J'ai besoin de savoir: qu'est-ce que la superposition de carte de chaleur de risque?,1
+What regulatory considerations apply to PathoIntern?,1
+How are embeddings generated?,1
+comment fonctionne le filtrage côté serveur de la liste de travail?,1
+why doesn't pathointern use yolo or cnn classification?,1
+Can you tell me: pathointern peut-il être utilisé pour l'enseignement?,1
+Bonjour?,0
+Pouvez-vous me dire: que représente le score de criticité?,1
+Can you tell me: what is l2 normalization and why is it important?,1
+Who created you?...,0
+Hi there!,0
+bonjour,0
+What's up?!,0
+Thanks!,0
+Help me,0
+Qu'est-ce que la... calibration au 95e percentile?,1
+au revoir,0
+How do I request admin access?,1
+How accurate is PathoIntern,1
+I need help...,0
+How are you?!,0
+qu'est-ce que ctranspath?,1
+HEY,0
+Good afternoon!,0
+How many images was CTransPath pretrained on?,1
+Query: how do i get an account on pathointern?,1
+Please explain what image formats does pathointern accept?,1
+Merci?,0
+à plus tard,0
+Good afternoon,0
+Mot de passe oublié?,0
+quelle est la différence entre les trois rôles d'utilisateur?,1
+help me,0
+ok,0
+D'accord...,0
+Please explain what is the difference between the three user roles?,1
+I need help...,0
+How confident should I be in chatbot answers,1
+à plus tard,0
+reset my password,0
+Qui a... construit PathoIntern?,1
+Can I process data on a local machine instead of the server,1
+I forgot my password...,0
+good afternoon,0
+Reset my password!,0
+Question: what development methodology was used?,1
+What's up?!,0
+RESET MY PASSWORD,0
+D'ACCORD,0
+S'il vous plaît?,0
+are you a robot?,0
+I forgot my password!,0
+qui est lohith reddy?,1
+Comment tu t'appelles?!,0
+S'il vous plaît...,0
+Can you tell me: is the pathointern chatbot clinically reliable?,1
+how does the criticality boost work for disease cases?,1
+Que montre la liste de travail?,1
+Hello?,0
+S'il vous plaît...,0
+What is OpenSlide?,1
+Veuillez expliquer what is cosine distance versus cosine similarity?,1
+Please explain how do i get an account on pathointern?,1
+Non...,0
+Okay,0
+Comment fonctionne la priorisation de liste de travail par IA?,1
+Hey...,0
+Comment tu t'appelles?,0
+AIDEZ-MOI,0
+Pourquoi PathoIntern n'utilise-t-il pas YOLO ou la classification CNN,1
+How is PathoIntern deployed,1
+Tu es un robot?!,0
+D'accord,0
+I forgot my password,0
+Query: what is rate limiting in pathointern?,1
+What's up?!,0
+Veuillez expliquer who is sumanth reddy?,1
+D'accord...,0
+Hello...,0
+Que représente le score de criticité,1
+Yes!,0
+S'il vous plaît?,0
+How does user... registration work technically?,1
+Can you assist me?,0
+Bonsoir...,0
+thank you,0
+How do I access the QA site for testing,1
+What is the similarity search?,1
+CAN YOU ASSIST ME?,0
+Qu'est-ce que le contrôle d'accès basé sur les rôles dans PathoIntern?,1
+qu'est-ce que l'apprentissage par transfert en pathologie computationnelle?,1
+who created you?,0
+Please explain how accurate is pathointern?,1
+Comment le chatbot PathoIntern gere-t-il la saisie vocale et la securite?,1
+comment fonctionne le système de notation?,1
+Good evening,0
+Query: comment le frontend communique-t-il avec le backend?,1
+What tools does the team use for development?,1
+Good afternoon,0
+What about: who is muthuraj jayakumar?,1
+What does the criticality score represent?,1
+Comment obtenir un compte sur PathoIntern?,1
+Comment le compte administrateur initial est-il créé?,1
+ARE YOU A ROBOT?,0
+Qu'est-ce que l'Assistant PathoIntern?,1
+Comment ça va??,0
+What does... the worklist show?,1
+mot de passe oublié,0
+I need help,0
+What is pgvector?,1
+Good afternoon?,0
+comment fonctionne le système de notation?,1
+RÉINITIALISER MON MOT DE PASSE,0
+OK,0
+What's up??,0
+WHAT IS YOUR NAME?,0
+Pouvez-vous me dire: what does 95% auroc mean and why is it significant?,1
+Non...,0
+tu es un robot?,0
+Maybe...,0
+Qu'est-ce que PathoIntern?,1
+Hey!,0
+Qu'en est-il de: what is the nginx reverse proxy and what does it do?,1
+Oui?,0
+Can you assist me?...,0
+PEUT-ÊTRE,0
+Pouvez-vous me dire: comment fonctionne la notation par lots (score-all)?,1
+Merci?,0
+Query: how does user registration work technically?,1
+Qui es-tu?,0
+how are cors origins configured?,1
+Veuillez expliquer what is the mission of pathointern?,1
+What is... a verdict?,1
+à plus tard,0
+J'ai besoin de savoir: quelles dimensions d'image ctranspath attend-il?,1
+Non,0
+What is OpenSlide?,1
+"I need to know, qu'est-ce que l'apprentissage par transfert en pathologie computationnelle?",1
+Query: who is muthuraj jayakumar?,1
+can you assist me?,0
+PathoIntern est-il un outil de diagnostic?,1
+THANKS,0
+What is CTransPath?,1
+What is your name?!,0
+Thanks,0
+I NEED HELP,0
+Tu es un robot?!,0
+Can a pathologist change their verdict after submission?,1
+le pathologiste peut-il remplacer le score de l'ia?,1
+HELP ME,0
+I forgot my password...,0
+Veuillez expliquer qu'est-ce que la recherche de similarité?,1
+Mot de passe oublié,0
+What about: what is l2 normalization and why is it important?,1
+comment accéder au site qa pour les tests?,1
+i forgot my password,0
+Comment PathoIntern gère-t-il le risque de faux négatifs?,1
+how does the chatbot rag retrieval pipeline work?,1
+Qu'est-ce que la calibration au 95e percentile?,1
+Good morning?,0
+Help me...,0
+comment ça va?,0
+Bonsoir!,0
+Y a-t-il un compte de démonstration que je peux essayer?,1
+Reset my password!,0
+Comment PathoIntern se compare-t-il aux autres outils d'IA en pathologie,1
+What is the risk heatmap overlay,1
+"I need to know, how does pathointern handle the risk of false negatives?",1
+Good evening!,0
+Bonjour!,0
+see you later,0
+Good morning?,0
+Qu'en est-il de: what is a production git tag?,1
+Qu'est-ce que le modèle fondamental UNI?,1
+Quelle pile technologique PathoIntern utilise-t-il,1
+HELLO,0
+I DON'T KNOW,0
+See you later?,0
+Qu'est-ce que la piste d'audit?,1
+Maybe!,0
+What is the mission of PathoIntern?,1
+No?,0
+Who can submit verdicts?,1
+J'ai besoin de savoir: what is the risk heatmap overlay?,1
+Dans quelle mesure devrais-je faire confiance aux reponses du chatbot?,1
+Quelles considérations réglementaires s'appliquent à PathoIntern?,1
+What is the service layer pattern used in the backend?,1
+peut-être,0
+I forgot my password!,0
+Quelle est la précision de PathoIntern?,1
+Qu'en est-il de: how was the development organized?,1
+J'ai besoin de savoir: qu'est-ce que l'intégration lis/dme prévue pour la phase 2?,1
+J'ai besoin de savoir: what is the similarity search?,1
+Que ne peut PAS faire un technologiste dans PathoIntern?,1
+Good afternoon...,0
+how do i get an account on pathointern?,1
+comment les origines cors sont-elles configurées?,1
+Maybe...,0
+quels articles de recherche soutiennent pathointern?,1
+Reset my password!,0
+comment tu t'appelles?,0
+Query: qui est sumanth reddy?,1
+Non?,0
+AU REVOIR,0
+Quels outils l'équipe utilise-t-elle,1
+MERCI,0
+Bonjour...,0
+What about: what is the anomaly_baseline.npz file?,1
+SEE YOU LATER,0
+Tu es un robot??,0
+I need help!,0
+Salut!,0
+How are deployments triggered,1
+What is transfer... learning in computational pathology?,1
+Help me?,0
+WHAT IS YOUR NAME?,0
+AIDEZ-MOI,0
+who created you?,0
+Are you a robot?!,0
+bonjour,0
+AU REVOIR,0
+Help me?,0
+Qu'est-ce que l'étude NEJM AI sur CTransPath,1
+Qu'est-ce que PathoIntern?,1
+Bonjour...,0
+what is k-nn and how is it used for anomaly detection?,1
+Aidez-moi!,0
+I need help...,0
+Plusieurs utilisateurs peuvent-ils utiliser PathoIntern en même temps?,1
+Quel est l'état... actuel du projet?,1
+Qu'est-ce que l'apprentissage auto-supervisé en pathologie computationnelle?,1
+Le pathologiste peut-il remplacer le score de l'IA?,1
+What are the explicit non-goals of PathoIntern?,1
+Qui est Muthuraj Jayakumar?,1
+WHO CREATED YOU?,0
+How does batch embedding generation work?,1
+MAYBE,0
+Mot de passe oublié?,0
+How were the supporting research papers selected?,1
+Bonsoir!,0
+how is pathointern deployed?,1
+Good afternoon...,0
+Aidez-moi!,0
+Qui est Sumanth Reddy?,1
+Tu es un robot?...,0
+Comment tu t'appelles??,0
+Bonsoir...,0
+Comment fonctionne techniquement l'inscription des utilisateurs?,1
+Tu es un robot?!,0
+"I need to know, how is the anomaly baseline rebuilt?",1
+Okay?,0
+PathoIntern peut-il être utilisé pour l'enseignement,1
+What about: what infrastructure is needed for phase 2?,1
+Salut,0
+Bye,0
+Pouvez-vous me dire: pathointern est-il un outil de diagnostic?,1
+Aidez-moi?,0
+how does pathointern compare to other ai pathology tools?,1
+J'ai besoin de savoir: what is the production environment?,1
+Merci...,0
+Qu'est-ce qui différencie PathoIntern des compteurs de cellules sanguines automatisés?,1
+What about: what is transfer learning in computational pathology?,1
+Tu es un robot??,0
+What is k-NN and how is it used for anomaly detection,1
+J'ai besoin de savoir: why are there two phases?,1
+I need help?,0
+I need help,0
+Who created you?,0
+What is the current status of the project?,1
+how does anomaly detection work?,1
+What is your name?,0
+Please?,0
+bye,0
+what does 95% auroc mean and why is it significant?,1
+Good evening!,0
+Quelles variables... d'environnement PathoIntern nécessite-t-il?,1
+what is your name?,0
+I need help,0
+Veuillez expliquer quelle infrastructure est nécessaire pour la phase 2?,1
+"I need to know, is there a demo account i can try?",1
+What are normal... labels in the dataset?,1
+Query: qu'est-ce qu'un tag git de production?,1
+Comment les mots de passe sont-ils stockés de manière sécurisée?,1
+Oui...,0
+Okay,0
+What is your name?...,0
+Pouvez-vous me dire: what ports does pathointern use?,1
+Oui?,0
+hey,0
+Peut-on traiter les données sur une machine locale plutôt que sur le serveur?,1
+What happens if CTransPath model weights are missing?,1
+Can PathoIntern be used for teaching or education,1
+What is your name?!,0
+Qu'est-ce que la construction Docker multi-étapes?,1
+What is your name?,0
+Qu'en est-il de: what is the verdict score and how does it differ from the criticality score?,1
+How does server-side... worklist filtering work?,1
+Qui est Ali Ozdemir?,1
+QUI ES-TU?,0
+what infrastructure is needed for phase 2?,1
+Comment les articles de recherche de soutien ont-ils été sélectionnés?,1
+bonsoir,0
+JE NE SAIS PAS,0
+THANK YOU,0
+Combien de temps faut-il pour traiter une image,1
+Good afternoon?,0
+S'IL VOUS PLAÎT,0
+d'accord,0
+How are passwords stored securely in PathoIntern?,1
+what are the explicit non-goals of pathointern?,1
+Good evening...,0
+What problem does PathoIntern solve?,1
+Good afternoon?,0
+Pouvez-vous me dire: why doesn't pathointern use yolo or cnn classification?,1
+RESET MY PASSWORD,0
+What is the Nginx reverse proxy and what does it do,1
+Bonjour,0
+qu'est-ce que la recherche de similarité?,1
+À plus tard?,0
+What is OpenSlide,1
+I need help!,0
+Bonsoir...,0
+What can a technologist... NOT do in PathoIntern?,1
+How long does it... take to process an image?,1
+I FORGOT MY PASSWORD,0
+À plus tard...,0
+How do I access the QA site for testing?,1
+Hi there?,0
+Hi there...,0
+Hey?,0
+Qu'est-ce que la recherche de similarité?,1
+hi there,0
+How do I log in to PathoIntern?,1
+Qu'est-ce que la piste d'audit,1
+Qu'est-ce que la... Phase 1 de PathoIntern?,1
+Question: quelle est la différence entre la phase 1 et la phase 2?,1
+Can I process data on a local machine instead of the server,1
+Maybe!,0
+comment fonctionne la génération d'embeddings par lots?,1
+Can you assist me??,0
+qu'est-ce que le middleware d'audit?,1
+À qui PathoIntern est-il destiné?,1
+QUI ES-TU?,0
+who can submit verdicts?,1
+WHAT IS YOUR NAME?,0
+Oui?,0
+Maybe...,0
+Pouvez-vous me dire: comment pathointern protège-t-il la sécurité des patients?,1
+Can you assist me??,0
+Bonsoir!,0
+qui est sumanth reddy?,1
+Query: how does user registration work technically?,1
+À plus tard,0
+What is rate limiting in PathoIntern?,1
+Comment ça va?!,0
+Quelles specifications de droplet DigitalOcean PathoIntern utilise-t-il?,1
+Comment ça va?!,0
+No,0
+Why are non-normal reference cases displayed first in the similar patches panel?,1
+Qu'est-ce qu'OpenSlide?,1
+What is the technologist role in PathoIntern,1
+How long does a login session last?,1
+Pouvez-vous me dire: what is a digital intern in pathology?,1
+Tu es un robot?...,0
+Who created you?,0
+Reset my password?,0
+Je ne sais pas,0
+Comment les cas de référence sont-ils affichés?,1
+hi there,0
+OK,0
+Comment fonctionne le système de notation?,1
+D'accord...,0
+What is a verdict,1
+Je ne sais pas!,0
+GOOD EVENING,0
+Thank you?,0
+Query: quel est l'état actuel du projet?,1
+Query: sur combien d'images ctranspath a-t-il été pré-entraîné?,1
+Comment PathoIntern se compare-t-il aux autres outils d'IA en pathologie?,1
+"I need to know, how do i upload a blood smear image?",1
+Question: what is the 95th percentile calibration in anomaly scoring?,1
+Qu'en est-il de: is pathointern a diagnostic tool?,1
+Pouvez-vous me dire: how do i log in to pathointern?,1
+Reset my password...,0
+Oui?,0
+What's up?,0
+Hey?,0
+Veuillez expliquer what are the password requirements?,1
+What infrastructure is needed for Phase 2?,1
+I NEED HELP,0
+Tu es un robot?...,0
+Quelle est la différence entre les trois rôles d'utilisateur,1
+No?,0
+Query: how does pathointern compare to other ai pathology tools?,1
+Comment fonctionne le filtrage côté serveur de la liste de travail,1
+J'ai besoin de savoir: comment fonctionne le processus de construction du frontend?,1
+Hey!,0
+What is self-supervised learning in computational pathology,1
+How does the frontend... communicate with the backend?,1
+J'ai besoin de savoir: quel est l'état actuel du projet?,1
+bye,0
+How do I get an account on PathoIntern,1
+How does user registration work technically?,1
+Comment ça va?...,0
+merci,0
+Are you a robot?,0
