@@ -157,9 +157,9 @@ class LlamaManager:
             from llama_cpp import Llama
 
             root_dir = os.path.abspath(
-                os.path.join(os.path.dirname(__file__), "..", "..", "..")
+                os.path.join(os.path.dirname(__file__), "..", "..")
             )
-            model_path = os.path.join(root_dir, "models", "llm", "../../models/llm/LFM2.5-350M-Q4_K_M.gguf")
+            model_path = os.path.join(root_dir, "models", "llm", "LFM2.5-350M-Q4_K_M.gguf")
 
             if not os.path.exists(model_path):
                 logger.error("[PathoIntern] Chatbot LLM not found at %s", model_path)

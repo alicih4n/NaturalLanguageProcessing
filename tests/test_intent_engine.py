@@ -57,3 +57,8 @@ def test_empty_string(models):
     for q in empty_queries:
         pred = predict(q, models)
         assert pred == 0
+
+if __name__ == "__main__":
+    import pytest
+    import sys
+    sys.exit(pytest.main(["-v", os.path.abspath(__file__)]))
