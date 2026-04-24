@@ -21,6 +21,13 @@
 
 ---
 
+## 🔗 Main Project Repository
+
+This repository focuses on the **Main PathoInternProject**. For the full end-to-end application (MVP), please visit our main project repository:
+👉 **[PathoIntern MVP](https://github.com/muthuacumen/PathoInternMVP.git)**
+
+---
+
 ## 🏗️ Architecture Overview
 
 The **PathoIntern** project integrates a classical Machine Learning router with a Large Language Model (LLM) Retrieval-Augmented Generation (RAG) system.
